@@ -2,12 +2,12 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.designge.geotaxi"
+        id        = "com.designge.priustaxi"
 	    versionCode="17" 
         version   = "1.0.1"
-		package="com.designge.geotaxi"
+		package="com.designge.priustaxi"
 		>
-    <name>GeoTaxi</name>
+    <name>Prius Taxi</name>
 	<icon src="taxi.png" />
 
 
@@ -30,7 +30,7 @@
 
 	<preference name="phonegap-version" value="cli-5.2.0" /> 
 <!--	<preference name="orientation" value="landscape" />-->
-	<preference name="orientation" value="landscape" />
+	<preference name="orientation" value="portrait" />
 
 	<preference name="webviewbounce" value="false" />  
 	<preference name="DisallowOverscroll" value="true" />
@@ -38,7 +38,7 @@
 	<preference name="keepRunning" value="true" />
 	<preference name="exit-on-suspend" value="false" />
     <description>
-     geo taxi
+     Prius Taxi Tbilisi
     </description>
 	
 
