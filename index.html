@@ -670,17 +670,17 @@ function setmypos()
 			//	alert("checking: "+curmap+"_"+MyZoom+"_"+(xtile+curx)+"_"+(ytile+cury)+".png");
 				mytile=curmap+"/"+MyZoom+"_"+(xtile+curx)+"_"+(ytile+cury)+".png";
 				checktile(mytile);
-				if (tilef==0 || cache_ignore==1 || (cache_ignore_wifi==1 && inter=="Wifi"))
-					{
+				//if (tilef==0 || cache_ignore==1 || (cache_ignore_wifi==1 && inter=="Wifi"))
+//					{
 			//		if (tilef==1)	{document.getElementById("img_"+i+"-"+ii).src="file:///mnt/sdcard/locage/maps/"+mytile;	}
 					downtile(curmap, MyZoom, (xtile+curx), (ytile+cury), i, ii,1);
 					console.log("down tile, map "+curmap+", zoom: "+MyZoom+", X: "+ (xtile+curx)+", y: "+ (ytile+cury)+" i:"+i+" ii: "+ii);
-					}
-				else
-					{
-					document.getElementById("img_"+i+"-"+ii).src="file:///mnt/sdcard/locage/maps/"+mytile;
-					document.getElementById("img_"+i+"-"+ii).alt=mytile;
-					}
+//					}
+//				else
+//					{
+//					document.getElementById("img_"+i+"-"+ii).src="file:///mnt/sdcard/locage/maps/"+mytile;
+//					document.getElementById("img_"+i+"-"+ii).alt=mytile;
+//					}
 				}
 			}
 		oxt=xtile;
@@ -719,44 +719,8 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 	console.log("tilename: "+tilename);
 	console.log("tilelink: "+tilelink);
 
+	document.getElementById("img_"+i+"-"+ii).src=tilelink;
 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
-	function(fileSystem)
-		{
-		
-		fileSystem.root.getFile("locage/maps/dummy.html", {create: true, exclusive: false}, 
-		function gotFileEntry(fileEntry) 
-			{
-			var sPath =fileEntry.fullPath.replace("dummy.html","");
-			var fileTransfer = new FileTransfer();
-			//fileEntry.remove();
-			//  theFile.toURI());
-		//	alert(	sPath + tilename);
-fileTransfer.download(tilelink,	sPath + tilename,	function(theFile) {document.getElementById("img_"+i+"-"+ii).src="file:///mnt/sdcard/locage/maps/"+smap+"/"+szoom+"_"+A+"_"+B+".png";
-
-document.getElementById("img_"+i+"-"+ii).alt=smap+"/"+szoom+"_"+A+"_"+B+".png";
-
-
-			theFile.file(
-				function(fileObj) 
-					{
-					if (fileObj.size<9 && retry<5)
-						{downtile(smap, szoom, A, B, i, ii, retry+1);} 
-					}
-				);
-			
-			},	function(error) {
-				//alert("download error source " + error.source);
-                //alert("download error target " + error.target);
-				//alert("upload error code: " + error.code);
-				if (retry<4)
-					{
-					downtile(smap, szoom, A, B, i, ii, retry+1);
-					}
-
-				});
-			}, fail);
-		}, fail);
 	
 	}
 
