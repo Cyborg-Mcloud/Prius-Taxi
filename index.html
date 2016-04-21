@@ -274,7 +274,7 @@ function onSuccess(position)
 	wlon=MyLong;
 	wlat=MyLat;
 
-	if (started==0 && MyUser!="nouser")	{Start();}
+	if (started==0 && MyUser!="nouser" && MyUser!="")	{Start();}
 
 	setmypos();
 	document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";

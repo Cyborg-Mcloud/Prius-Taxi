@@ -62,6 +62,8 @@
 
     </plugins>
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/device" />
+
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 <feature name="http://api.phonegap.com/1.0/file"/>
@@ -83,6 +85,11 @@
 </feature>
 
 -->
+
+	<feature name="http://api.phonegap.com/1.0/file" />
+	<gap:plugin name="org.apache.cordova.file-transfer" />
+
+
 
 	<gap:plugin name="com.simplec.plugins.powermanagement" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
