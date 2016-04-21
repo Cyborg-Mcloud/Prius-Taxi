@@ -11,9 +11,9 @@
 	<icon src="taxi.png" />
 
 
-<access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+<access origin="*" subdomains="true"/>
+    <allow-intent href="http://*/*" subdomains="true"/>
+    <allow-intent href="https://*/*" subdomains="true"/>
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
