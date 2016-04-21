@@ -50,7 +50,9 @@ function checkConnection()
 	states[Connection.CELL_4G]  = '4G';
 	states[Connection.CELL]     = 'generic';
 	states[Connection.NONE]     = 'none';
+	
 	inter= states[networkState];
+
 	curint=inter;
 	document.getElementById('erorebi').innerHTML="internet: "+inter;
 	}

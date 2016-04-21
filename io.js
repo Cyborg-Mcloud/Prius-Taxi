@@ -10,12 +10,12 @@ function ReadData()
 	}
 function gotfswrite(fileSystem) 
 	{
-	fileSystem.root.getFile("locage/locdata.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+	fileSystem.root.getFile("mytaxi/locdata.txt", {create: true, exclusive: false}, gotFileEntry, fail);
 	}
 
 function gotfsread(fileSystem)
 	{
-	fileSystem.root.getFile("locage/locdata.txt", null, gotFileEntry2, fail2);
+	fileSystem.root.getFile("mytaxi/locdata.txt", null, gotFileEntry2, fail2);
 	}
 
 function gotFileEntry(fileEntry) 
@@ -76,43 +76,73 @@ function fail2(evt)
 
 function checkIfFileExists(path)
 	{
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/1", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/2", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/3", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/4", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/5", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/6", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/7", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/8", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/9", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("locage/maps/10", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-
-	
-	
-	
-	
-	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("locage/"+path, { create: false }, fileExists, fileDoesNotExist);}, getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/1", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/2", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/3", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/4", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/5", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/6", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/7", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/8", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/9", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/10", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/dummy.html", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("mytaxi/"+path, { create: false }, fileExists, fileDoesNotExist);}, getFSFail); 
 	}
 
 
-function checktile(path)
+function checktile(fileName)
 	{
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("locage/maps/"+path, { create: false }, tilefound, notile);}, getFSFail); 
+	console.log("checking file: "+fileName);
+	fileName="file:///storage/emulated/0/mytaxi/maps/"+fileName;
+    var http = new XMLHttpRequest();
+    http.open('HEAD', fileName, false);
+    http.send(null);
+	console.log("file: "+fileName+" status: "+http.status );
+    return (http.status != 404);
+	}
+
+function checktile2(path)
+	{
+	var reader = new FileReader();
+	reader.onloadend = function(evt) 
+		{
+		if(evt.target.result == null) 
+			{
+			tilef=0;
+			return false;
+		   // If you receive a null value the file doesn't exists
+			} 
+		else 
+			{
+			tilef=1;
+			return true;
+	// Otherwise the file exists
+			}         
+		};
+
+	reader.readAsDataURL("mytaxi/maps/"+path); 
+	}
+
+function checktile3(path)
+	{
+
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("mytaxi/maps/"+path, { create: false }, tilefound, notile);}, getFSFail); 
+//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("mytaxi/maps/"+path, { create: false }, function(){console.log("loading image: "+path); document.getElementById("img_"+i+"-"+ii).src="file:///storage/emulated/0/mytaxi/maps/"+path;}, function(){console.log("downloading tile: "+smap+"/"+szoom+"_"+A+"_"+B+" : "+i+" | "+ii);downtile(smap, szoom, A, B, i, ii,1);});}, getFSFail); 
+
 	}
 
 function tilefound(fileEntry)
 	{
 	tilef=1;
-//	alert("found");
-//	alert("size: ".fileEntry.size);
-
+	check_complete=1;
 	}
 function notile()
 	{
 	tilef=0;
+	check_complete=1;
 	}
 
 function fileExists(fileEntry)
@@ -125,7 +155,7 @@ function fileDoesNotExist()
 	}
 function getFSFail(evt)
 	{
-    console.log(evt.target.error.code);
+    console.log("shit error");
 	}
 
 
