@@ -87,7 +87,6 @@
 -->
 
 	<feature name="http://api.phonegap.com/1.0/file" />
-	<gap:plugin name="org.apache.cordova.file-transfer" />
 
 
 
@@ -95,7 +94,7 @@
 	<gap:plugin name="org.apache.cordova.geolocation" />
 	<gap:plugin name="org.apache.cordova.file" />
 	<gap:plugin name="org.apache.cordova.network-information" />
-	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="org.apache.cordova.file-transfer" source="pgb" spec="4.8.0"  />
 	
 	
 <!--
