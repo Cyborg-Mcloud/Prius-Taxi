@@ -66,8 +66,8 @@
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
-<feature name="http://api.phonegap.com/1.0/file"/>
-<feature name="http://api.phonegap.com/1.0/filetransfer"/>
+<!--<feature name="http://api.phonegap.com/1.0/file"/>
+<feature name="http://api.phonegap.com/1.0/filetransfer"/>-->
 <!--	<feature name="FileTransfer" value="org.apache.cordova.FileTransfer" />-->
 
 	<feature name="App">
@@ -86,7 +86,7 @@
 
 -->
 
-	<feature name="http://api.phonegap.com/1.0/file" />
+<!--	<feature name="http://api.phonegap.com/1.0/file" />-->
 
 
 
@@ -94,7 +94,7 @@
 	<gap:plugin name="org.apache.cordova.geolocation" />
 	<gap:plugin name="org.apache.cordova.file" />
 	<gap:plugin name="org.apache.cordova.network-information" />
-	<gap:plugin name="org.apache.cordova.file-transfer" source="npm" spec="4.8.0"  />
+	<gap:plugin name="org.apache.cordova.file-transfer"  />
 	
 	
 <!--
