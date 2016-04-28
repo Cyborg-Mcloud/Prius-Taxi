@@ -124,20 +124,24 @@ var watchID = null;
 function onDeviceReady() 
 	{
 
-
+console.log("device ready, checking connection");
 	checkConnection();
 
 	document.addEventListener("pause", onPause, false);
-	document.addEventListener("backbutton", onBackKeyDown, false);
-	document.addEventListener("menubutton", onMenuDown, false);
-	document.addEventListener("searchbutton", onSearchDown, false);
+	//document.addEventListener("backbutton", onBackKeyDown, false);
+	//document.addEventListener("menubutton", onMenuDown, false);
+	//document.addEventListener("searchbutton", onSearchDown, false);
 	document.addEventListener("volumedownbutton", onVolumeDown, false);
 	document.addEventListener("volumeupbutton", onVolumeUp, false);
 
+	console.log("device ready, getting position");
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
 	var opts = { timeout: 30000, enableHighAccuracy: true};
 	watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 	document.addEventListener("resume", onResume, false);
+	
+	console.log("device ready, dealing with record file");
+	
 	checkIfFileExists("locdata.txt");
 
 	if (dataex==0)	{WriteData();}	
@@ -362,7 +366,7 @@ function onWatchSuccess(position)
 		
 <div  style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; ' >
 	<div style='float:left;'><img src='but_info.png'></div>
-	<div id='infodiv'></div>
+	<div id='infodiv' style='float:right; width:150px; border:1px solid red;'></div>
 <!--	<div style='float:right;'><img src='but_register.png'></div>-->
 
 
