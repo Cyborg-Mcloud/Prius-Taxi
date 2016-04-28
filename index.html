@@ -558,6 +558,7 @@ function DrawUsers()
 
 function DrawHomePos()
 	{
+	console.log("drawing home pos");
 	var x=long2pixel(MyLong, MyZoom);
 	var y=lat2pixel(MyLat, MyZoom);
 
@@ -568,14 +569,16 @@ function DrawHomePos()
 	
 	document.getElementById("homepos").style.left=(difx-2)+"px";
 	document.getElementById("homepos").style.top=(dify-2)+"px";
+
 	}
 
 
 var but1=0;
 function mdown(event)
 	{
-		
+
 	omousex=event.touches[0].pageX; omousey=event.touches[0].pageY;
+	console.log("mouse down: "+omousex+ " - "+omousey);
 	finx=0; sfiny=0;
 	but1=1;
 
@@ -846,8 +849,8 @@ function loadtiles()
 		A=(xtile+curx);	if (A<0) {A=0;}
 		mytile=curmap+"/"+MyZoom+"_"+A+"_"+(ytile+cury)+".png";
 
-		if (tilef==0 || cache_ignore==1 || (cache_ignore_wifi==1 && inter=="Wifi"))
-			{
+		//if (tilef==0 || cache_ignore==1 || (cache_ignore_wifi==1 && inter=="Wifi"))
+//			{
 		//	if (file_downing==1)
 		//		{
 				file_downing=0;
@@ -855,16 +858,16 @@ function loadtiles()
 				down_complete=1;
 				file_downing=1;
 		//		}
-			}
-		else
-			{
-			document.getElementById("img_"+cur_down_i+"-"+cur_down_ii).src="file:///storage/emulated/0/mytaxi/maps/"+mytile;
-			document.getElementById("img_"+cur_down_i+"-"+cur_down_ii).alt=mytile;
-			down_complete=1;
-			file_downing=1;
+//			}
+//		else
+//			{
+//			document.getElementById("img_"+cur_down_i+"-"+cur_down_ii).src="file:///storage/emulated/0/mytaxi/maps/"+mytile;
+//			document.getElementById("img_"+cur_down_i+"-"+cur_down_ii).alt=mytile;
+//			down_complete=1;
+//			file_downing=1;
 			
-			DrawHomePos();
-			}
+//			DrawHomePos();
+//			}
 		}
 		
 	if (LT_finished==0)
@@ -907,50 +910,8 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 		{tilelink="http://tile.stamen.com/toner/"+szoom+"/"+A+"/"+B+".png";			}	
 	tilename=smap+"/"+szoom+"_"+A+"_"+B+".png";
 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
-	function(fileSystem)
-		{
-		
-		fileSystem.root.getFile("mytaxi/maps/dummy.html", {create: true, exclusive: false}, 
-		function gotFileEntry(fileEntry) 
-			{
-			var sPath =fileEntry.fullPath.replace("dummy.html","");
-			var fileTransfer = new FileTransfer();
-			
-			console.log("downloading: "+fileSystem.root.toURL()+" mytaxi/maps/" + tilename);
-			fileTransfer.download(tilelink,	fileSystem.root.toURL() + "mytaxi/maps/" + tilename,	function(theFile) {
-				theFile.file(
-					function(fileObj) 
-						{
-						if (fileObj.size<9 && retry<5)
-							{downtile(smap, szoom, A, B, i, ii, retry+1);
-							console.log("file size too small: "+ smap+"/"+ szoom+"_"+ A+"_"+ B+".png "+ i+ " : " +ii); 
-							} 
-						else
-							{
-							console.log("carmateba:  "+ smap+"/"+ szoom+"_"+ A+"_"+ B+".png "+ i+ " : " +ii); 
-							document.getElementById("img_"+i+"-"+ii).src="file:///storage/emulated/0/mytaxi/maps/"+smap+"/"+szoom+"_"+A+"_"+B+".png";
-	//						down_complete=1;file_downing=1;
-							}
-						}
-					);
-					DrawHomePos();
-					},	function(error) {
-							// download ERROR
-							console.log("download error source " + error.source);
-							console.log("download error target " + error.target);
-							console.log("upload error code: " + error.code);
-							if (retry<4)
-								{
-								console.log("retring: "+tilename+" number: "+retry);
-								downtile(smap, szoom, A, B, i, ii, retry+1);
-								}
-							else {//down_complete=1;file_downing=1;
-								console.log("sheveshvi: "+tilename+" number: "+retry);
-								}
-					}, { 'Connection': 'close', 'chunkedMode': 'false' });
-			}, fail);
-		}, fail);	
+	document.getElementById("img_"+i+"-"+ii).src=tilelink;
+
 	}
 
  function fail(error) 
