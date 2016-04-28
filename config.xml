@@ -10,16 +10,15 @@
     <name>Prius Taxi</name>
 	<icon src="taxi.png" />
 
-
-<access origin="*" />
-<allow-intent href="*" />
-<allow-navigation href="*" />
-    
-
     <platform name="android">
         <preference name="android-minSdkVersion" value="18" />
         <allow-intent href="market:*" />
     </platform>
+
+	<access origin="*" />
+<allow-intent href="*" />
+<allow-navigation href="*" />
+
 <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
