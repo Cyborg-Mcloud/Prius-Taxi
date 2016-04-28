@@ -144,9 +144,11 @@ function onDeviceReady()
 
 	ReadData();
 
-	if (started==0)	{
+	if (started==0)	
+		{
 		Start();
 		}
+	setmypos();
 	}
 // ------------------------
 
@@ -360,7 +362,8 @@ function onWatchSuccess(position)
 		
 <div  style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; ' >
 	<div style='float:left;'><img src='but_info.png'></div>
-	<div style='float:right;'><img src='but_register.png'></div>
+	<div id='infodiv'></div>
+<!--	<div style='float:right;'><img src='but_register.png'></div>-->
 
 
 </div>
@@ -749,6 +752,7 @@ function setmypos()
 		loadtiles();	
 		DrawHomePos();
 		}
+	document.getElementById("infodiv").innerHTML=wlon+ " / "+wlat;
 	}
 
 function check_user_click()
@@ -861,7 +865,7 @@ function loadtiles()
 		
 	if (LT_finished==0)
 		{
-		setTimeout("loadtiles();",1);
+		setTimeout("loadtiles();",10);
 		}
 
 	}
@@ -909,7 +913,7 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 			var sPath =fileEntry.fullPath.replace("dummy.html","");
 			var fileTransfer = new FileTransfer();
 			
-			console.log("downloading: mytaxi/maps/" + tilename);
+			console.log("downloading: "+fileSystem.root.toURL()+" mytaxi/maps/" + tilename);
 			fileTransfer.download(tilelink,	fileSystem.root.toURL() + "mytaxi/maps/" + tilename,	function(theFile) {
 				theFile.file(
 					function(fileObj) 
