@@ -25,7 +25,7 @@ function gotFileEntry(fileEntry)
 
 function gotFileWriter(writer) 
 	{
-	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat);
+	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid);
 
 	}
 
@@ -61,6 +61,11 @@ function readAsText(file)
 			wlon=a[3];
 			wlat=a[4];
 			setmypos();
+			}
+
+		if (a.length>5)
+			{
+			myid=a[5];
 			}
 
 		document.getElementById("myname").value=MyUser;

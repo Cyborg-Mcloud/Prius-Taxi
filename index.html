@@ -16,6 +16,8 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+var myid=0;
+
 var wlon=44.7689831;
 var wlat=41.7089554;
 var MyUser="nouser";
@@ -122,7 +124,7 @@ var watchID = null;
 function onDeviceReady() 
 	{
 
-console.log("device ready, checking connection");
+	console.log("device ready, checking connection");
 	checkConnection();
 
 	document.addEventListener("pause", onPause, false);
@@ -142,9 +144,20 @@ console.log("device ready, checking connection");
 	
 	checkIfFileExists("locdata.txt");
 
-	if (dataex==0)	{WriteData();}	
+	if(dataex==1)
+		{
+		ReadData();
+		}
+	
+	if (dataex==0 || myid==0s)	
+		{
+		
+		myid=Math.floor(Math.random()*10000000);
+		
+		WriteData();
+		}	
 
-	ReadData();
+
 
 	if (started==0)	
 		{
@@ -156,11 +169,11 @@ console.log("device ready, checking connection");
 
 function MainProg()
 	{
-	console.log("main prog");
+	//console.log("main prog");
 	if (started==1)
 		{	
-		UpData();
-		console.log("up data");
+		//UpData();
+		//console.log("up data");
 		if (myself==1 && inpause==0)
 			{
 			console.log("myself=1 and inpause=0, setting wlongebi");
@@ -170,7 +183,7 @@ function MainProg()
 			}
 			
 
-		setTimeout("MainProg();",5000);
+		setTimeout("MainProg();",1000);
 
 		}
 	}
@@ -203,13 +216,13 @@ function update_data()
 						
 						b=a[i].split(";");
 						
-						var myid=b[0];
+						var curid=b[0];
 
-						if ( document.getElementById("user_"+myid)==null)
+						if ( document.getElementById("user_"+curid)==null)
 							{
-							document.getElementById("users").innerHTML+="<div id='user_"+myid+"'  style='position:absolute; left:0px; top:0px; color:red; font-size:12px; font-weight:bold;'><div style='position:absolute; left:-16px; top:-16px; width:32px; height:32px;'><img src='taxizm.png'></div></div>"; //&nbsp;&nbsp;"+b[1]+"
+							document.getElementById("users").innerHTML+="<div id='user_"+curid+"'  style='position:absolute; left:0px; top:0px; color:red; font-size:12px; font-weight:bold;'><div style='position:absolute; left:-16px; top:-16px; width:32px; height:32px;'><img src='taxizm.png'></div></div>"; //&nbsp;&nbsp;"+b[1]+"
 							}
-						userids[i]=myid;
+						userids[i]=curid;
 						usernames[i]=b[1];
 						userlats[i]=parseFloat(b[2]);
 						userlongs[i]=parseFloat(b[3]);
@@ -418,11 +431,11 @@ console.log("on watch success");
 		<!--<a href='Javascript: Start();' id='mainb' style='position:absolute; left:25px; top:25px; background-color:green; color:white; font-weight:bold; width:200px; display:block; padding:5px; z-index:301; text-align:center;' >START</a>-->
 
 
-	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; border:1px solid red;'><img src='but_call.png'></div>
+	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; border:1px solid red;' href='Javascript: call_taxi();'><img src='but_call.png'></div>
 	
-<a href='Javascript:zoomme(1);' style='position:fixed; bottom:80px; right:5px; margin:5px; z-index:252;'><img src='zoomin.png'></a>
+<a href='Javascript:zoomme(1);' style='position:fixed; bottom:85px; right:5px; margin:5px; z-index:252;'><img src='zoomin.png'></a>
 <a href='Javascript:zoomme(-1);'style='position:fixed; bottom:45px; right:5px; margin:5px; z-index:252;'><img src='zoomout.png'></a>
-<a href='Javascript: setme();' style='position:fixed; bottom:125px; right:5px; margin:5px; z-index:252; ' ><img id='cbut' src='centeroff.png'></a>
+<a href='Javascript: setme();' style='position:fixed; bottom:130px; right:5px; margin:5px; z-index:252; ' ><img id='cbut' src='centeroff.png'></a>
 <a href='Javascript: show_settings();' style='position:fixed; top:55px; right:5px; margin:5px; z-index:252;' ><img src='settings.png'></a>
 
 
@@ -552,7 +565,7 @@ function DrawUsers()
 
 	for (i=0;i<userids.length ;i++ )
 		{
-		myid=userids[i];
+		curid=userids[i];
 
 		var x=long2pixel(userlongs[i], MyZoom);
 		var y=lat2pixel(userlats[i], MyZoom);
@@ -565,10 +578,10 @@ function DrawUsers()
 		mcl="orange";
 		if (userlasts[i]<300)
 			{mcl="red";}
-		document.getElementById("user_"+myid).style.color=mcl;
-		document.getElementById("user_"+myid).style.left=difx+"px";
-		document.getElementById("user_"+myid).style.top=dify+"px";
-		document.getElementById("user_"+myid).innerHTML="<img src='taxizm.png' width='32px' height='32px' style='position:absolute; left:-16px; top:-16px;'>";//"X: "+difx+" Y: "+dify;
+		document.getElementById("user_"+curid).style.color=mcl;
+		document.getElementById("user_"+curid).style.left=difx+"px";
+		document.getElementById("user_"+curid).style.top=dify+"px";
+		document.getElementById("user_"+curid).innerHTML="<img src='taxizm.png' width='32px' height='32px' style='position:absolute; left:-16px; top:-16px;'>";//"X: "+difx+" Y: "+dify;
 
 		}
 	}
@@ -801,7 +814,7 @@ function check_user_click()
 	console.log((omousex-canacX-kartX) + " and " + (omousey-canacY-kartY));
 	for (i=0;i<userids.length ;i++ )
 		{
-		myid=userids[i];
+		curid=userids[i];
 
 		var x=long2pixel(userlongs[i], MyZoom);
 		var y=lat2pixel(userlats[i], MyZoom);
@@ -834,10 +847,21 @@ function show_profile(tid)
 
 function call_taxi()
 	{
-	if (curtaxi>-1)
-		{
-		alert("gamozaxeba");
+	if (MyUser!="nouser")
+		{    
+		url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+un_id;		
 		}
+	else
+		{
+		url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+un_id;
+		}
+	console.log("taxi call: "+url);
+	gamehttp.open('GET',url,true);
+	gamehttp.send(null);
+	
+
+
+	
 	}
 
 function loadtiles()
