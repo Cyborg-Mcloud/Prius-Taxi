@@ -152,7 +152,7 @@ function onDeviceReady()
 	if (dataex==0 || myid==0)	
 		{
 		
-		myid=Math.floor(Math.random()*10000000);
+		myid=Math.floor(Math.random()*100000000);
 		
 		WriteData();
 		}	
@@ -849,11 +849,11 @@ function call_taxi()
 	{
 	if (MyUser!="nouser")
 		{    
-		url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+un_id;		
+		url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
 		}
 	else
 		{
-		url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+un_id;
+		url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid;
 		}
 	console.log("taxi call: "+url);
 	gamehttp.open('GET',url,true);
