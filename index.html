@@ -31,9 +31,6 @@ var MyAcc;
 var started;
 started=0;
 
-
-
-
 function onBackKeyDown() 
 	{
 	if (curwindow==1)
@@ -159,12 +156,14 @@ console.log("device ready, checking connection");
 
 function MainProg()
 	{
+	console.log("main prog");
 	if (started==1)
 		{	
 		UpData();
-
+		console.log("up data");
 		if (myself==1 && inpause==0)
 			{
+			console.log("myself=1 and inpause=0, setting wlongebi");
 			wlon=MyLong;
 			wlat=MyLat;
 			setmypos();
@@ -184,6 +183,7 @@ function update_data()
 		mr=gamehttp.responseText;
 		if (mr!="")
 			{
+			console.log("data received from server: "+mr);
 			if (mr=="register")		
 				{
 				//alert("Please Register Your User at\n\r http://design.ge/geotaxi/");
@@ -231,6 +231,7 @@ function update_data()
 
 function UpData()
 	{
+
 	if (MyUser!="nouser")
 		{    
 		url="http://design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause;		
@@ -239,6 +240,7 @@ function UpData()
 		{
 		url="http://design.ge/geotaxi/upload.php?passive="+inpause;
 		}
+	console.log("upload: "+url);
 //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
 	gamehttp.open('GET',url,true);
 	gamehttp.send(null);
@@ -248,6 +250,7 @@ function UpData()
 
 function Start()
 	{
+	console.log("Start / END");
 	if (started==0)
 		{started=1;  MainProg();}  // document.getElementById('mainb').innerHTML="STOP";
 	else
@@ -257,6 +260,7 @@ function Start()
 
 function onPause()
 	{
+		console.log("on pause");
 //	if (started==0) 
 		//{
 			started=0;
@@ -268,15 +272,15 @@ function onPause()
 
 function onResume() 
 	{
+	console.log("on resume");
 	inpause=0;
 	if (started==0)
 		{
 		checkConnection();
-		if (started==0)
-			{
-			var opts = { timeout: 30000, enableHighAccuracy: true};
-			watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
-			}
+	
+		var opts = { timeout: 30000, enableHighAccuracy: true};
+		watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+	
 		if (MyUser!="nouser")	{Start();}
 		}
 
@@ -292,6 +296,8 @@ function onResume()
 
 function onSuccess(position) 
 	{
+console.log("on success");
+		
 	var element = document.getElementById('geopos');
 	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />';
@@ -308,6 +314,7 @@ function onSuccess(position)
 
 	wlon=MyLong;
 	wlat=MyLat;
+console.log("on succ, sett long");
 
 	if (started==0 && MyUser!="nouser")	{Start();}
 
@@ -320,6 +327,7 @@ function onSuccess(position)
  
 function getpos()
 	{
+		console.log("get pos");
 	document.getElementById('geopos').innerHTML="Finding geolocation...";
 	 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	
@@ -328,6 +336,9 @@ function getpos()
 
 function onWatchSuccess(position) 
 	{
+
+console.log("on watch success");
+
 	MyLat=position.coords.latitude ;
 	MyLong=position.coords.longitude ;
 	MyAlt=position.coords.altitude ;
@@ -367,7 +378,7 @@ function onWatchSuccess(position)
 		
 <div  style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; ' >
 	<div style='float:left;'><img src='but_info.png'></div>
-	<div id='infodiv' style='float:right; width:150px; border:1px solid red;'></div>
+	<div id='infodiv' style='float:right; width:150px; border:1px solid red; color:Black;'></div>
 <!--	<div style='float:right;'><img src='but_register.png'></div>-->
 
 
@@ -413,7 +424,12 @@ function onWatchSuccess(position)
 		<div id="bottom_menu" style='width:100%; position:fixed; bottom:0px; left:0px; height:41px; z-index:204; background-color:#3f3f3f; filter: alpha(opacity=90);	-moz-opacity: 0.9; -khtml-opacity: 0.9;  opacity: 0.9;'>
 
 <img src='phone.png'>
-
+<table width=100% cellpadding=0 cellspacing=0>
+			<tr><Td align=left><a href='Javascript:zoomme(1);' style='float:left; font-size:30px; margin:5px;'><img src='zoomin.png'></a></td>
+			<td align=center><a href='Javascript: setme();' style='margin:5px; ' ><img id='cbut' src='centeroff.png'></a></td>
+			<Td align=center><a href='Javascript: show_settings();' style='margin:5px;'><img src='settings.png'></a></td>
+			<td align=right><a href='Javascript:zoomme(-1);' style='float:right; margin:5px;   '><img src='zoomout.png'></a></td>
+			</table>
 
 		</div>
 
@@ -486,6 +502,7 @@ function cignorewifi()
 
 function setme()
 	{
+		console.log("setme");
 	if(myself==0)
 		{myself=1; document.getElementById("cbut").src='centeron.png';}
 	else {myself=0;document.getElementById("cbut").src='centeroff.png';}
@@ -497,6 +514,7 @@ var curmap=1;
 
 function changemap()
 	{
+		console.log("change map");
 	curmap=document.getElementById("maptype").value;
 	oxt=0;oyt=0;
 	setmypos();
@@ -525,6 +543,8 @@ function show_map()
 
 function stopScrolling( touchEvent )
 			{ touchEvent.preventDefault(); }
+
+
 document.body.addEventListener( 'touchmove' , stopScrolling , false );
 var mcl="orange";
 
@@ -609,12 +629,14 @@ var sfinx=0;
 var finy=0;
 function getmousecoord(event)
 	{
-
+console.log("get mouse coord");
 	if (but1==1)
 		{
 		mousex=event.touches[0].pageX; 
 		mousey=event.touches[0].pageY;
 	
+console.log("get mouse coord: "+mousex+" - "+mousey);
+
 		wlon=wlon+((omousex-mousex)/biji[MyZoom]);
 		wlat=wlat-((omousey-mousey)/(biji[MyZoom]*1.3));
 		omousex=mousex;
@@ -629,6 +651,7 @@ function getmousecoord(event)
 
 function mup()
 	{
+		console.log("mouse up");
 	but1=0;
 	sfinx=0; sfiny=0;
 	check_user_click();
@@ -674,6 +697,7 @@ console.log(" x: "+(-(mywpx-(sx))/2)+ " Y: "+(-(myhpx-(sy))/2));
 
 function zoomme(sait)
 	{
+		console.log("zoome "+sait)
 	var cant=0;
 	if (sait>0 && MyZoom==18)
 		{cant=1;}
@@ -692,6 +716,7 @@ function zoomme(sait)
 
 function saveuser()
 	{
+
 	MyUser=document.getElementById("myname").value;
 	MyPass=document.getElementById("mypass").value;
 
@@ -730,6 +755,8 @@ var kartY;
 function setmypos()
 	{
 
+	console.log("set my pos");
+
 	var lon_deg=wlon; 
 	var lat_deg=wlat; 
 
@@ -743,6 +770,8 @@ function setmypos()
 	var dify=128-(y-ytile)*256;
 	kartX=difx;
 	kartY=dify;
+
+	console.log("mypos: "+lon_deg+" / "+lat_deg+ " = "+difx+" / "+dify);
 
 	document.getElementById("map").style.left=difx+"px";
 	document.getElementById("map").style.top=dify+"px";
@@ -765,6 +794,7 @@ function setmypos()
 
 function check_user_click()
 	{
+	console.log("checking user click");
 	console.log((omousex-canacX-kartX) + " and " + (omousey-canacY-kartY));
 	for (i=0;i<userids.length ;i++ )
 		{
@@ -817,6 +847,7 @@ function loadtiles()
 			{
 			cur_down_ii=-1; cur_down_i++;
 			}
+
 		curx=cur_down_i-(myw-1)/2;
 	
 		if (cur_down_i<myw)
@@ -912,6 +943,7 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 	tilename=smap+"/"+szoom+"_"+A+"_"+B+".png";
 
 	document.getElementById("img_"+i+"-"+ii).src=tilelink;
+	console.log("down tile: "+tilelink);
 
 	}
 
