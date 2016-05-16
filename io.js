@@ -94,7 +94,7 @@ function checkIfFileExists(path)
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/9", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/10", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("mytaxi/maps/dummy.html", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("mytaxi/"+path, { create: false }, fileExists, fileDoesNotExist);}, getFSFail); 
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("mytaxi/"+path, { create: false }, fileExists_main, fileDoesNotExist_main);}, getFSFail); 
 	}
 
 
@@ -152,12 +152,33 @@ function notile()
 
 function fileExists(fileEntry)
 	{
-    dataex=1;
+//		console.log("aris!");
+//	dataex=1;
 	}
 function fileDoesNotExist()
 	{
+//		console.log("ar arsebobda");
+//    dataex=0;
+	}
+
+
+function fileExists_main(fileEntry)
+	{
+		console.log("aris faili!");
+
+	dataex=1;
+			ReadData();
+	}
+function fileDoesNotExist_main()
+	{
+	console.log("ar arsebobda");
+		myid=Math.floor(Math.random()*100000000);
+		
+		WriteData();
+
     dataex=0;
 	}
+
 function getFSFail(evt)
 	{
     console.log("shit error");

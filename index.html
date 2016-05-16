@@ -144,21 +144,9 @@ function onDeviceReady()
 	
 	console.log("device ready, dealing with record file");
 	
-	checkIfFileExists("locdata.txt");
+	kc=checkIfFileExists("locdata.txt");
 
-	if(dataex==1)
-		{
-		ReadData();
-		}
 	
-	if (dataex==0 || myid==0)	
-		{
-		
-		myid=Math.floor(Math.random()*100000000);
-		
-		WriteData();
-		}	
-
 
 
 	if (started==0)	
@@ -295,7 +283,7 @@ function onResume()
 		var opts = { timeout: 30000, enableHighAccuracy: true};
 		watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 	
-		if (MyUser!="nouser")	{Start();}
+		Start();
 		}
 
 	//checkIfFileExists("locdata.txt");
