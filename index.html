@@ -219,8 +219,8 @@ function update_data()
 					b=a[1].split(";");
 					if (b[0]!="")
 						{
-						taxilong=b[0];
-						taxilat=b[1];
+						taxilong=parseFloat(b[0]);
+						taxilat=parseFloat(b[1]);
 						}
 					}
 				if (inpause==0)	{DrawUsers();}
