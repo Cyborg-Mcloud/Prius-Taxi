@@ -234,6 +234,11 @@ function update_data()
 
 function UpData()
 	{
+	if (myid==0 || myid=="")
+		{	
+		myid=Math.floor(Math.random()*100000000);	
+		WriteData();
+		}
 
 	if (MyUser!="nouser")
 		{    

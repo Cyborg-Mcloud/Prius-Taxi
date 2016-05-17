@@ -73,11 +73,7 @@ function readAsText(file)
 		};
 	reader.readAsText(file);
 
-	if (myid==0 || myid=="")
-		{	
-		myid=Math.floor(Math.random()*100000000);	
-		WriteData();
-		}
+	
 	}
 
 function fail2(evt) 
