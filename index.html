@@ -221,7 +221,18 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
-						console.log("taxilat: "+b[1]+" / "+taxilat);
+						
+						}
+					}
+				else if (a[0]=="taxi_arrived")
+					{
+					change_status(3);
+					b=a[1].split(";");
+					if (b[0]!="")
+						{
+						taxilong=parseFloat(b[0]);
+						taxilat=parseFloat(b[1]);
+						
 						}
 					}
 				if (inpause==0)	{DrawUsers();}
@@ -408,6 +419,11 @@ function onWatchSuccess(position)
 			</div>
 		</div>
 </div>
+
+
+
+	<div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:252; background-color:green; color:white; '><center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();' style='color:white; background-color:green; padding:10px; text-align:center;'>ჩამოვდივარ</a></center></div>
+	
 		<!-- MOUSE OVER LAYER -->
 		<div id='mouser' style='position:absolute; left:0px;top:50px; width:400px; height:620px; z-index:250; border:1px solid red;' ontouchstart="mdown(event);" ontouchend="mup();"  ontouchmove="getmousecoord(event);">
 		</div>
@@ -435,7 +451,7 @@ function onWatchSuccess(position)
 		<!--<a href='Javascript: Start();' id='mainb' style='position:absolute; left:25px; top:25px; background-color:green; color:white; font-weight:bold; width:200px; display:block; padding:5px; z-index:301; text-align:center;' >START</a>-->
 
 
-	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='but_call.png'></div>
+	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='but_call.png'></a>
 	
 <a href='Javascript:zoomme(1);' style='position:fixed; bottom:85px; right:5px; margin:5px; z-index:252;'><img src='zoomin.png'></a>
 <a href='Javascript:zoomme(-1);'style='position:fixed; bottom:45px; right:5px; margin:5px; z-index:252;'><img src='zoomout.png'></a>
@@ -507,11 +523,19 @@ if (newstat!=mystatus)
 		{
 		uplimit=1;
 		document.getElementById("call_but").style.display="none";
+		document.getElementById("arrived_screen").style.display="none";
 		}
-	if (mystatus==2)
+	else if (mystatus==2)
 		{
 		uplimit=1;
 		document.getElementById("call_but").style.display="none";
+		myself=1;
+		}
+	if (mystatus==3)
+		{
+		uplimit=1;
+		document.getElementById("call_but").style.display="none";
+		document.getElementById("arrived_screen").style.display="inline";
 		myself=1;
 		}
 
@@ -519,6 +543,7 @@ if (newstat!=mystatus)
 		{
 		uplimit=5;
 		document.getElementById("call_but").style.display="inline";
+		document.getElementById("arrived_screen").style.display="none";
 		}	
 	}
 
