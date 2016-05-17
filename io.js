@@ -72,6 +72,12 @@ function readAsText(file)
 		document.getElementById("mypass").value=MyPass;
 		};
 	reader.readAsText(file);
+
+	if (myid==0 || myid=="")
+		{	
+		myid=Math.floor(Math.random()*100000000);	
+		WriteData();
+		}
 	}
 
 function fail2(evt) 
@@ -164,18 +170,17 @@ function fileDoesNotExist()
 
 function fileExists_main(fileEntry)
 	{
-		console.log("aris faili!");
+	console.log("aris faili!");
 
 	dataex=1;
-			ReadData();
+	ReadData();
 	}
 function fileDoesNotExist_main()
 	{
 	console.log("ar arsebobda");
-		myid=Math.floor(Math.random()*100000000);
-		
-		WriteData();
-
+	myid=Math.floor(Math.random()*100000000);
+	
+	WriteData();
     dataex=0;
 	}
 
