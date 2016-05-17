@@ -591,7 +591,9 @@ function DrawUsers()
 		{
 		var x=long2pixel(taxilong, MyZoom);
 		var y=lat2pixel(taxilat, MyZoom);
-	
+
+		console.log("draw taxi: "+taxilong+ " / "+taxilat+ " onme:"+myself);
+
 		var difx=Math.floor((x-xtile)*256);
 		var dify=Math.floor((y-ytile)*256);
 		difx=(256*(myw-1)/2)+difx-128;
