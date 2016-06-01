@@ -216,7 +216,7 @@ function update_data()
 					}
 				else if (a[0]=="taxi_moving")
 					{
-					document.getElementById("taxi_search_screen").style.display="none;
+					document.getElementById("taxi_search_screen").style.display="none";
 					change_status(2);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -228,7 +228,7 @@ function update_data()
 					}
 				else if (a[0]=="taxi_arrived")
 					{
-											document.getElementById("taxi_search_screen").style.display="none;
+											document.getElementById("taxi_search_screen").style.display="none";
 					change_status(3);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -240,7 +240,7 @@ function update_data()
 					}
 				else if (a[0]=="taxi_waiting")
 					{
-											document.getElementById("taxi_search_screen").style.display="none;
+											document.getElementById("taxi_search_screen").style.display="none";
 					change_status(4);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -251,7 +251,7 @@ function update_data()
 					}
 				else if (a[0]=="you_moving")
 					{
-											document.getElementById("taxi_search_screen").style.display="none;
+											document.getElementById("taxi_search_screen").style.display="none";
 					change_status(5);
 					b=a[1].split(";");
 					if (b[0]!="")
