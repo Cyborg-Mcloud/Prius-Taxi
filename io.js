@@ -169,6 +169,8 @@ function fileExists_main(fileEntry)
 	console.log("aris faili!");
 
 	dataex=1;
+
+	document.getElementById("regbut").style.display="none";
 	ReadData();
 	}
 function fileDoesNotExist_main()
