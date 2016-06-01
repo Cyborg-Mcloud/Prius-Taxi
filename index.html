@@ -514,7 +514,7 @@ function onWatchSuccess(position)
 		<br>
 		<p id="geopos">Finding geolocation...</p>
 
-	<b>Map Type</b><br>
+	<b>რუქის ტიპი</b><br>
 	<select id='maptype' onChange='changemap();'>
 	<option value='1' >Open Street Map (fast)</option>
 	<option value='2'>Open Cycle Map (slow)</option>
@@ -531,16 +531,17 @@ function onWatchSuccess(position)
 		<div id='erorebi'>Tilebi (zoom:16)</div>
 	
 		
-		<b>Profile Details</b>
+		<b>პროფილი</b>
 		<table>
-			<tr><td>User:</td><td> <input id='myname' name='myname' value='youuser' size=12></td></tr>
-			<tr><td>Pass:</td><td> <input id='mypass' name='mypass' value='yourpass' size=12></td>
+			<tr><td>მომხმ.:</td><td> <input id='myname' name='myname' value='youuser' size=12></td></tr>
+			<tr><td>პაროლი:</td><td> <input id='mypass' name='mypass' value='yourpass' size=12></td>
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png'></a></td></tr>
 		</table>
+		<a href='javascript: regme();'>რეგისტრაცია</a>
 		<br><br>
-		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> Ignore Cache<br>
-		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> Ignore Cache on WiFi<br>
-
+		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
+		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>
+		<a href='Javascript: show_map();'>Back</a>
 	</div>
 
 
