@@ -146,9 +146,6 @@ function onDeviceReady()
 	
 	kc=checkIfFileExists("locdata.txt");
 
-	
-
-
 	if (started==0)	
 		{
 		Start();
@@ -181,15 +178,12 @@ function MainProg()
 			}
 			
 		setTimeout("MainProg();",1000);
-
-
-
 		}
 	}
 
 var taxilong=0;
 var taxilat=0;
-
+var taxiname="";
 
 function update_data()
 	{		
@@ -223,6 +217,7 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
+						taxiname=b[2];
 						
 						}
 					}
@@ -235,7 +230,7 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
-						
+												taxiname=b[2];
 						}
 					}
 				else if (a[0]=="taxi_waiting")
@@ -247,6 +242,7 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
+												taxiname=b[2];
 						}
 					}
 				else if (a[0]=="you_moving")
@@ -258,8 +254,17 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
+												taxiname=b[2];
 						}
 					}
+				else
+					{
+					document.getElementById("taxibox").style.visibility="hidden";
+						uplimit=5;
+		document.getElementById("call_but").style.display="inline";
+		document.getElementById("arrived_screen").style.display="none";
+					}
+				
 				if (inpause==0)	{DrawUsers();}
 
 
@@ -436,8 +441,9 @@ function onWatchSuccess(position)
 					<div id='homepos' style='position:absolute; left:0px; top:0px;  background-color:green; width:7px; height:7px; z-index:102;'></div>
 					<div id='taxibox'  style=' position:absolute; left:0px; top:0px; color:red; font-size:12px; width:32px; height:32px;  z-index:103;'>
 						<div style='position:absolute; left:-16px; top:-16px; width:32px; height:32px; z-index:104;'>
-						<img src='taxizm.png'>
+							<img src='taxizm.png'>
 						</div>
+						<div id='taxitext'></div>
 					</div>
 				</div>
 
@@ -700,8 +706,9 @@ function DrawUsers()
 		document.getElementById("taxibox").style.left=difx+"px";
 		document.getElementById("taxibox").style.top=dify+"px";
 		document.getElementById("taxibox").style.visibility="visible";
+		document.getElementById("taxitext").innerHTML=taxiname;
 
-		console.log("draw taxi: "+difx+ " / "+dify);
+		console.log("draw taxi: "+difx+ " / "+dify+" taxiname: "+taxiname);
 		}
 	}
 
