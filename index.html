@@ -184,6 +184,7 @@ function MainProg()
 var taxilong=0;
 var taxilat=0;
 var taxiname="";
+var notified=0;
 
 function update_data()
 	{		
@@ -195,6 +196,7 @@ function update_data()
 			console.log("data received from server: "+mr);
 			if (mr=="register")		
 				{
+				
 				console.log("register received");
 				Start();
 				}
@@ -205,12 +207,14 @@ function update_data()
 				a=mr.split("|");
 				if (a[0]=="searching_taxi")
 					{
+											notified=0;
 					change_status(1);
 					document.getElementById("taxi_search_screen").style.display="inline";
 					}
 				else if (a[0]=="taxi_moving")
 					{
 					document.getElementById("taxi_search_screen").style.display="none";
+										notified=0;
 					change_status(2);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -231,13 +235,17 @@ function update_data()
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
 						taxiname=b[2];
-
-						window.plugin.notification.local.schedule({
-						id:         "321123",  // A unique id of the notifiction
-						message:    "თქვენი ტაქსი მოვიდა და გელოდებათ",  // The message that is displayed
-						title:      "ტაქსი მოვიდა",  // The title of the message  
-					
-						});
+						document.getElementById("taxi_number").innerHTML="ბორტის ნომერი: "+taxiname;
+						if (notified==0)
+							{
+							window.plugin.notification.local.schedule({
+							id:         "321123",  // A unique id of the notifiction
+							text:    "თქვენი ტაქსი მოვიდა და გელოდებათ",  // The message that is displayed
+							title:      "ტაქსი მოვიდა",  // The title of the message  
+						
+							});
+							notified=1;
+							}
 
 						}
 					}
@@ -255,7 +263,8 @@ function update_data()
 					}
 				else if (a[0]=="you_moving")
 					{
-											document.getElementById("taxi_search_screen").style.display="none";
+					notified=0;
+					document.getElementById("taxi_search_screen").style.display="none";
 					change_status(5);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -267,6 +276,7 @@ function update_data()
 					}
 				else
 					{
+											notified=0;
 					document.getElementById("taxibox").style.visibility="hidden";
 						uplimit=5;
 		document.getElementById("call_but").style.display="inline";
