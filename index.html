@@ -327,20 +327,27 @@ function Start()
 
 function onPause()
 	{
-		console.log("on pause");
+	console.log("on pause");
 //	if (started==0) 
 		//{
-			started=0;
-	clearWatch();
-	//}
-	WriteData();
-	inpause=1;
+	if (mystatus==0 || mystatus==5)
+		{
+		started=0;
+		clearWatch();
+		WriteData();
+		inpause=1;
+		}
+
 	}
 
 function onResume() 
 	{
 	console.log("on resume");
-	inpause=0;
+	if (inpause==1)
+		{
+		inpause=0;
+		}
+
 	if (started==0)
 		{
 		checkConnection();
