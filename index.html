@@ -223,14 +223,22 @@ function update_data()
 					}
 				else if (a[0]=="taxi_arrived")
 					{
-											document.getElementById("taxi_search_screen").style.display="none";
+					document.getElementById("taxi_search_screen").style.display="none";
 					change_status(3);
 					b=a[1].split(";");
 					if (b[0]!="")
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
-												taxiname=b[2];
+						taxiname=b[2];
+
+						window.plugin.notification.local.schedule({
+						id:         "321123",  // A unique id of the notifiction
+						message:    "თქვენი ტაქსი მოვიდა და გელოდებათ",  // The message that is displayed
+						title:      "ტაქსი მოვიდა",  // The title of the message  
+					
+						});
+
 						}
 					}
 				else if (a[0]=="taxi_waiting")
@@ -453,7 +461,12 @@ function onWatchSuccess(position)
 
 
 
-	<div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:black; color:white; '><br><br><br><br><br><br><br><br><br><br><br><center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();' style='color:white; background-color:green; padding:10px; text-align:center; border:1px solid gray;'>ჩამოვდივარ</a></center></div>
+	<div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:black; color:white; '>
+	
+		<br><br><br><br><br><br><br><br><br><br><br><center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();' style='color:white; background-color:green; padding:10px; text-align:center; border:1px solid gray;'>ჩამოვდივარ</a></center>
+		<br><br><center>
+		<div id='taxi_number' style='color:white;'></div>
+	</div>
 	
 
 <div id='GPS_search_screen'  style='display:inline; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:301; background-color:black; color:white; '><br><br><br><br><br><br><br><br><center> <img src='taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center></div>
@@ -577,6 +590,7 @@ if (newstat!=mystatus)
 		uplimit=1;
 		document.getElementById("call_but").style.display="none";
 		document.getElementById("arrived_screen").style.display="inline";
+		document.getElementById("taxi_number").innerHTML="ბორტის ნომერი: "+taxiname;
 		myself=1;
 		}
 	else if (mystatus==4)
@@ -584,7 +598,8 @@ if (newstat!=mystatus)
 		uplimit=1;
 		document.getElementById("call_but").style.display="none";
 		document.getElementById("arrived_screen").style.display="none";
-		document.getElementById("info_text").innerHTML="ტაქსი გელოდებათ";
+		document.getElementById("info_text").innerHTML="ტაქსი გელოდებათ, ბორტი: "+taxiname;
+
 		myself=1;
 		}
 	else if (mystatus==5)
