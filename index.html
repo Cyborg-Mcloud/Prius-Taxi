@@ -524,11 +524,11 @@ function onWatchSuccess(position)
 
 		<!--<a href='Javascript: Start();' id='mainb' style='position:absolute; left:25px; top:25px; background-color:green; color:white; font-weight:bold; width:200px; display:block; padding:5px; z-index:301; text-align:center;' >START</a>-->
 
-	<div id='chat_div' style='position:fixed; right:10px; bottom:90px; z-index:253; border:1px solid red;'>
+	<div id='chat_div' style='position:fixed; right:10px; bottom:30px; z-index:253; border:1px solid red;'>
 		<a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img src='chat.png'></a>
-		<div id='chat_window' style='display:inline; width:90%; height:200px; background-color:white;'>
-			<div id='chat_txt' style='width:98%; border:1px solid gray; height:150px; overflow:auto;'></div>
-			<input type='text' size=30 id='chat_send_text'><input type='button' value='send'>
+		<div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
+			<div id='chat_txt' style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white;'></div>
+			<input type='text' size=30 id='chat_send_text'><input type='button' value='send' onclick='chat_send();'>
 		</div>
 	</div>
 	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='but_call.png'></a>
@@ -599,6 +599,24 @@ function onWatchSuccess(position)
 
 
 <script>
+
+var chatopened=0;
+function chat_click()
+	{
+	if (chatopened==0)
+		{
+		document.getElementById("chat_window").style.display="inline";
+		document.getElementById("chat_div").style.bottom="70px";
+		chatopened=1;
+		}
+	else	
+		{
+		document.getElementById("chat_window").style.display="none";
+		document.getElementById("chat_div").style.bottom="30px";
+		chatopened=0;
+		}
+
+	}
 
 function change_status(newstat)
 {
