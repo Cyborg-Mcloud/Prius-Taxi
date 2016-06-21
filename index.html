@@ -278,11 +278,15 @@ function update_data()
 					}
 				else
 					{
-											notified=0;
-					document.getElementById("taxibox").style.visibility="hidden";
+					if (mystatus>0)
+						{
+						notified=0;
+						document.getElementById("taxibox").style.visibility="hidden";
 						uplimit=5;
-		document.getElementById("call_but").style.display="inline";
-		document.getElementById("arrived_screen").style.display="none";
+						document.getElementById("call_but").style.display="inline";
+						document.getElementById("arrived_screen").style.display="none";
+						change_status(0);
+						}
 					}
 				
 				if (inpause==0)	{DrawUsers();}
