@@ -137,8 +137,8 @@ function onDeviceReady()
 	document.addEventListener("volumeupbutton", onVolumeUp, false);
 
 	console.log("device ready, getting position");
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true});
-	var opts = { timeout: 30000, enableHighAccuracy: true};
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: false,  maximumAge:0});
+	var opts = { timeout: 5000, enableHighAccuracy: false, maximumAge:0};
 	watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 	document.addEventListener("resume", onResume, false);
 	
@@ -168,17 +168,12 @@ function MainProg()
 			UpData();
 			updatacounter=0;
 			}
-
-		//console.log("up data");
 		if (myself==1 && inpause==0)
 			{
-		//	console.log("myself=1 and inpause=0, setting wlongebi");
 			wlon=MyLong;
 			wlat=MyLat;
 			setmypos();
 			}
-			
-
 		}
 		setTimeout("MainProg();",1000);
 	}
@@ -187,6 +182,8 @@ var taxilong=0;
 var taxilat=0;
 var taxiname="";
 var notified=0;
+
+var chatis="";
 
 function update_data()
 	{		
@@ -201,6 +198,13 @@ function update_data()
 				
 				console.log("register received");
 				Start();
+				}
+			else if (mr.substring(0,4)="chat")
+				{
+				console.log("chat receive: "+mr);
+				a=mr.split("|");
+				chatis=a[1];
+				document.getElementById("chat_txt").innerHTML=chatis;
 				}
 			else
 				{
@@ -260,7 +264,7 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
-												taxiname=b[2];
+						taxiname=b[2];
 						}
 					}
 				else if (a[0]=="you_moving")
@@ -273,7 +277,7 @@ function update_data()
 						{
 						taxilong=parseFloat(b[0]);
 						taxilat=parseFloat(b[1]);
-												taxiname=b[2];
+						taxiname=b[2];
 						}
 					}
 				else
@@ -294,6 +298,19 @@ function update_data()
 
 				}
 			}
+		}
+	}
+
+function check_chat(chatid)
+	{
+	if (chatid!=last_chat)
+		{
+		last_chat=chatid;
+		url="http://design.ge/geotaxi/chat.php?req=1&myid="+myid;
+		
+		console.log("request chat: "+url);
+		gamehttp.open('GET',url,true);
+		gamehttp.send(null);
 		}
 	}
 
@@ -522,15 +539,16 @@ function onWatchSuccess(position)
 		<div id="geopos_short" style='width:100%; position:absolute; left:0px; top:50px; z-index:220; background-color:black; filter: alpha(opacity=50);
 			-moz-opacity: 0.5; -khtml-opacity: 0.5;  opacity: 0.5;'>Finding geolocation...</div>
 
-		<!--<a href='Javascript: Start();' id='mainb' style='position:absolute; left:25px; top:25px; background-color:green; color:white; font-weight:bold; width:200px; display:block; padding:5px; z-index:301; text-align:center;' >START</a>-->
+		
 
-	<div id='chat_div' style='position:fixed; right:10px; bottom:30px; z-index:253; border:1px solid red;'>
+	<div id='chat_div' style='position:fixed; right:10px; bottom:45px; z-index:253; border:1px solid red; '>
 		<a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img src='chat.png'></a>
 		<div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
 			<div id='chat_txt' style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white;'></div>
 			<input type='text' size=30 id='chat_send_text'><input type='button' value='send' onclick='chat_send();'>
 		</div>
 	</div>
+
 	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='but_call.png'></a>
 
 
@@ -599,7 +617,7 @@ function onWatchSuccess(position)
 
 
 <script>
-
+var last_chat=0;
 var chatopened=0;
 function chat_click()
 	{
@@ -612,11 +630,21 @@ function chat_click()
 	else	
 		{
 		document.getElementById("chat_window").style.display="none";
-		document.getElementById("chat_div").style.bottom="30px";
+		document.getElementById("chat_div").style.bottom="45px";
 		chatopened=0;
 		}
 
 	}
+
+function chat_send()
+{
+chat_txt=document.getElementById("chat_send_text").value;
+document.getElementById("chat_send_text").value="";
+url="http://design.ge/geotaxi/chat.php?send=1&myid="+myid+"&chat_txt="+chat_txt;
+console.log("send chat: "+url);
+gamehttp.open('GET',url,true);
+gamehttp.send(null);
+}
 
 function change_status(newstat)
 {
