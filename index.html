@@ -649,7 +649,7 @@ gamehttp.send(null);
 
 function change_status(newstat)
 {
-console ("status change: "+newstat+ " / "+mystatus);
+console.log("status change: "+newstat+ " / "+mystatus);
 if (newstat!=mystatus)
 	{
 	mystatus=newstat;
@@ -705,6 +705,7 @@ if (newstat!=mystatus)
 		document.getElementById("call_but").style.display="inline";
 		document.getElementById("arrived_screen").style.display="none";
 		}	
+	mystatus=newstat;
 	}
 
 		
