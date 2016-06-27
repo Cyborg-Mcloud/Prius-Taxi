@@ -652,8 +652,8 @@ function change_status(newstat)
 console.log("status change: "+newstat+ " / "+mystatus);
 if (newstat!=mystatus)
 	{
-	mystatus=newstat;
-	if (mystatus==1)
+
+	if (newstat==1)
 		{
 
 		uplimit=1;
@@ -662,7 +662,7 @@ if (newstat!=mystatus)
 		document.getElementById("call_but").style.display="none";
 		document.getElementById("arrived_screen").style.display="none";
 		}
-	else if (mystatus==2)
+	else if (newstat==2)
 		{
 		document.getElementById("taxi_search_screen").style.display="none";
 		uplimit=1;
@@ -670,7 +670,7 @@ if (newstat!=mystatus)
 		document.getElementById("info_text").innerHTML="ტაქსი მოდის";
 		myself=1;
 		}
-	else if (mystatus==3)
+	else if (newstat==3)
 		{
 		uplimit=1;
 		document.getElementById("taxi_search_screen").style.display="none";
@@ -679,7 +679,7 @@ if (newstat!=mystatus)
 		document.getElementById("taxi_number").innerHTML="ბორტის ნომერი: "+taxiname;
 		myself=1;
 		}
-	else if (mystatus==4)
+	else if (newstat==4)
 		{
 		uplimit=1;
 		document.getElementById("taxi_search_screen").style.display="none";
@@ -689,7 +689,7 @@ if (newstat!=mystatus)
 
 		myself=1;
 		}
-	else if (mystatus==5)
+	else if (newstat==5)
 		{
 		uplimit=5;
 		document.getElementById("taxi_search_screen").style.display="none";
@@ -699,10 +699,11 @@ if (newstat!=mystatus)
 		myself=1;
 		}
 
-	else if (mystatus==0)
+	else if (newstat==0)
 		{
 		uplimit=5;
 		document.getElementById("call_but").style.display="inline";
+		document.getElementById("taxi_search_screen").style.display="none";
 		document.getElementById("arrived_screen").style.display="none";
 		}	
 	mystatus=newstat;
