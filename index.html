@@ -455,7 +455,7 @@ function onWatchSuccess(position)
 //							'Speed: '              + position.coords.speed                 + '<br />';
 	
 		setmypos();	
-		document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";
+	//	document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";
 	
 		}
 	}
@@ -537,8 +537,8 @@ function onWatchSuccess(position)
 				</table>
 		</div>-->
 		
-		<div id="geopos_short" style='width:100%; position:absolute; left:0px; top:50px; z-index:220; background-color:black; filter: alpha(opacity=50);
-			-moz-opacity: 0.5; -khtml-opacity: 0.5;  opacity: 0.5;'>Finding geolocation...</div>
+		<!--<div id="geopos_short" style='width:100%; position:absolute; left:0px; top:50px; z-index:220; background-color:black; filter: alpha(opacity=50);
+			-moz-opacity: 0.5; -khtml-opacity: 0.5;  opacity: 0.5;'>Finding geolocation...</div>-->
 
 		
 
@@ -553,8 +553,6 @@ function onWatchSuccess(position)
 	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='gamozaxeba.svg' style='width:210px; height:100px;'></a>
 
 
-
-	<a id='call_but'  style='position:fixed; bottom:0px; left:80px; height:100px; width:210px; z-index:252; ' href='Javascript: call_taxi();'><img src='but_call.png'></a>
 	
 <a href='Javascript:zoomme(1);' style='position:fixed; bottom:85px; left:5px; margin:5px; z-index:252;'><img src='zoomin.png'></a>
 <a href='Javascript:zoomme(-1);'style='position:fixed; bottom:45px; left:5px; margin:5px; z-index:252;'><img src='zoomout.png'></a>
