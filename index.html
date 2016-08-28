@@ -838,19 +838,28 @@ var but1=0;
 
 var t2x=0;
 var t2y=0;
+
+var tdist=0;
+var tdist_old=0;
+
+
 function mdown(event)
 	{
 
 	omousex=event.touches[0].pageX; 
 	omousey=event.touches[0].pageY;
+	console.log(event.touches.length+"mouse down: "+omousex+ " - "+omousey);
 	if (event.touches.length>1)
 		{
-			t2x=event.touches[1].pageX;
-			t2y=event.touches[1].pageY;
-
-		}
-	console.log(event.touches.length+"mouse down: "+omousex+ " - "+omousey);
+		t2x=event.touches[1].pageX;
+		t2y=event.touches[1].pageY;
+		tdist_old=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
+		tdist=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
 		console.log(" dva: "+t2x+ " - "+t2y);
+		console.log(" tdist: "+tdist_old +" - " +tdist );
+		}
+
+
 	finx=0; sfiny=0;
 	but1=1;
 
@@ -881,21 +890,24 @@ var finy=0;
 function getmousecoord(event)
 	{
 	console.log("get mouse coord");
-	if (but1==1)
+	if (event.touches.length>1)
 		{
-		if (event.touches.length>1)
+		t2x=event.touches[1].pageX;
+		t2y=event.touches[1].pageY;
+		mousex=event.touches[0].pageX; 
+		mousey=event.touches[0].pageY;
+		console.log("get mouse coord: "+mousex+" - "+mousey);
+		console.log("get mouse dva: "+t2x+" - "+t2y);
+		tdist=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
+		console.log(" tdist: "+tdist_old +" - " +tdist );
+		
+		}
+	else
+		{
+		if (but1==1)
 			{
-			t2x=event.touches[1].pageX;
-			t2y=event.touches[1].pageY;
-			mousex=event.touches[0].pageX; 
-			mousey=event.touches[0].pageY;
-			console.log("get mouse coord: "+mousex+" - "+mousey);
-			console.log("get mouse dva: "+t2x+" - "+t2y);
-
 			
-			}
-		else
-			{
+			
 			mousex=event.touches[0].pageX; 
 			mousey=event.touches[0].pageY;
 		
@@ -909,17 +921,20 @@ function getmousecoord(event)
 			//
 			setmypos();
 			DrawUsers();
+				
 			}
 		}
-		
 	}
 
 function mup()
 	{
-		console.log("mouse up");
+	console.log("mouse up");
 	but1=0;
 	sfinx=0; sfiny=0;
 	check_user_click();
+	t2x=0; t2y=0;
+	tdist=0;
+	tdist_old=0;
 	//document.getElementById("mainb").innerHTML="Up";
 	}
 
