@@ -835,11 +835,22 @@ function DrawHomePos()
 
 
 var but1=0;
+
+var t2x=0;
+var t2y=0;
 function mdown(event)
 	{
 
-	omousex=event.touches[0].pageX; omousey=event.touches[0].pageY;
+	omousex=event.touches[0].pageX; 
+	omousey=event.touches[0].pageY;
+	if (event.touches.length>1)
+		{
+			t2x=event.touches[1].pageX;
+			t2y=event.touches[1].pageY;
+
+		}
 	console.log("mouse down: "+omousex+ " - "+omousey);
+		console.log(" dva: "+t2x+ " - "+t2y);
 	finx=0; sfiny=0;
 	but1=1;
 
@@ -869,22 +880,36 @@ var sfinx=0;
 var finy=0;
 function getmousecoord(event)
 	{
-console.log("get mouse coord");
+	console.log("get mouse coord");
 	if (but1==1)
 		{
-		mousex=event.touches[0].pageX; 
-		mousey=event.touches[0].pageY;
-	
-console.log("get mouse coord: "+mousex+" - "+mousey);
+		if (event.touches.length>1)
+			{
+			t2x=event.touches[1].pageX;
+			t2y=event.touches[1].pageY;
+			mousex=event.touches[0].pageX; 
+			mousey=event.touches[0].pageY;
+			console.log("get mouse coord: "+mousex+" - "+mousey);
+			console.log("get mouse dva: "+t2x+" - "+t2y);
 
-		wlon=wlon+((omousex-mousex)/biji[MyZoom]);
-		wlat=wlat-((omousey-mousey)/(biji[MyZoom]*1.3));
-		omousex=mousex;
-		omousey=mousey;
+			
+			}
+		else
+			{
+			mousex=event.touches[0].pageX; 
+			mousey=event.touches[0].pageY;
+		
+			console.log("get mouse coord: "+mousex+" - "+mousey);
 
-		//
-		setmypos();
-		DrawUsers();
+			wlon=wlon+((omousex-mousex)/biji[MyZoom]);
+			wlat=wlat-((omousey-mousey)/(biji[MyZoom]*1.3));
+			omousex=mousex;
+			omousey=mousey;
+
+			//
+			setmypos();
+			DrawUsers();
+			}
 		}
 		
 	}
