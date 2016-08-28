@@ -849,7 +849,7 @@ function mdown(event)
 			t2y=event.touches[1].pageY;
 
 		}
-	console.log("mouse down: "+omousex+ " - "+omousey);
+	console.log(event.touches.length+"mouse down: "+omousex+ " - "+omousey);
 		console.log(" dva: "+t2x+ " - "+t2y);
 	finx=0; sfiny=0;
 	but1=1;
@@ -1064,8 +1064,9 @@ function setmypos()
 
 function check_user_click()
 	{
-	console.log("checking user click");
-	console.log((omousex-canacX-kartX) + " and " + (omousey-canacY-kartY));
+//	console.log("checking user click");
+//	console.log((omousex-canacX-kartX) + " and " + (omousey-canacY-kartY));
+return;
 	for (i=0;i<userids.length ;i++ )
 		{
 		curid=userids[i];
