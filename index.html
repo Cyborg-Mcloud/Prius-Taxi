@@ -519,7 +519,7 @@ function onWatchSuccess(position)
 
 
 		<!-- MOUSE OVER LAYER -->
-<div id='mouser' style='position:fixed; left:0px;top:50px; border:1px solid red; width:365px; height:500px; z-index:500; -ms-touch-action: none;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >
+<div id='mouser' style='position:fixed; left:0px;top:50px; border:1px solid red; width:355px; height:450px; z-index:500; -ms-touch-action: none;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >
 </div>
 
 
@@ -1222,7 +1222,7 @@ function loadtiles()
 		
 	if (LT_finished==0)
 		{
-		//setTimeout("loadtiles();",10);
+		setTimeout("loadtiles();",10);
 		}
 
 	}
