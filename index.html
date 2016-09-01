@@ -475,6 +475,11 @@ function onWatchSuccess(position)
 			<img   id='myimg' style='width:256px; height:256px;'>
 			<div style='position:absolute; left:0px; top:0px; background-color:red; width:7px; height:7px;' id='persona'></div>
 		</div>-->
+<!-- MOUSE OVER LAYER -->
+<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; border:1px solid green; width:255px; height:60px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >a
+</div>
+
+
 
 	<div id='fanjara' style='position:relative; overflow:hidden; width:400px; height:600px;'>
 		
@@ -519,10 +524,7 @@ function onWatchSuccess(position)
 	<div id='taxi_search_screen'  style='display:none; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:302; background-color:black; color:white; '><br><br><br><br><br><br><br><br><center> <img src='taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center></div>
 
 
-		<!-- MOUSE OVER LAYER -->
-<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; border:1px solid green; width:255px; height:20px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >
-</div>
-
+		
 
 		<!--<div id='profile_div' style='position:absolute; left:0px; top:0px; width:600px; height:600px; z-index:252; background:URL(semitrans.png); visibility:hidden;'>
 			<table width=100% cellspacing=0 cellpadding=0 height=100% border=1>
