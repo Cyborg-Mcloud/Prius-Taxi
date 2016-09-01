@@ -853,8 +853,8 @@ function mdown(event)
 		{
 		t2x=parseInt(event.touches[1].pageX);
 		t2y=parseInt(event.touches[1].pageY);
-		tdist_old=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
-		tdist=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
+		tdist_old=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
+		tdist=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
 		console.log(" dva: "+t2x+ " - "+t2y);
 		console.log(" tdist: "+tdist_old +" - " +tdist );
 		}
@@ -898,7 +898,7 @@ function getmousecoord(event)
 		mousey=parseInt(event.touches[0].pageY);
 		console.log("get mouse coord: "+mousex+" - "+mousey);
 		console.log("get mouse dva: "+t2x+" - "+t2y);
-		tdist=Math.sqrt( (t2x-omousex)^2 + (t2y-omousey)^2 );
+		tdist=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
 		console.log(" tdist: "+tdist_old +" - " +tdist );
 		
 		}
