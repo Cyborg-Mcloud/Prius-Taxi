@@ -789,7 +789,7 @@ function stopScrolling( touchEvent )
 			{ touchEvent.preventDefault(); }
 
 
-document.body.addEventListener( 'touchmove' , stopScrolling , false );
+//document.body.addEventListener( 'touchmove' , stopScrolling , false );
 var mcl="orange";
 
 
@@ -967,7 +967,7 @@ if (myw/2==Math.floor(myw/2))
 
 if (myh/2==Math.floor(myh/2))
 	{myh++;}
-
+document.ontouchmove = function (e) {  console.log("object: "+e.target.id);};
 
 
 document.getElementById("fanjara").style.width=sx+"px";
@@ -1269,10 +1269,8 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 	{
     console.log(error.code);
     }
-
-document.ontouchmove = function(e) {getmousecoord(e);};
-document.body.addEventListener('touchmove', function(event) {
-  event.preventDefault();
-}, false); 
+//document.ontouchmove = function (e) {  console.log("object: "+e.target.id);};
+//document.ontouchmove = function(e) {getmousecoord(e);};
+//document.body.addEventListener('touchmove', function(event) {  event.preventDefault();}, false); 
 </script></body>
 </html>
