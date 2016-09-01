@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+<meta name="viewport"   content="width=device-width, initial-scale=1.0, user-scalable=no">
   <head>
 
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -517,7 +519,7 @@ function onWatchSuccess(position)
 
 
 		<!-- MOUSE OVER LAYER -->
-<div id='mouser' style='position:fixed; left:0px;top:50px; width:400px; height:620px; z-index:250; border: 1px solid red;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" onmousemove="getmousecoord(event);">
+<div id='mouser' style='position:fixed; left:0px;top:50px; width:400px; height:620px; z-index:250; border: 1px solid red;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >
 </div>
 
 
@@ -892,13 +894,14 @@ var finy=0;
 
 function getmousecoord(event)
 	{
-	console.log("get mouse coord");
-	if (event.touches.length>1)
+	console.log("get mouse coord movedi");
+	
+	if (event.targetTouches.length>1)
 		{
-		t2x=parseInt(event.touches[1].pageX);
-		t2y=parseInt(event.touches[1].pageY);
-		mousex=parseInt(event.touches[0].pageX); 
-		mousey=parseInt(event.touches[0].pageY);
+		t2x=parseInt(event.targetTouches[1].pageX);
+		t2y=parseInt(event.targetTouches[1].pageY);
+		mousex=parseInt(event.targetTouches[0].pageX); 
+		mousey=parseInt(event.targetTouches[0].pageY);
 		console.log("get mouse coord on move: "+mousex+" - "+mousey);
 		console.log("get mouse dva on move: "+t2x+" - "+t2y);
 		tdist=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
@@ -1268,5 +1271,8 @@ function downtile(smap, szoom, A, B, i, ii, retry)
     }
 
 document.ontouchmove = function(e) {getmousecoord(e);};
+document.body.addEventListener('touchmove', function(event) {
+  event.preventDefault();
+}, false); 
 </script></body>
 </html>
