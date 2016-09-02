@@ -178,7 +178,9 @@ function MainProg()
 			setmypos();
 			}
 		}
-		setTimeout("MainProg();",1000);
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true,  maximumAge:0});
+
+	setTimeout("MainProg();",1000);
 	}
 
 var taxilong=0;
@@ -418,7 +420,7 @@ function onSuccess(position)
 	wlat=MyLat;
 	console.log("on succ, sett long");
 
-	if (started==0 && MyUser!="nouser")	{Start();}
+	if (started==0)	{Start();}
 
 	setmypos();
 //	document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";
@@ -476,7 +478,7 @@ function onWatchSuccess(position)
 			<div style='position:absolute; left:0px; top:0px; background-color:red; width:7px; height:7px;' id='persona'></div>
 		</div>-->
 <!-- MOUSE OVER LAYER -->
-<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; border:1px solid green; width:255px; height:60px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >a
+<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; border:1px solid green; width:355px; height:500px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >a
 </div>
 
 
