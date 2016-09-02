@@ -478,8 +478,6 @@ function onWatchSuccess(position)
 			<div style='position:absolute; left:0px; top:0px; background-color:red; width:7px; height:7px;' id='persona'></div>
 		</div>-->
 <!-- MOUSE OVER LAYER -->
-<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; border:1px solid green; width:355px; height:500px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" >a
-</div>
 
 
 
@@ -493,6 +491,10 @@ function onWatchSuccess(position)
 
 	</div>
 		<!-- MAIN MAP -->
+<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250;  ' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>
+
+
+
 	<div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;' >
 		<div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; ' >
 			<div id='map' style='position:absolute; left:0px; top:0px; width:600px; height:600px; display:block; ' >
@@ -585,11 +587,12 @@ function onWatchSuccess(position)
 
 
 
-	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px;'>
+	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:100%;'>
 		<br>
 		<div id='mydiv'></div>
 		<br>
 		<p id="geopos">Finding geolocation...</p>
+		<br><br><br>
 <!--
 	<b>რუქის ტიპი</b><br>
 	<select id='maptype' onChange='changemap();'>
