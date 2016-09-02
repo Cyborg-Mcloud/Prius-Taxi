@@ -398,10 +398,10 @@ function onResume()
 
 function onSuccess(position) 
 	{
-	console.log("on success");
+	console.log("GPS on success");
 	document.getElementById("GPS_search_screen").style.display="none";
-	var element = document.getElementById('geopos');
-	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+//	var element = document.getElementById('geopos');
+//	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />';
                             //'Altitude: '           + position.coords.altitude              + '<br />' +
                             //'Accuracy: '           + position.coords.accuracy              + '<br />' +
