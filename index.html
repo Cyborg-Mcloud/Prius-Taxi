@@ -915,6 +915,17 @@ function getmousecoord(event)
 		console.log("get mouse dva on move: "+t2x+" - "+t2y);
 		tdist=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
 
+		if (tdist-tdist_old>10)
+			{
+			zoomme(1);
+			tdist_old=tdist;
+			}
+		else if (tdist-tdist_old<-10)
+			{
+			zoomme(-1);
+			tdist_old=tdist;
+			}
+
 		tdist=parseInt(tdist);
 		console.log(" tdist on move: "+tdist_old +" - " +tdist );
 		
