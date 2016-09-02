@@ -591,7 +591,7 @@ function onWatchSuccess(position)
 		<br>
 		<div id='mydiv'></div>
 		<br>
-		<p id="geopos">Finding geolocation...</p>
+		<p id="geopos" style='display:none;'>Finding geolocation...</p>
 		<br><br><br><Br><br>
 <!--
 	<b>რუქის ტიპი</b><br>
@@ -617,12 +617,13 @@ function onWatchSuccess(position)
 			<tr><td>პაროლი:</td><td> <input id='mypass' name='mypass' value='yourpass' size=12></td>
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png' width=20px></a></td></tr>
 		</table>
-		<a href='javascript: regme();' style='background-color:white; border:1px solid gray;  color:black;'>რეგისტრაცია</a>
+		<Br><br>
+		<a href='javascript: regme();' style='background-color:white; border:1px solid gray;  color:black; pardding:5px;'>რეგისტრაცია</a>
 		<br><br>
 		
 <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
 		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
-		<a href='Javascript: show_map();'  style='background-color:white; border:1px solid gray;  color:black;'>უკან დაბრუნება</a></center>
+		<a href='Javascript: show_map();'  style='background-color:white; border:1px solid gray;  color:black;pardding:5px; '>უკან დაბრუნება</a></center>
 	</div>
 </div>
 
@@ -915,12 +916,12 @@ function getmousecoord(event)
 		console.log("get mouse dva on move: "+t2x+" - "+t2y);
 		tdist=Math.sqrt( Math.pow ((t2x-omousex),2) + Math.pow ((t2y-omousey),2) );
 
-		if (tdist-tdist_old>15)
+		if (tdist-tdist_old>25)
 			{
 			zoomme(1);
 			tdist_old=tdist;
 			}
-		else if (tdist-tdist_old<-15)
+		else if (tdist-tdist_old<-25)
 			{
 			zoomme(-1);
 			tdist_old=tdist;
