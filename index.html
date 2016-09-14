@@ -554,8 +554,9 @@ function onWatchSuccess(position)
 	<div id='chat_div' style='position:fixed; right:10px; bottom:50px; z-index:254;  '>
 		<a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img src='chat.svg' style='width:50px; height:50px;'></a>
 		<div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
-			<div id='chat_txt' style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202;'></div>
-			<input type='text' size=30 id='chat_send_text' style='z-index:305; text-size:14px;'><input type='button' value='send' onclick='chat_send();' style='z-index:305;'>
+			<div id='chat_txt' style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202; border-radius:5px;'></div>
+			<input type='text' size=30 id='chat_send_text' style='z-index:305; text-size:16px;' onkeyup='chat_key(event);'>
+			<!--<input type='button' value='send' onclick='chat_send();' style='z-index:305;'>-->
 		</div>
 	</div>
 
@@ -629,7 +630,18 @@ function onWatchSuccess(position)
 
 <script>
 var last_chat=0;
+
 var chatopened=0;
+function chat_key(e)
+{
+
+if (e.keyCode==13)
+	{
+		send_chat();
+	}
+}
+
+
 function chat_click()
 	{
 	if (chatopened==0)
