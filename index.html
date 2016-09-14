@@ -139,8 +139,8 @@ function onDeviceReady()
 	document.addEventListener("volumeupbutton", onVolumeUp, false);
 
 	console.log("device ready, getting position");
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: false,  maximumAge:0});
-	var opts = { timeout: 5000, enableHighAccuracy: false, maximumAge:0};
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true,  maximumAge:0});
+	var opts = { timeout: 5000, enableHighAccuracy: true, maximumAge:0};
 	watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 	document.addEventListener("resume", onResume, false);
 	
@@ -178,7 +178,7 @@ function MainProg()
 			setmypos();
 			}
 		}
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: false,  maximumAge:0});
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true,  maximumAge:0});
 
 	setTimeout("MainProg();",1000);
 	}
@@ -382,7 +382,7 @@ function onResume()
 		{
 		checkConnection();
 	
-		var opts = { timeout: 30000, enableHighAccuracy: false};
+		var opts = { timeout: 30000, enableHighAccuracy: true};
 		watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 	
 		Start();
@@ -618,7 +618,7 @@ function onWatchSuccess(position)
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png' width=20px></a></td></tr>
 		</table>
 		<Br><br>
-		<a href='javascript: regme();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
+		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 		<br>
 		
 <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
@@ -635,7 +635,7 @@ function chat_click()
 	if (chatopened==0)
 		{
 		document.getElementById("chat_window").style.display="inline";
-		document.getElementById("chat_div").style.bottom="200px";
+		document.getElementById("chat_div").style.bottom="400px";
 		chatopened=1;
 		}
 	else	
