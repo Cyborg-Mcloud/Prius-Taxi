@@ -204,6 +204,22 @@ function update_data()
 				console.log("register received");
 				Start();
 				}
+			else if (mr.substring(0,4)=="logi")
+				{
+				console.log("login receive: "+mr);
+				a=mr.split("|");
+				
+				console.log("loginid:"+a[1]);
+				if (a[1]!="error")
+					{
+					loginid=a[1];
+					WriteData();
+					}
+				else
+					{
+					alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");
+					}
+				}
 			else if (mr.substring(0,4)=="chat")
 				{
 				console.log("chat receive: "+mr);
@@ -589,7 +605,7 @@ function onWatchSuccess(position)
 
 
 
-	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:100%;'>
+	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:355px;'>
 		<br>
 		<div id='mydiv'></div>
 		<br>
@@ -614,7 +630,7 @@ function onWatchSuccess(position)
 	
 		<center>
 		<b>პროფილი</b>
-		<div id='login_page' style='width:355px;'>
+		<div id='login_page' style='width:355px; border:1px solid white;'>
 		<table>
 			<tr><td>მობ. ან ელ-ფოსტა:</td><td> <input  type='text'id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა" size=18></td></tr>
 			<tr><td>პაროლი:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12></td>
