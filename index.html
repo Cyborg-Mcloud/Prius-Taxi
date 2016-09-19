@@ -355,7 +355,7 @@ function UpData()
 		WriteData();
 		}
 
-	if (MyUser!="nouser")
+	if (MyUser!="nouser"  && MyUser!="")
 		{    
 		url="http://design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&myid="+myid;		
 		}
@@ -773,7 +773,7 @@ if (newstat!=mystatus)
 
 function chamovdivar()
 {
-if (MyUser!="nouser")
+if (MyUser!="nouser" && MyUser!="")
 		{    
 		url="http://design.ge/geotaxi/chamovdivar.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
 		}
@@ -1087,9 +1087,13 @@ var myloginid=0;
 
 function saveuser()
 	{
-
-	MyUser=document.getElementById("myname").value;
-	MyPass=document.getElementById("mypass").value;
+	if (document.getElementById("myname").value!="" and document.getElementById("mypass").value!="")
+		{
+		MyUser=document.getElementById("myname").value;
+		MyPass=document.getElementById("mypass").value;
+		}
+	else
+		{MyUser="nouser";MyPass="nopass";}
 
 	WriteData(); 
 
@@ -1214,7 +1218,7 @@ function show_profile(tid)
 
 function call_taxi()
 	{
-	if (MyUser!="nouser")
+	if (MyUser!="nouser" && MyUser!="")
 		{    
 		url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
 		}
@@ -1341,6 +1345,17 @@ function downtile(smap, szoom, A, B, i, ii, retry)
 	console.log("down tile: "+tilelink);
 
 	}
+
+function logout()
+{
+myloginid=0;
+WriteData();
+	document.getElementById("regbut").style.display="inline";
+	document.getElementById("myname").value="";
+	document.getElementById("mypass").value="";
+	document.getElementById("loggedin_page").style.visibility="hidden";
+	document.getElementById("login_page").style.visibility="visible";
+}
 
  function fail(error) 
 	{
