@@ -586,28 +586,6 @@ function onWatchSuccess(position)
 			</table>-->
 
 
-	
-	<div id='reg_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:100%;'>
-		<br>
-		<br>
-		<br><br><br><Br><br>
-		<center>
-		<b>რეგისტრაცია</b>
-		<table>
-			<tr><td>სახელი გვარი:</td><td> <input id='regname' name='regname' value='' placeholder='სახელი გვარი' size=20></td></tr>
-			<tr><td>ელ.ფოსტა</td><td> <input id='regemail' name='regemail' value=''  placeholder='Email'  size=20></td>
-			<tr><td>პაროლი:</td><td> <input id='regpass' name='regpass' value=''  placeholder='პაროლი' size=12></td>
-			<tr><td>მობ.ნომერი</td><td> <input id='regmob' name='regmob' value='' placeholder='მობ.ნომერი' size=12></td>
-		</table>
-		<Br><br>
-		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
-		<br>
-		
-<!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
-		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
-		<a href='Javascript: show_map();'  style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან დაბრუნება</a></center>
-	</div>
-
 
 
 
@@ -636,13 +614,20 @@ function onWatchSuccess(position)
 	
 		<center>
 		<b>პროფილი</b>
+		<div id='login_page'>
 		<table>
-			<tr><td>მომხმ.:</td><td> <input id='myname' name='myname' value='youuser' size=12></td></tr>
-			<tr><td>პაროლი:</td><td> <input id='mypass' name='mypass' value='yourpass' size=12></td>
+			<tr><td>მობ. ან ელ-ფოსტა:</td><td> <input  type='text'id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა" size=18></td></tr>
+			<tr><td>პაროლი:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12></td>
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png' width=20px></a></td></tr>
 		</table>
 		<Br><br>
 		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
+		</div>
+
+		<div id='loggedin_page' style='visibility:hidden;'>
+			<div id='loggedin_info'></div>
+			<a href='Javascript: logout();' style='float:right; background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
+		</div>
 		<br>
 		
 <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
@@ -1068,6 +1053,7 @@ function zoomme(sait)
 		}
 	}
 
+var myloginid=0;
 
 
 function saveuser()
@@ -1077,7 +1063,13 @@ function saveuser()
 	MyPass=document.getElementById("mypass").value;
 
 	WriteData(); 
-	alert("user saved: "+MyUser);
+
+
+	url="http://design.ge/prius/login.php?login=1&unique="+myid+"&myuser="+MyUser+"&mypass="+MyPass;
+	console.log("login: "+url);
+	gamehttp.open('GET',url,true);
+	gamehttp.send(null);
+
 	if(started==0)
 		{
 		Start();

@@ -25,7 +25,7 @@ function gotFileEntry(fileEntry)
 
 function gotFileWriter(writer) 
 	{
-	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid);
+	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid+";"+myloginid);
 
 	}
 
@@ -66,6 +66,21 @@ function readAsText(file)
 		if (a.length>5)
 			{
 			myid=a[5];
+			}
+
+		if (a.length>6)
+			{
+			myloginid=a[6];
+			if (myloginid>0)
+				{
+				document.getElementById("loggedin_page").style.visbility="visible";
+				document.getElementById("login_page").style.visbility="hidden";
+				}
+			else
+				{
+				document.getElementById("loggedin_page").style.visbility="hidden";
+				document.getElementById("login_page").style.visbility="visible";
+				}
 			}
 
 		document.getElementById("myname").value=MyUser;
