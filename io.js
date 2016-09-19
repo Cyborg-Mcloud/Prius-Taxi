@@ -74,14 +74,14 @@ function readAsText(file)
 			myloginid=a[6];
 			if (myloginid>0)
 				{
-				document.getElementById("loggedin_page").style.visibility="visible";
-				document.getElementById("login_page").style.visibility="hidden";
+				document.getElementById("loggedin_page").style.display="inline";
+				document.getElementById("login_page").style.display="none";
 					document.getElementById("regbut").style.display="none";
 				}
 			else
 				{
-				document.getElementById("loggedin_page").style.visibility="hidden";
-				document.getElementById("login_page").style.visibility="visible";
+				document.getElementById("loggedin_page").style.display="none";
+				document.getElementById("login_page").style.display="inline";
 
 				}
 			}

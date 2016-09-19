@@ -222,13 +222,13 @@ function update_data()
 				if (myloginid>0)
 					{
 					document.getElementById("loggedin_page").style.visibility="visible";
-					document.getElementById("login_page").style.visibility="hidden";
-						document.getElementById("regbut").style.display="none";
+					document.getElementById("login_page").style.display="none";
+						document.getElementById("regbut").style.display="inline";
 					}
 				else
 					{
-					document.getElementById("loggedin_page").style.visibility="hidden";
-					document.getElementById("login_page").style.visibility="visible";
+					document.getElementById("loggedin_page").style.display="none";
+					document.getElementById("login_page").style.display="inline";
 					}
 				}
 			else if (mr.substring(0,4)=="chat")
@@ -651,9 +651,9 @@ function onWatchSuccess(position)
 		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 		</div>
 
-		<div id='loggedin_page' style='visibility:hidden; width:355px;'>
+		<div id='loggedin_page' style='width:355px;'>
 			<div id='loggedin_info'></div>
-			<a href='Javascript: logout();' style='float:right; background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
+			<a href='Javascript: logout();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
 		</div>
 		<br>
 
@@ -1353,8 +1353,8 @@ WriteData();
 	document.getElementById("regbut").style.display="inline";
 	document.getElementById("myname").value="";
 	document.getElementById("mypass").value="";
-	document.getElementById("loggedin_page").style.visibility="hidden";
-	document.getElementById("login_page").style.visibility="visible";
+	document.getElementById("loggedin_page").style.display="none";
+	document.getElementById("login_page").style.display="inline";
 }
 
  function fail(error) 
