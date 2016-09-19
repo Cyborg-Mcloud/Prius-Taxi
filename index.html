@@ -240,8 +240,8 @@ function update_data()
 				console.log("chat receive: "+mr);
 				a=mr.split("|");
 				chatis=a[1];
-				console.log("chat is:"+chatis);
 				document.getElementById("chat_txt").innerHTML=chatis;
+				document.getElementById("chat_txt").scrollTop = document.getElementById("chat_txt").scrollHeight;;
 				}
 			else
 				{
