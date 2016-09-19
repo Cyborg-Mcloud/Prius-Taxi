@@ -74,13 +74,15 @@ function readAsText(file)
 			myloginid=a[6];
 			if (myloginid>0)
 				{
-				document.getElementById("loggedin_page").style.visbility="visible";
-				document.getElementById("login_page").style.visbility="hidden";
+				document.getElementById("loggedin_page").style.visibility="visible";
+				document.getElementById("login_page").style.visibility="hidden";
+					document.getElementById("regbut").style.display="none";
 				}
 			else
 				{
-				document.getElementById("loggedin_page").style.visbility="hidden";
-				document.getElementById("login_page").style.visbility="visible";
+				document.getElementById("loggedin_page").style.visibility="hidden";
+				document.getElementById("login_page").style.visibility="visible";
+
 				}
 			}
 		if (MyUser!="nouser")
@@ -91,6 +93,7 @@ function readAsText(file)
 			}	
 		else
 			{
+
 			document.getElementById("myname").value="";
 			document.getElementById("mypass").value="";
 			}
@@ -194,7 +197,7 @@ function fileExists_main(fileEntry)
 
 	dataex=1;
 
-	document.getElementById("regbut").style.display="none";
+
 	ReadData();
 	}
 function fileDoesNotExist_main()
