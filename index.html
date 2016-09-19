@@ -212,12 +212,22 @@ function update_data()
 				console.log("loginid:"+a[1]);
 				if (a[1]!="error")
 					{
-					loginid=a[1];
+					myloginid=a[1];
 					WriteData();
 					}
 				else
 					{
 					alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");
+					}
+				if (myloginid>0)
+					{
+					document.getElementById("loggedin_page").style.visbility="visible";
+					document.getElementById("login_page").style.visbility="hidden";
+					}
+				else
+					{
+					document.getElementById("loggedin_page").style.visbility="hidden";
+					document.getElementById("login_page").style.visbility="visible";
 					}
 				}
 			else if (mr.substring(0,4)=="chat")

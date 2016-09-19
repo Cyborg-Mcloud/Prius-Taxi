@@ -52,6 +52,7 @@ function readAsText(file)
 	reader.onloadend = function(evt) 
 		{
 		var myData =evt.target.result;
+		console.log("file read: "+myData);
 		a=myData.split(";");
 		MyUser=a[0];
 		MyPass=a[1];
