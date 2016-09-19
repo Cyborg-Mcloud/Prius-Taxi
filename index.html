@@ -213,17 +213,21 @@ function update_data()
 				if (a[1]!="error")
 					{
 					myloginid=a[1];
+					MyUser=a[2];
 					WriteData();
 					}
 				else
 					{
 					alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");
 					}
+
 				if (myloginid>0)
 					{
 					document.getElementById("loggedin_page").style.visibility="visible";
 					document.getElementById("login_page").style.display="none";
-						document.getElementById("regbut").style.display="inline";
+					document.getElementById("regbut").style.display="inline";
+					document.getElementById("loggedin_info").innerHTML="მოგესალმებით "+MyUser;
+
 					}
 				else
 					{

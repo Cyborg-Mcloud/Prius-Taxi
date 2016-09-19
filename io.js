@@ -77,6 +77,7 @@ function readAsText(file)
 				document.getElementById("loggedin_page").style.display="inline";
 				document.getElementById("login_page").style.display="none";
 					document.getElementById("regbut").style.display="none";
+										document.getElementById("loggedin_info").innerHTML="მოგესალმებით "+MyUser;
 				}
 			else
 				{
