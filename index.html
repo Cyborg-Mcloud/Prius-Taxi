@@ -614,7 +614,7 @@ function onWatchSuccess(position)
 	
 		<center>
 		<b>პროფილი</b>
-		<div id='login_page'>
+		<div id='login_page' style='width:355px;'>
 		<table>
 			<tr><td>მობ. ან ელ-ფოსტა:</td><td> <input  type='text'id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა" size=18></td></tr>
 			<tr><td>პაროლი:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12></td>
@@ -624,15 +624,17 @@ function onWatchSuccess(position)
 		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 		</div>
 
-		<div id='loggedin_page' style='visibility:hidden;'>
+		<div id='loggedin_page' style='visibility:hidden; width:355px;'>
 			<div id='loggedin_info'></div>
 			<a href='Javascript: logout();' style='float:right; background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
 		</div>
 		<br>
+
 		
 <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
 		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
 		<a href='Javascript: show_map();'  style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან დაბრუნება</a></center>
+				</center>
 	</div>
 </div>
 

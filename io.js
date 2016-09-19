@@ -82,9 +82,17 @@ function readAsText(file)
 				document.getElementById("login_page").style.visbility="visible";
 				}
 			}
+		if (MyUser!="nouser")
+			{
+			document.getElementById("myname").value=MyUser;
+			document.getElementById("mypass").value=MyPass;
 
-		document.getElementById("myname").value=MyUser;
-		document.getElementById("mypass").value=MyPass;
+			}	
+		else
+			{
+			document.getElementById("myname").value="";
+			document.getElementById("mypass").value="";
+			}
 		};
 	reader.readAsText(file);
 
