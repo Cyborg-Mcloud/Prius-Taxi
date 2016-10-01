@@ -3,15 +3,15 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.designge.priustaxi"
-	    versionCode="21" 
-        version   = "1.0.5"
+	    versionCode="22" 
+        version   = "1.0.6"
 		package="com.designge.priustaxi"
 		>
     <name>Prius Taxi</name>
 	<icon src="taxi.png" />
 
     <platform name="android">
-        <preference name="android-minSdkVersion" value="21" />
+        <preference name="android-minSdkVersion" value="22" />
         <allow-intent href="market:*" />
     </platform>
 
