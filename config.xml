@@ -98,7 +98,9 @@
 	<gap:plugin name="cordova-plugin-file" source="npm"  />
 	<gap:plugin name="cordova-plugin-network-information"  source="npm"/>
 	<gap:plugin name="cordova-plugin-file-transfer"   source="npm"/>
-	<gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
+<!--	<gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />-->
+	<gap:plugin name="cordova-plugin-local-notifications"   source="npm"/>
+
 	
 <!--
 	<gap:platform name="ios" />
