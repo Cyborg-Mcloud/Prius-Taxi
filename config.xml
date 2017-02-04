@@ -93,7 +93,7 @@
 
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<!--<gap:plugin name="com.simplec.plugins.powermanagement" />-->
-	<gap:plugin name="com.simplec.plugins.powermanagement"  source="npm"/>
+<gap:plugin name="cordova-plugin-powermanagement" source="npm" />
 	<gap:plugin name="cordova-plugin-geolocation" source="npm"/>
 	<gap:plugin name="cordova-plugin-file" source="npm"  />
 	<gap:plugin name="cordova-plugin-network-information"  source="npm"/>
