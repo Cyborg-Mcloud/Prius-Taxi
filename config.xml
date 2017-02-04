@@ -95,9 +95,9 @@
 	<!--<gap:plugin name="com.simplec.plugins.powermanagement" />-->
 	<plugin name="com.simplec.plugins.powermanagement" spec="0.4.0" source="pgb" />
 	<gap:plugin name="cordova-plugin-geolocation" source="npm"/>
-	<gap:plugin name="org.apache.cordova.file" />
-	<gap:plugin name="org.apache.cordova.network-information" />
-	<gap:plugin name="org.apache.cordova.file-transfer"  />
+	<gap:plugin name="cordova-plugin-file" source="npm"  />
+	<gap:plugin name="cordova-plugin-network-information"  source="npm"/>
+	<gap:plugin name="cordova-plugin-file-transfer"   source="npm"/>
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
 	
 <!--
