@@ -1,4 +1,4 @@
-package com.simonmacdonald.cordova.plugins;
+package org.apache.cordova.plugin;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
