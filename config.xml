@@ -100,7 +100,7 @@
 	<gap:plugin name="cordova-plugin-file-transfer"   source="npm"/>
 <!--	<gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="npm" />-->
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.4"  source="npm"/>
-<plugin name="com.simonmacdonald.telephonenumber" spec="1.0.0" source="npm" />
+<plugin name="com.simonmacdonald.telephonenumber"/>
 	
 <!--
 	<gap:platform name="ios" />
