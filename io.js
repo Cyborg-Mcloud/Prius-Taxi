@@ -25,7 +25,7 @@ function gotFileEntry(fileEntry)
 
 function gotFileWriter(writer) 
 	{
-	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid+";"+myloginid);
+	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid+";"+myloginid+";"+mytel);
 
 	}
 
@@ -64,10 +64,13 @@ function readAsText(file)
 			setmypos();
 			}
 
+
 		if (a.length>5)
 			{
 			myid=a[5];
 			}
+
+
 
 		if (a.length>6)
 			{
@@ -76,8 +79,8 @@ function readAsText(file)
 				{
 				document.getElementById("loggedin_page").style.display="inline";
 				document.getElementById("login_page").style.display="none";
-					document.getElementById("regbut").style.display="none";
-										document.getElementById("loggedin_info").innerHTML="მოგესალმებით "+MyUser;
+				document.getElementById("regbut").style.display="none";
+				document.getElementById("loggedin_info").innerHTML="მოგესალმებით "+MyUser;
 				}
 			else
 				{
@@ -86,6 +89,12 @@ function readAsText(file)
 
 				}
 			}
+
+		if (a.length>7)
+			{
+			mytel=a[7];
+			}
+
 		if (MyUser!="nouser")
 			{
 			document.getElementById("myname").value=MyUser;

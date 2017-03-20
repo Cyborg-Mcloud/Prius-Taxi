@@ -38,6 +38,7 @@ var wlat=41.7102118;
 var MyUser="nouser";
 var MyPass="nopass";
 var MyZoom=17;
+var mytel="";
 
 var MyLat;
 var MyLong;
@@ -1238,22 +1239,27 @@ function show_profile(tid)
 
 function call_taxi()
 	{
-	if (MyUser!="nouser" && MyUser!="")
-		{    
-		url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
+	if (mytel=="")
+		{	
+		mytel=confirm("რა ნომერზე დაგიკავშირდეთ?");
+		WriteData();
 		}
-	else
+
+	if (mytel!="")
 		{
-		url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid;
+		if (MyUser!="nouser" && MyUser!="")
+			{    
+			url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;		
+			}
+		else
+			{
+			url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;
+			}
+		console.log("taxi call: "+url);
+		gamehttp.open('GET',url,true);
+		gamehttp.send(null);
+		
 		}
-	console.log("taxi call: "+url);
-	gamehttp.open('GET',url,true);
-	gamehttp.send(null);
-	
-
-	
-
-	
 	}
 
 function loadtiles()
