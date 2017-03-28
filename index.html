@@ -1230,13 +1230,13 @@ function show_profile(tid)
 
 function call_taxi()
 	{
-	if (mytel=="")
+	if (mytel=="" || mystel.length<6)
 		{	
 		mytel=prompt("რა ნომერზე დაგიკავშირდეთ?");
 		WriteData();
 		}
 
-	if (mytel!="")
+	if (mytel!="" && mytel!=null && || mystel.length>=6)
 		{
 		if (MyUser!="nouser" && MyUser!="")
 			{    
