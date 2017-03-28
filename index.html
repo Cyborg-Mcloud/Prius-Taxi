@@ -17,15 +17,6 @@
 <script type="text/javascript" charset="utf-8">
 
 
-var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
-telephoneNumber.get(function(result) {
-        console.log("result = " + result);
-		alert("result = " + result);
-    }, function(error) {
-        console.log("error = " + error.code);
-		alert("error = " + error.code);
-});
-
 var mystatus=0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
