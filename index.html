@@ -260,11 +260,13 @@ function update_data()
 					{
 					notified=0;
 					change_status(1);
+					callingtaxi=0;
 
 					}
 				else if (a[0]=="taxi_moving")
 					{
 					notified=0;
+						callingtaxi=0;
 					change_status(2);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -277,6 +279,7 @@ function update_data()
 					}
 				else if (a[0]=="taxi_arrived")
 					{
+							callingtaxi=0;
 
 					change_status(3);
 					b=a[1].split(";");
@@ -301,7 +304,7 @@ function update_data()
 					}
 				else if (a[0]=="taxi_waiting")
 					{
-					
+						callingtaxi=0;
 					change_status(4);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -314,7 +317,7 @@ function update_data()
 				else if (a[0]=="you_moving")
 					{
 					notified=0;
-
+	callingtaxi=0;
 					change_status(5);
 					b=a[1].split(";");
 					if (b[0]!="")
@@ -328,6 +331,7 @@ function update_data()
 					{
 					if (mystatus>0)
 						{
+								callingtaxi=0;
 						notified=0;
 						document.getElementById("taxibox").style.visibility="hidden";
 						uplimit=5;
@@ -366,19 +370,22 @@ function UpData()
 		myid=Math.floor(Math.random()*100000000);	
 		WriteData();
 		}
-
-	if (MyUser!="nouser"  && MyUser!="")
-		{    
-		url="http://design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&myid="+myid;		
-		}
-	else
+	if (callingtaxi==0)
 		{
-		url="http://design.ge/geotaxi/upload.php?passive="+inpause+"&myid="+myid+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
+
+		if (MyUser!="nouser"  && MyUser!="")
+			{    
+			url="http://design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&myid="+myid;		
+			}
+		else
+			{
+			url="http://design.ge/geotaxi/upload.php?passive="+inpause+"&myid="+myid+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
+			}
+		console.log("just upload: "+url);
+	//	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
+		gamehttp.open('GET',url,true);
+		gamehttp.send(null);
 		}
-	console.log("just upload: "+url);
-//	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
-	gamehttp.open('GET',url,true);
-	gamehttp.send(null);
 	
 	
 	}
@@ -1228,6 +1235,8 @@ function show_profile(tid)
 //	document.getElementById("mouser").style.visibility="hidden";
 	}
 
+var callingtaxi=0;
+
 function call_taxi()
 	{
 	if (mytel=="" || mytel.length<6)
@@ -1236,7 +1245,7 @@ function call_taxi()
 		WriteData();
 		}
 
-	if ((mytel!="" && mytel!=null ) || mystel.length>=6)
+	if ((mytel!="" && mytel!=null ) || mytel.length>=6)
 		{
 		if (MyUser!="nouser" && MyUser!="")
 			{    
@@ -1246,6 +1255,7 @@ function call_taxi()
 			{
 			url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;
 			}
+		callingtaxi=1;
 		console.log("taxi call: "+url);
 		gamehttp.open('GET',url,true);
 		gamehttp.send(null);
