@@ -355,7 +355,7 @@ function check_chat(chatid)
 	if (chatid!=last_chat)
 		{
 		last_chat=chatid;
-		url="http://design.ge/geotaxi/chat.php?req=1&myid="+myid;
+		url="http://developer.design.ge/geotaxi/chat.php?req=1&myid="+myid;
 		
 		console.log("request chat: "+url);
 		gamehttp.open('GET',url,true);
@@ -375,11 +375,11 @@ function UpData()
 
 		if (MyUser!="nouser"  && MyUser!="")
 			{    
-			url="http://design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&myid="+myid;		
+			url="http://developer.design.ge/geotaxi/upload.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&myid="+myid;		
 			}
 		else
 			{
-			url="http://design.ge/geotaxi/upload.php?passive="+inpause+"&myid="+myid+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
+			url="http://developer.design.ge/geotaxi/upload.php?passive="+inpause+"&myid="+myid+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
 			}
 		console.log("just upload: "+url);
 	//	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
@@ -581,7 +581,7 @@ function onWatchSuccess(position)
 				<tr><td onmouseup='hide_profile();' onclick="hide_profile();" colspan=3></td></tr>
 				<tr><td onmouseup='hide_profile();' onclick="hide_profile();"></td>
 				<td>
-					<img src='http://design.ge/geotaxi/taxicar.jpg' width=100px><br>
+					<img src='http://developer.design.ge/geotaxi/taxicar.jpg' width=100px><br>
 					&#4315;&#4304;&#4316;&#4325;&#4304;&#4316;&#4312;&#4321;&#32;&#4315;&#4317;&#4307;&#4308;&#4314;&#4312;: Mercedes<br>
 					მანქანის ფერი: მწვანე<br>
 					მძღოლი: ანდრო შველიძე<br>
@@ -667,7 +667,7 @@ function onWatchSuccess(position)
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png' width=20px></a></td></tr>
 		</table>
 		<Br><br>
-		<a href='#' onclick="window.open('http://design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
+		<a href='#' onclick="window.open('http://developer.design.ge/prius/reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 		</div>
 
 		<div id='loggedin_page' style='width:355px;'>
@@ -719,7 +719,7 @@ function chat_send()
 {
 chat_txt=document.getElementById("chat_send_text").value;
 document.getElementById("chat_send_text").value="";
-url="http://design.ge/geotaxi/chat.php?send=1&myid="+myid+"&chat_txt="+chat_txt;
+url="http://developer.design.ge/geotaxi/chat.php?send=1&myid="+myid+"&chat_txt="+chat_txt;
 console.log("send chat: "+url);
 gamehttp.open('GET',url,true);
 gamehttp.send(null);
@@ -794,11 +794,11 @@ function chamovdivar()
 {
 if (MyUser!="nouser" && MyUser!="")
 		{    
-		url="http://design.ge/geotaxi/chamovdivar.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
+		url="http://developer.design.ge/geotaxi/chamovdivar.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid;		
 		}
 	else
 		{
-		url="http://design.ge/geotaxi/chamovdivar.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid;
+		url="http://developer.design.ge/geotaxi/chamovdivar.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid;
 		}
 	console.log("taxi chamovdivar: "+url);
 	gamehttp.open('GET',url,true);
@@ -1117,7 +1117,7 @@ function saveuser()
 	WriteData(); 
 
 
-	url="http://design.ge/prius/login.php?login=1&unique="+myid+"&myuser="+MyUser+"&mypass="+MyPass;
+	url="http://developer.design.ge/prius/login.php?login=1&unique="+myid+"&myuser="+MyUser+"&mypass="+MyPass;
 	console.log("login: "+url);
 	gamehttp.open('GET',url,true);
 	gamehttp.send(null);
@@ -1249,11 +1249,11 @@ function call_taxi()
 		{
 		if (MyUser!="nouser" && MyUser!="")
 			{    
-			url="http://design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;		
+			url="http://developer.design.ge/geotaxi/call.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;		
 			}
 		else
 			{
-			url="http://design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;
+			url="http://developer.design.ge/geotaxi/call.php?lat="+MyLat+"&long="+MyLong+"&unique="+myid+"&tel="+mytel;
 			}
 		callingtaxi=1;
 		console.log("taxi call: "+url);
