@@ -66,10 +66,10 @@ function checkConnection()
         }
     }
 
-   function onError(error) 
-		{
-		document.getElementById('erorebi').innerHTML+='code: '    + error.code    + '<Br>' +              'message: ' + error.message + '<br>';
-		}
+//   function onError(error) 
+//		{
+//		document.getElementById('erorebi').innerHTML+='code: '    + error.code    + '<Br>' +              'message: ' + error.message + '<br>';
+//		}
 
 
 function long2tile(lon,zoom) { return (Math.floor((lon+180)/360*Math.pow(2,zoom))); }
