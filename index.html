@@ -24,6 +24,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var myid=0;
 
 
+var nogps=0;
 var wlon=44.7814581;
 var wlat=41.7102118;
 var MyUser="nouser";
@@ -163,6 +164,17 @@ function onDeviceReady()
 	//setmypos();
 	}
 // ------------------------
+
+
+function onError()
+	{
+	console.log("error getting location");
+	nogps++;
+	if (nogps>1)
+		{
+		document.getElementById("nogps").style.display="inline";
+		}
+	}
 
 var updatacounter=0;
 var uplimit=5;
@@ -446,6 +458,7 @@ function onResume()
 
 function onSuccess(position) 
 	{
+	nogps=0;
 	console.log("GPS on success");
 	document.getElementById("GPS_search_screen").style.display="none";
 //	var element = document.getElementById('geopos');
@@ -633,6 +646,16 @@ function onWatchSuccess(position)
 
 
 
+<div style='position:fixed; left:0px; top:0px; display:none; z-index:10000; height:20%; width:100%; color:red; font-weight:Bold; background:white;' id='nogps'>
+<Br><Br><Br>
+<Center>ვერ ხერხდება GPS ლოკაცის მიღება</center>
+</div>
+
+
+<div style='position:fixed; left:0px; top:0px; display:none; z-index:10001; height:20%; width:100%; color:red; font-weight:Bold; background:white;' id='myint'>
+<Br><Br><Br>
+<Center>ჩართეთ ინტერნეტ კავშირი</center>
+</div>
 
 
 	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:355px;'>
@@ -680,7 +703,7 @@ function onWatchSuccess(position)
 <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
 		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
 		<a href='Javascript: show_map();'  style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან დაბრუნება</a></center>
-				</center>
+		</center>
 	</div>
 </div>
 
@@ -716,14 +739,14 @@ function chat_click()
 	}
 
 function chat_send()
-{
-chat_txt=document.getElementById("chat_send_text").value;
-document.getElementById("chat_send_text").value="";
-url="http://developer.design.ge/geotaxi/chat.php?send=1&myid="+myid+"&chat_txt="+chat_txt;
-console.log("send chat: "+url);
-gamehttp.open('GET',url,true);
-gamehttp.send(null);
-}
+	{
+	chat_txt=document.getElementById("chat_send_text").value;
+	document.getElementById("chat_send_text").value="";
+	url="http://developer.design.ge/geotaxi/chat.php?send=1&myid="+myid+"&chat_txt="+chat_txt;
+	console.log("send chat: "+url);
+	gamehttp.open('GET',url,true);
+	gamehttp.send(null);
+	}
 
 function change_status(newstat)
 {
@@ -1154,7 +1177,14 @@ var kartY;
 
 function setmypos()
 	{
- 
+	if (window.navigator.onLine==false)
+		{
+		document.getElementById("myint").style.display="inline";
+		}		 
+	else
+		{
+		document.getElementById("myint").style.display="none";
+		}
 	console.log("set my pos, zoom: "+MyZoom);
 
 	if (MyZoom>18 || MyZoom<1)
