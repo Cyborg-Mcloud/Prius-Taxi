@@ -560,8 +560,8 @@ var MyLat;
 var MyLong;
  function initMap() {
 			
-	//	MyLat=41.718287;
-	//	MyLong=44.778728;
+		MyLat=41.718287;
+		MyLong=44.778728;
 		
         var myLatLng = {lat: MyLat, lng: MyLong};
 
@@ -594,7 +594,7 @@ var MyLong;
 
 	MyMarker = new google.maps.Marker({
 			  position: myLatLng,
-			  map: MyMap,
+			  map: gmap,
 				  	icon:micon
 
 			});
