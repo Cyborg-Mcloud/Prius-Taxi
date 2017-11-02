@@ -554,6 +554,31 @@ function onWatchSuccess(position)
 <div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>
 
 
+<script>
+
+var MyLat;
+var MyLong;
+ function initMap() {
+			
+		MyLat=41.718287;
+		MyLong=44.778728;
+		
+        var myLatLng = {lat: MyLat, lng: MyLong};
+
+		MyMap = new google.maps.Map(document.getElementById('mymap'), {
+          zoom: 18,
+          center: myLatLng,
+			  zIndex:70,
+			    mapTypeId: 'satellite'
+
+        });
+		
+
+
+      }
+
+</script>
+
 
 	<div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;' >
 
@@ -561,8 +586,8 @@ function onWatchSuccess(position)
 
 
 		<div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; ' >
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ"></script>
 
+<div id="mymap" style='position:absolute; left:0px; top:0x; height:600px; width:365px; ' ></div>
 
 			<div id='map' style='position:absolute; left:0px; top:0px; width:600px; height:600px; display:block; display:none;' >
 
@@ -583,7 +608,7 @@ function onWatchSuccess(position)
 		</div>
 	</div>
 
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ&callback=initMap"></script>
 
 	<div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
 	
