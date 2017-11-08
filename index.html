@@ -1286,6 +1286,17 @@ function setmypos()
 		loadtiles();	
 		DrawHomePos();
 		}
+
+	var myLatLng = {lat:  MyLat, lng: MyLong};
+	MyMarker.setPosition(myLatLng);
+//	if (selobj<0)
+//		{
+		gmap.panTo(myLatLng);
+//		}
+	console.log("move marker");
+
+	
+	
 //	document.getElementById("infodiv").innerHTML=wlon+ " / "+wlat;
 	}
 
