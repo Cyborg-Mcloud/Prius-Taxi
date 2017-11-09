@@ -577,9 +577,9 @@ var MyLong;
 		
 		var myicon = {
 		     url: "pin.svg", // url
-		     scaledSize: new google.maps.Size(50, 50), // size
+		     scaledSize: new google.maps.Size(30, 36), // size
 		     origin: new google.maps.Point(0,0), // origin
-		     anchor: new google.maps.Point(25, 25), // anchor 
+		     anchor: new google.maps.Point(15, 18), // anchor 
 			 ratation:30
 			 };
 
@@ -964,8 +964,7 @@ function DrawUsers()
 		
 		console.log("draw taxi: "+taxilong+ " / "+taxilat+ " onme:"+myself);
 
-		document.getElementById("taxibox").style.left=difx+"px";
-		document.getElementById("taxibox").style.top=dify+"px";
+		
 		document.getElementById("taxibox").style.visibility="visible";
 		document.getElementById("taxitext").innerHTML=taxiname;
 
@@ -979,9 +978,6 @@ function DrawHomePos()
 	{
 	console.log("drawing home pos");
 
-	
-	document.getElementById("homepos").style.left=(difx-2)+"px";
-	document.getElementById("homepos").style.top=(dify-2)+"px";
 
 	}
 
