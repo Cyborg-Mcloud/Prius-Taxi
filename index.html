@@ -551,7 +551,7 @@ function onWatchSuccess(position)
 
 	</div>
 		<!-- MAIN MAP -->
-<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>
+<!--<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>-->
 
 
 <script>
@@ -607,30 +607,10 @@ var MyLong;
 
 
 	<div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;' >
-
-
-
-
 		<div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; ' >
 
-<div id="gmap" style='position:absolute; left:75px; top:220px; height:600px; width:365px; display:block;' ></div>
+			<div id="gmap" style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;' ></div>
 
-			<div id='map' style='position:absolute; left:0px; top:0px; width:600px; height:600px; display:block; display:none;' >
-
-				
-
-				<div id='users' style='position:absolute; left:0px; top:0px;  z-index:101; '>
-					<div id='homepos' style='position:absolute; left:0px; top:0px;  background-color:green; width:7px; height:7px; z-index:102;'><img src='pin.svg' style='position:absolute; left:-15px; top:-17px; width:30px; height:35px;'></div>
-
-					<div id='taxibox'  style=' position:absolute; left:0px; top:0px; color:red; font-size:12px; width:50px; height:50px;  z-index:103;'>
-						<div style='position:absolute; left:-25px; top:-25px; width:50px; height:50px; z-index:104;'>
-							<img src='car.svg' style='width:50px; height:50px;'>
-						</div>
-						<div id='taxitext' style='position:absolute; left:-40px; top:25px;  width:70px; text-align:center;'></div>
-					</div>
-				</div>
-
-			</div>
 		</div>
 	</div>
 
@@ -1013,7 +993,7 @@ function mup(event)
 	}
 
 
-document.ontouchmove = function (e) {  console.log("object: "+e.target.id);};
+//document.ontouchmove = function (e) {  console.log("object: "+e.target.id);};
 
 
 document.getElementById("fanjara").style.width=sx+"px";
