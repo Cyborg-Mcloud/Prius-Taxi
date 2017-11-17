@@ -417,7 +417,7 @@ function onResume() {
     //if (dataex==0)
     //	{WriteData();}
 
-    //ReadData();
+    ReadData();
 
 // daakomentare jer
 
