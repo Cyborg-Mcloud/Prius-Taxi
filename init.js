@@ -226,14 +226,7 @@ function update_data() {
                 if (a[1] != "error") {
                     myloginid = a[1];
                     MyUser = a[2];
-//					WriteData();
-
-                    document.cookie = "MyUser=" + MyUser;
-                    document.cookie = "MyPass=" + MyPass;
-                    document.cookie = "MyUser=" + MyUser;
-                    document.cookie = "MyUser=" + MyUser;
-                    document.cookie = "MyUser=" + MyUser;
-                    document.cookie = "MyUser=" + MyUser;
+                    WriteData();
 
                 }
                 else {

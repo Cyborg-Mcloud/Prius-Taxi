@@ -1,5 +1,13 @@
 function WriteData() {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite, fail);
+
+    document.cookie = "MyUser=" + MyUser;
+    document.cookie = "MyPass=" + MyPass;
+    document.cookie = "MyUser=" + MyUser;
+    document.cookie = "MyUser=" + MyUser;
+    document.cookie = "MyUser=" + MyUser;
+    document.cookie = "MyUser=" + MyUser;
+
+    // window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite, fail);
 }
 
 function ReadData() {
