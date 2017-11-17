@@ -26,7 +26,6 @@ function gotFileEntry(fileEntry)
 function gotFileWriter(writer) 
 	{
 	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid+";"+myloginid+";"+mytel);
-
 	}
 
 function fail(error)
