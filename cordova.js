@@ -805,7 +805,7 @@ define("cordova/exec", function(require, exports, module) {
  * @param {String} action       Action to be run in cordova
  * @param {String[]} [args]     Zero or more arguments to pass to the method
  */
-var cordova = require('js/cordova'),
+var cordova = require('cordova'),
     nativeApiProvider = require('cordova/plugin/android/nativeapiprovider'),
     utils = require('cordova/utils'),
     jsToNativeModes = {
@@ -1128,7 +1128,7 @@ module.exports = {
     id: "android",
     initialize:function() {
         var channel = require("cordova/channel"),
-            cordova = require('js/cordova'),
+            cordova = require('cordova'),
             exec = require('cordova/exec'),
             modulemapper = require('cordova/modulemapper');
 
@@ -4540,7 +4540,7 @@ define("cordova/plugin/battery", function(require, exports, module) {
  * This class contains information about the current battery status.
  * @constructor
  */
-var cordova = require('js/cordova'),
+var cordova = require('cordova'),
     exec = require('cordova/exec');
 
 function handlers() {
@@ -6200,7 +6200,7 @@ modulemapper.clobbers('cordova/plugin/MediaError', 'MediaError');
 define("cordova/plugin/network", function(require, exports, module) {
 
 var exec = require('cordova/exec'),
-    cordova = require('js/cordova'),
+    cordova = require('cordova'),
     channel = require('cordova/channel'),
     utils = require('cordova/utils');
 
@@ -6700,7 +6700,7 @@ function UUIDcreatePart(length) {
 
 });
 
-window.cordova = require('js/cordova');
+    window.cordova = require('cordova');
 // file: lib/scripts/bootstrap.js
 
 (function (context) {
@@ -6773,7 +6773,7 @@ window.cordova = require('js/cordova');
         // order that plugins may manipulate channel.deviceReadyChannelsArray
         // if necessary.
         channel.join(function() {
-            require('js/cordova').fireDocumentEvent('deviceready');
+            require('cordova').fireDocumentEvent('deviceready');
         }, channel.deviceReadyChannelsArray);
 
     }, platformInitChannelsArray);
