@@ -150,6 +150,7 @@ function onDeviceReady() {
 
 
 function onError(e) {
+
     console.log(e);
 
 //        MyLat=position.coords.latitude ;
@@ -159,6 +160,12 @@ function onError(e) {
 //        MySpeed=position.coords.speed ;
 //        MyAcc=position.coords.accuracy;
 
+
+    console.log("error getting location");
+    nogps++;
+    if (nogps > 1) {
+        document.getElementById("nogps").style.display = "inline";
+    }
     return onSuccess({
         coords: {
             latitude: 41.7151,
@@ -169,11 +176,6 @@ function onError(e) {
             accuracy: 1
         }
     });
-    console.log("error getting location");
-    nogps++;
-    if (nogps > 1) {
-        document.getElementById("nogps").style.display = "inline";
-    }
 }
 
 var updatacounter = 0;
