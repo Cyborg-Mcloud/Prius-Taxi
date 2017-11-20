@@ -136,7 +136,7 @@ function onDeviceReady() {
     console.log("device ready, dealing with record file");
 
     // qveda amosagebia
-    kc = checkIfFileExists("locdata.txt");
+    // kc = checkIfFileExists("locdata.txt");
 
 
     //if (started==0)
