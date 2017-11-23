@@ -183,8 +183,8 @@ var uplimit = 5;
 
 
 function MainProg() {
-    console.log("main prog: " + started);
-    console.log("focus is on: " + document.activeElement.getAttribute('id'));
+    // console.log("main prog: " + started);
+    // console.log("focus is on: " + document.activeElement.getAttribute('id'));
     if (started == 1) {
         // console.log("I am running");
         updatacounter++;
@@ -367,7 +367,7 @@ function UpData() {
         else {
             url = "http://developer.design.ge/geotaxi/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
         }
-        console.log("just upload: " + url);
+        // console.log("just upload: " + url);
         //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
         gamehttp.open('GET', url, true);
         gamehttp.send(null);
