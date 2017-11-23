@@ -1,0 +1,21 @@
+{
+  "name": "com.designge.priustaxi",
+  "version": "1.0.7",
+  "displayName": "Prius Taxi",
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-network-information": {}
+    }
+  },
+  "dependencies": {
+    "cordova-browser": "~5.0.1",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-network-information": "~1.3.4",
+    "cordova-android": "~6.3.0"
+  }
+}
