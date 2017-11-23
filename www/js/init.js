@@ -186,7 +186,7 @@ function MainProg() {
     console.log("main prog: " + started);
     console.log("focus is on: " + document.activeElement.getAttribute('id'));
     if (started == 1) {
-        console.log("I am running");
+        // console.log("I am running");
         updatacounter++;
         if (updatacounter > uplimit) {
             UpData();
@@ -214,7 +214,7 @@ function update_data() {
     if (gamehttp.readyState == 4) {
         mr = gamehttp.responseText;
         if (mr != "") {
-            console.log("data received from server: " + mr);
+            // console.log("data received from server: " + mr);
             if (mr == "register") {
 
                 console.log("register received");
