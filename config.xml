@@ -46,6 +46,7 @@
   </feature>
   <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
   <gap:plugin name="cordova-plugin-powermanagement" source="npm"/>
+  <plugin name="cordova-plugin-geolocation" source="npm"/>
   <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
   <gap:plugin name="cordova-plugin-file" source="npm"/>
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
