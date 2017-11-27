@@ -2,4 +2,3 @@
 .idea/
 /platforms/
 node_modules/
-plugins/cordova-plugin-android-permissions/
