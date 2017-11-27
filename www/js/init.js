@@ -118,29 +118,29 @@ function onDeviceReady() {
     var permissions = cordova.plugins.permissions;
     permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
         console.log('succ')
+
+        console.log("device ready, checking connection");
+        checkConnection();
+
+        document.addEventListener("pause", onPause, false);
+        //document.addEventListener("backbutton", onBackKeyDown, false);
+        //document.addEventListener("menubutton", onMenuDown, false);
+        //document.addEventListener("searchbutton", onSearchDown, false);
+        document.addEventListener("volumedownbutton", onVolumeDown, false);
+        document.addEventListener("volumeupbutton", onVolumeUp, false);
+
+        console.log("device ready, getting position");
+
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
+        var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
+        watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+
+        document.addEventListener("resume", onResume, false);
+
     }, function () {
         console.log('looL')
     });
 
-    console.log("device ready, checking connection");
-    checkConnection();
-
-    document.addEventListener("pause", onPause, false);
-    //document.addEventListener("backbutton", onBackKeyDown, false);
-    //document.addEventListener("menubutton", onMenuDown, false);
-    //document.addEventListener("searchbutton", onSearchDown, false);
-    document.addEventListener("volumedownbutton", onVolumeDown, false);
-    document.addEventListener("volumeupbutton", onVolumeUp, false);
-
-    console.log("device ready, getting position");
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
-    var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
-    watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
-
-    document.addEventListener("resume", onResume, false);
-
-    console.log("device ready, dealing with record file");
 
     // qveda amosagebia
     // kc = checkIfFileExists("locdata.txt");
