@@ -9,7 +9,8 @@
       "ios"
     ],
     "plugins": {
-      "cordova-plugin-network-information": {}
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-geolocation": {}
     }
   },
   "dependencies": {

@@ -41,11 +41,7 @@ function initMap() {
         icon: myicon
 
     });
-    document.addEventListener("deviceready", onDeviceReady, false);
 
-    function onDeviceReady() {
-        console.log("navigator.geolocation works well");
-    }
 
 }
 
