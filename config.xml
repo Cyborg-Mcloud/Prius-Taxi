@@ -58,4 +58,5 @@
     <engine name="ios" spec="~4.5.4"/>
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0"/>
     <plugin name="cordova-plugin-geolocation" spec="~3.0.0"/>
+    <plugin name="cordova.plugins.diagnostic" spec="^3.7.2"/>
 </widget>
