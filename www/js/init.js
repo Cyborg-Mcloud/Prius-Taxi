@@ -115,6 +115,12 @@ var watchID = null;
 
 // ----------------------------------------------------------------
 function onDeviceReady() {
+    var permissions = cordova.plugins.permissions;
+    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
+        console.log('succ')
+    }, function () {
+        console.log('looL')
+    });
 
     console.log("device ready, checking connection");
     checkConnection();
@@ -432,7 +438,7 @@ function onResume() {
 
 function onSuccess(position) {
     nogps = 0;
-    console.log("GPS on success");
+    // console.log("GPS on success");
     document.getElementById("GPS_search_screen").style.display = "none";
 //	var element = document.getElementById('geopos');
 //	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
@@ -450,7 +456,7 @@ function onSuccess(position) {
 
     wlon = MyLong;
     wlat = MyLat;
-    console.log("on succ, sett long");
+    // console.log("on succ, sett long");
 
     if (started == 0) {
         Start();
@@ -463,7 +469,7 @@ function onSuccess(position) {
 
 
 function getpos() {
-    console.log("get pos");
+    // console.log("get pos");
     document.getElementById('geopos').innerHTML = "Finding geolocation...";
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
@@ -472,7 +478,7 @@ function getpos() {
 
 function onWatchSuccess(position) {
 
-    console.log("on watch success");
+    // console.log("on watch success");
 
     MyLat = position.coords.latitude;
     MyLong = position.coords.longitude;

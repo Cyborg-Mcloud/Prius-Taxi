@@ -12,8 +12,8 @@ function initMap() {
         zoom: 18,
         center: myLatLng,
         zIndex: 70,
-
-        disableDefaultUI: true
+        gesturehandling: 'none'
+        // disableDefaultUI: true
 
 
     });
@@ -30,7 +30,7 @@ function initMap() {
         url: "car.svg", // url
         scaledSize: new google.maps.Size(50, 50), // size
         origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(25, 25), // anchor
+        anchor: new google.maps.Point(25, 25) // anchor
 
     };
 
