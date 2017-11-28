@@ -131,7 +131,19 @@ function onDeviceReady() {
 
         console.log("device ready, getting position");
 
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
+        navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
+            console.log(e);
+            return onSuccess({
+                coords: {
+                    latitude: 41.7151,
+                    longitude: 44.8271,
+                    altitude: 0,
+                    heading: 0,
+                    speed: 0,
+                    accuracy: 1
+                }
+            });
+        }, {enableHighAccuracy: true, maximumAge: 0});
         var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
         // watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 
@@ -205,18 +217,7 @@ function MainProg() {
             setmypos();
         }
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, function () {
-        return onSuccess({
-            coords: {
-                latitude: 41.7151,
-                longitude: 44.8271,
-                altitude: 0,
-                heading: 0,
-                speed: 0,
-                accuracy: 1
-            }
-        });
-    }, {enableHighAccuracy: true, maximumAge: 0});
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
 
     setTimeout("MainProg();", 1000);
 }
