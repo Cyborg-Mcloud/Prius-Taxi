@@ -395,6 +395,7 @@ function Start() {
 }
 
 function onPause() {
+    return;
     console.log("on pause");
 //	if (started==0)
     //{
@@ -408,6 +409,7 @@ function onPause() {
 }
 
 function onResume() {
+    return;
     console.log("on resume");
     if (inpause == 1) {
         inpause = 0;
