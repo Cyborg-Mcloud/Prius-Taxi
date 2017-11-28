@@ -173,16 +173,16 @@ function onError(e) {
     if (nogps > 1) {
         document.getElementById("nogps").style.display = "inline";
     }
-    return onSuccess({
-        coords: {
-            latitude: 41.7151,
-            longitude: 44.8271,
-            altitude: 0,
-            heading: 0,
-            speed: 0,
-            accuracy: 1
-        }
-    });
+    // return onSuccess({
+    //     coords: {
+    //         latitude: 41.7151,
+    //         longitude: 44.8271,
+    //         altitude: 0,
+    //         heading: 0,
+    //         speed: 0,
+    //         accuracy: 1
+    //     }
+    // });
 }
 
 var updatacounter = 0;
