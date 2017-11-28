@@ -133,7 +133,7 @@ function onDeviceReady() {
 
         navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
         var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
-        watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+        // watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
 
         document.addEventListener("resume", onResume, false);
 
@@ -173,16 +173,16 @@ function onError(e) {
     if (nogps > 1) {
         document.getElementById("nogps").style.display = "inline";
     }
-    // return onSuccess({
-    //     coords: {
-    //         latitude: 41.7151,
-    //         longitude: 44.8271,
-    //         altitude: 0,
-    //         heading: 0,
-    //         speed: 0,
-    //         accuracy: 1
-    //     }
-    // });
+    return onSuccess({
+        coords: {
+            latitude: 41.7151,
+            longitude: 44.8271,
+            altitude: 0,
+            heading: 0,
+            speed: 0,
+            accuracy: 1
+        }
+    });
 }
 
 var updatacounter = 0;
