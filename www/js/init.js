@@ -173,16 +173,16 @@ function onError(e) {
     if (nogps > 1) {
         document.getElementById("nogps").style.display = "inline";
     }
-    return onSuccess({
-        coords: {
-            latitude: 41.7151,
-            longitude: 44.8271,
-            altitude: 0,
-            heading: 0,
-            speed: 0,
-            accuracy: 1
-        }
-    });
+    // return onSuccess({
+    //     coords: {
+    //         latitude: 41.7151,
+    //         longitude: 44.8271,
+    //         altitude: 0,
+    //         heading: 0,
+    //         speed: 0,
+    //         accuracy: 1
+    //     }
+    // });
 }
 
 var updatacounter = 0;
@@ -205,7 +205,18 @@ function MainProg() {
             setmypos();
         }
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
+    navigator.geolocation.getCurrentPosition(onSuccess, function () {
+        return onSuccess({
+            coords: {
+                latitude: 41.7151,
+                longitude: 44.8271,
+                altitude: 0,
+                heading: 0,
+                speed: 0,
+                accuracy: 1
+            }
+        });
+    }, {enableHighAccuracy: true, maximumAge: 0});
 
     setTimeout("MainProg();", 1000);
 }
