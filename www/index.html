@@ -42,10 +42,10 @@
 
     <div style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; '>
         <a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img
-                src='but_info.png'></a>
+                src='resources/but_info.png'></a>
         <!--	<div id='infodiv' style='float:right;  color:Black; display:none;'></div>-->
         <a style='float:right; margin-top:7px; margin-right: 7px; ' href='Javascript: show_settings();' id='regbut'><img
-                src='but_register.png'></a>
+                src='resources/but_register.png'></a>
 
 
     </div>
@@ -88,13 +88,13 @@
     <div id='GPS_search_screen'
          style='display:inline; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:301; background-color:#e3b202; color:white; '>
         <br><br><br><br><br><br><br><br>
-        <center><img src='taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
+      <center><img src='resources/taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
     </div>
 
     <div id='taxi_search_screen'
          style='display:none; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:302; background-color:#e3b202; color:white; '>
         <br><br><br><br><br><br><br><br>
-        <center><img src='taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
+      <center><img src='resources/taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
     </div>
 
 
@@ -119,8 +119,8 @@
 
 
     <div id='chat_div' style='position:fixed; right:10px; bottom:50px; z-index:254;  '>
-        <a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img src='chat.svg'
-                                                                                                  style='width:50px; height:50px;'></a>
+      <a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img src='resources/chat.svg'
+                                                                                                style='width:50px; height:50px;'></a>
         <div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
             <div id='chat_txt'
                  style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202; border-radius:5px;'></div>
@@ -131,17 +131,17 @@
     </div>
 
     <a id='call_but' style='position:fixed; bottom:60px; left:80px; height:100px; width:210px; z-index:252;  '
-       href='Javascript: call_taxi();'><img src='gamodzaxeba.svg' style='width:210px; height:100px;'></a>
+       href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>
 
 
     <a href='Javascript: setme();' style='position:fixed; top:60px; right:leftpx; margin:5px; z-index:252; '><img
-            id='cbut' src='center.svg' style='width:50px; height:50px;'></a>
+            id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
     <!--<a href='Javascript: show_settings();' style='position:fixed; top:55px; right:5px; margin:5px; z-index:252;' ><img src='settings.png'></a>-->
 
 
     <div id="bottom_menu"
          style=' width:100%; position:fixed; bottom:0px; left:0px; height:90px; z-index:251; background-color:#3f3f3f; filter: alpha(opacity=90);	-moz-opacity: 0.9; -khtml-opacity: 0.9;  opacity: 0.9;   '>
-        <img src='phone.png'>
+      <img src='resources/phone.png'>
         <div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
 
         <div id='certilebi' name='certilebi'
@@ -208,7 +208,8 @@
                     <td style='font-size:12px;'>პაროლი:</td>
                     <td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
                     </td>
-                    <td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png' width=20px></a></td>
+                  <td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png' width=20px></a>
+                  </td>
                 </tr>
             </table>
             <Br><br>
