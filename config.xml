@@ -2,7 +2,7 @@
 <widget xmlns:gap="http://phonegap.com/ns/1.0" id="com.designge.priustaxi" package="com.designge.priustaxi"
         version="1.0.7" versionCode="23" xmlns="http://www.w3.org/ns/widgets">
   <name>Prius Taxi</name>
-  <!--<icon src="www/taxi.png"/>-->
+  <icon src="www/resources/taxi.png"/>
   <platform name="android">
     <preference name="android-minSdkVersion" value="22"/>
     <allow-intent href="market:*"/>
