@@ -125,11 +125,11 @@ function setme() {
     console.log("setme");
     if (myself == 0) {
         myself = 1;
-        document.getElementById("cbut").src = 'center_sel.svg';
+        document.getElementById("cbut").src = 'resources/center_sel.svg';
     }
     else {
         myself = 0;
-        document.getElementById("cbut").src = 'center.svg';
+        document.getElementById("cbut").src = 'resources/center.svg';
     }
 
 }

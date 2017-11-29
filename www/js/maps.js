@@ -19,7 +19,7 @@ function initMap() {
     });
 
     var myicon = {
-        url: "pin.svg", // url
+        url: "resources/pin.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(15, 18), // anchor
@@ -27,7 +27,7 @@ function initMap() {
     };
 
     var caricon = {
-        url: "car.svg", // url
+        url: "resources/car.svg", // url
         scaledSize: new google.maps.Size(50, 50), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(25, 25) // anchor
