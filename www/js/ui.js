@@ -122,6 +122,7 @@ function cignorewifi() {
 }
 
 function setme() {
+    MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
     console.log("setme");
     if (myself == 0) {
         myself = 1;
@@ -311,13 +312,23 @@ function show_profile(tid) {
 var callingtaxi = 0;
 
 function call_taxi() {
-    if (mytel == "" || mytel.length < 6) {
+    if (mytel === "" || mytel.length < 6) {
+
         mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
         WriteData();
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            function (result) {
+
+            },                  // callback to invoke
+            'Registration',            // title
+            ['დადასტურება', 'გაუქმება'],             // buttonLabels
+            '5'                 // defaultText
+        );
     }
 
-    if ((mytel != "" && mytel != null) || mytel.length >= 6) {
-        if (MyUser != "nouser" && MyUser != "") {
+    if ((mytel !== "" && mytel != null) || mytel.length >= 6) {
+        if (MyUser !== "nouser" && MyUser !== "") {
             url = "http://developer.design.ge/geotaxi/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid + "&tel=" + mytel;
         }
         else {
