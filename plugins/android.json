@@ -24,9 +24,6 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.designge.priustaxi"
-    },
-    "cordova-plugin-pin-dialog": {
-      "PACKAGE_NAME": "com.designge.priustaxi"
     }
   },
   "dependent_plugins": {}

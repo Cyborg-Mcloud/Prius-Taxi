@@ -13,8 +13,7 @@
       "cordova-plugin-geolocation": {},
       "cordova-plugin-android-permissions": {},
       "cordova.plugins.diagnostic": {},
-      "cordova-plugin-dialogs": {},
-      "cordova-plugin-pin-dialog": {}
+      "cordova-plugin-dialogs": {}
     }
   },
   "dependencies": {
@@ -26,7 +25,6 @@
     "cordova-plugin-geolocation": "^3.0.0",
     "cordova-plugin-network-information": "~1.3.4",
     "cordova-plugin-number-dialog": "^0.2.2",
-    "cordova-plugin-pin-dialog": "git+https://github.com/Paldom/PinDialog.git",
     "cordova.plugins.diagnostic": "^3.7.2"
   }
 }

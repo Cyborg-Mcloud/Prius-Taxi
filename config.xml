@@ -60,5 +60,4 @@
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0"/>
     <plugin name="cordova.plugins.diagnostic" spec="^3.7.2"/>
     <plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
-    <plugin name="cordova-plugin-pin-dialog" spec="https://github.com/Paldom/PinDialog.git"/>
 </widget>
