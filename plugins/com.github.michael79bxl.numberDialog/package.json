@@ -1,0 +1,65 @@
+{
+  "_from": "cordova-plugin-number-dialog",
+  "_id": "cordova-plugin-number-dialog@0.2.2",
+  "_inBundle": false,
+  "_integrity": "sha1-+Ymbb1XSfwQgbgINDla1MIOK7F4=",
+  "_location": "/cordova-plugin-number-dialog",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-number-dialog",
+    "name": "cordova-plugin-number-dialog",
+    "escapedName": "cordova-plugin-number-dialog",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-number-dialog/-/cordova-plugin-number-dialog-0.2.2.tgz",
+  "_shasum": "f9899b6f55d27f04206e020d0e56b530838aec5e",
+  "_spec": "cordova-plugin-number-dialog",
+  "_where": "D:\\Projects\\Prius-Taxi",
+  "bugs": {
+    "url": "https://github.com/michael79/cordova-number-dialog/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-number-dialog",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "PhoneGap numeric text/password dialog plugin for Android and iOS",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/michael79/cordova-number-dialog#readme",
+  "keywords": [
+    "cordova",
+    "dialog",
+    "number",
+    "pin",
+    "password",
+    "android",
+    "ios",
+    "install",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "name": "cordova-plugin-number-dialog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael79/cordova-number-dialog.git"
+  },
+  "version": "0.2.2"
+}

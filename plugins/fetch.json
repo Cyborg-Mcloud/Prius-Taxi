@@ -46,5 +46,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.github.michael79bxl.numberDialog": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-number-dialog"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

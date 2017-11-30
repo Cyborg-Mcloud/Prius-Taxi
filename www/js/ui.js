@@ -316,7 +316,7 @@ function call_taxi() {
         WriteData();
     }
 
-    if ((mytel != "" && mytel != null ) || mytel.length >= 6) {
+    if ((mytel != "" && mytel != null) || mytel.length >= 6) {
         if (MyUser != "nouser" && MyUser != "") {
             url = "http://developer.design.ge/geotaxi/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid + "&tel=" + mytel;
         }
