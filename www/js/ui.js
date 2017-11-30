@@ -33,6 +33,9 @@ function chat_send() {
     gamehttp.send(null);
 }
 
+function change_start() {
+
+}
 function change_status(newstat) {
     console.log("status change: " + newstat + " / " + mystatus);
     if (newstat != mystatus) {
@@ -122,7 +125,8 @@ function cignorewifi() {
 }
 
 function setme() {
-    MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
+    if (MyMarker !== undefined) gmap.panTo(MyMarker.getPosition());
+    // MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
     console.log("setme");
     if (myself == 0) {
         myself = 1;
@@ -340,7 +344,7 @@ function call_taxi() {
             onPrompt,                  // callback to invoke
             'ტელეფონის ნომერი',            // title
             ['დადასტურება', 'გაუქმება'],             // buttonLabels
-            '5'                 // defaultText
+            mytel === undefined ? '5' : mytel                 // defaultText
         );
     }
 
