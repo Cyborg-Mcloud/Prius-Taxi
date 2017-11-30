@@ -12,8 +12,8 @@ function initMap() {
         zoom: 18,
         center: myLatLng,
         zIndex: 70,
-        gestureHandling: 'cooperative'
-        // disableDefaultUI: true
+        gestureHandling: 'none',
+        disableDefaultUI: true
 
 
     });
