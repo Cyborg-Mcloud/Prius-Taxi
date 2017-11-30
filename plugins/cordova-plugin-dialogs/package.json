@@ -1,27 +1,24 @@
 {
-  "_from": "cordova-plugin-dialogs",
-  "_id": "cordova-plugin-dialogs@1.3.4",
+  "_from": "git+https://github.com/apache/cordova-plugin-dialogs.git",
+  "_id": "cordova-plugin-dialogs@1.3.5-dev",
   "_inBundle": false,
-  "_integrity": "sha1-XMlm7nyZsvW1s934SQAmKLDacVc=",
+  "_integrity": "sha1-EWoF2ZGJwvIsC6Sm2+ZzO5ZuosM=",
   "_location": "/cordova-plugin-dialogs",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-plugin-dialogs",
-    "name": "cordova-plugin-dialogs",
-    "escapedName": "cordova-plugin-dialogs",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "type": "git",
+    "raw": "https://github.com/apache/cordova-plugin-dialogs.git",
+    "rawSpec": "https://github.com/apache/cordova-plugin-dialogs.git",
+    "saveSpec": "git+https://github.com/apache/cordova-plugin-dialogs.git",
+    "fetchSpec": "https://github.com/apache/cordova-plugin-dialogs.git",
+    "gitCommittish": "master"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-dialogs/-/cordova-plugin-dialogs-1.3.4.tgz",
-  "_shasum": "5cc966ee7c99b2f5b5b3ddf849002628b0da7157",
-  "_spec": "cordova-plugin-dialogs",
+  "_resolved": "git+https://github.com/apache/cordova-plugin-dialogs.git#5a03f7fb469912de10070eae144862efef825b02",
+  "_spec": "https://github.com/apache/cordova-plugin-dialogs.git",
   "_where": "D:\\Projects\\Prius-Taxi",
   "author": {
     "name": "Apache Software Foundation"
@@ -92,5 +89,5 @@
     "test": "npm run eslint"
   },
   "types": "./types/index.d.ts",
-  "version": "1.3.4"
+  "version": "1.3.5-dev"
 }

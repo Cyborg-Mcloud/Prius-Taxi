@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns:gap="http://phonegap.com/ns/1.0" id="com.designge.priustaxi" package="com.designge.priustaxi"
-        version="1.0.7" versionCode="23" xmlns="http://www.w3.org/ns/widgets">
+        version="1.0.7"
+        versionCode="23" xmlns="http://www.w3.org/ns/widgets">
     <name>Prius Taxi</name>
     <icon src="www/resources/taxi.png"/>
     <platform name="android">
@@ -23,11 +24,11 @@
     <preference name="keepRunning" value="true"/>
     <preference name="exit-on-suspend" value="false"/>
     <description>
-    Prius Taxi Tbilisi
-  </description>
+        Prius Taxi Tbilisi
+    </description>
     <author email="uabashidze@gmail.com" href="http://design.ge">
-    Cyborg-Mcloud
-  </author>
+        Cyborg-Mcloud
+    </author>
     <plugins>
     </plugins>
     <feature name="http://api.phonegap.com/1.0/device"/>
@@ -59,5 +60,5 @@
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0"/>
     <plugin name="cordova.plugins.diagnostic" spec="^3.7.2"/>
     <plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
-    <plugin name="com.github.michael79bxl.numberDialog" spec="~0.2.2"/>
+    <plugin name="cordova-plugin-pin-dialog" spec="https://github.com/Paldom/PinDialog.git"/>
 </widget>

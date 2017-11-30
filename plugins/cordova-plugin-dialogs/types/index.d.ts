@@ -25,13 +25,11 @@ interface Notification {
           alertCallback: () => void,
           title?: string,
           buttonName?: string): void;
-
     /**
      * The device plays a beep sound.
-     * @param times The number of times to repeat the beep.
+     * @param times The number of times to repeat the beep. 
      */
     beep(times: number): void;
-
     /**
      * Displays a customizable confirmation dialog box.
      * @param message           Dialog message.
@@ -44,7 +42,6 @@ interface Notification {
             confirmCallback: (choice: number) => void,
             title?: string,
             buttonLabels?: string[]): void;
-
     /**
      * Displays a native dialog box that is more customizable than the browser's prompt function.
      * @param message           Dialog message.

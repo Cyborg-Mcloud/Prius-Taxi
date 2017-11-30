@@ -42,15 +42,15 @@
   "cordova-plugin-dialogs": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-dialogs@^1.3.4"
+      "id": "https://github.com/apache/cordova-plugin-dialogs.git"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "com.github.michael79bxl.numberDialog": {
+  "cordova-plugin-pin-dialog": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-number-dialog"
+      "id": "https://github.com/Paldom/PinDialog.git"
     },
     "is_top_level": true,
     "variables": {}

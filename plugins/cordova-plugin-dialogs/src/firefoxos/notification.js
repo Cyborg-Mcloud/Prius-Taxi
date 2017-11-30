@@ -88,7 +88,6 @@ function modal(message, callback, title, buttonLabels, domObjects) {
             callback(result);
         }, 10);
     }
-
     modalWindow.addEventListener('unload', onUnload, false);
 
     // call callback and destroy modal
