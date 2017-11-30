@@ -311,17 +311,34 @@ function show_profile(tid) {
 
 var callingtaxi = 0;
 
+/**Returns whether the number is valid*/
+function isValidInput(input1) {
+    return true;
+}
+
 function call_taxi() {
+    function onPrompt(result) {
+
+        if (result.buttonIndex === 0) {
+            if (isValidInput(result.input1)) {
+                mytel = result.input1;
+                WriteData();
+            } else {
+                navigator.notification.alert('გთხოვთ სწორად შეიყვანოთ ტელეფონის ნომერი\n(5XX-XXX-XXX)',
+                    undefined, 'არასწორი ტელეფონის ნომერი')
+            }
+        }
+
+    }
+
     if (mytel === "" || mytel.length < 6) {
 
-        mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
-        WriteData();
+        // mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
+        // WriteData();
         navigator.notification.prompt(
-            'Please enter your name',  // message
-            function (result) {
-
-            },                  // callback to invoke
-            'Registration',            // title
+            'რა ნომერზე დაგიკავშირდეთ?',  // message
+            onPrompt,                  // callback to invoke
+            'ტელეფონის ნომერი',            // title
             ['დადასტურება', 'გაუქმება'],             // buttonLabels
             '5'                 // defaultText
         );
