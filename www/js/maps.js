@@ -12,9 +12,7 @@ function initMap() {
         zoom: 18,
         center: myLatLng,
         zIndex: 70,
-        gestureHandling: 'none',
-        disableDefaultUI: true
-
+        gestureHandling: 'none'
 
     });
 
