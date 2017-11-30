@@ -169,7 +169,7 @@ function onDeviceReady() {
 
 
 function onError(e) {
-
+    return;
     console.log(e);
 
 //        MyLat=position.coords.latitude ;
@@ -180,7 +180,7 @@ function onError(e) {
 //        MyAcc=position.coords.accuracy;
 
 
-    console.log("error getting location");
+    // console.log("error getting location");
     nogps++;
     if (nogps > 1) {
         document.getElementById("nogps").style.display = "inline";
