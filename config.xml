@@ -47,16 +47,16 @@
   </feature>
   <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
   <gap:plugin name="cordova-plugin-powermanagement" source="npm"/>
-  <plugin name="cordova-plugin-geolocation" source="npm"/>
   <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
   <gap:plugin name="cordova-plugin-file" source="npm"/>
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
   <gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" version="0.8.4"/>
   <preference name="Orientation" value="portrait"/>
   <engine name="browser" spec="~5.0.1"/>
+  <engine name="ios" spec="^4.5.4"/>
+  <engine name="android" spec="^6.4.0"/>
   <plugin name="cordova-plugin-network-information" spec="~1.3.4"/>
-  <engine name="android" spec="~6.3.0"/>
-  <engine name="ios" spec="~4.5.4"/>
+  <plugin name="cordova-plugin-geolocation" spec="^3.0.0"/>
   <plugin name="cordova-plugin-android-permissions" spec="^1.0.0"/>
   <plugin name="cordova.plugins.diagnostic" spec="^3.7.2"/>
 </widget>
