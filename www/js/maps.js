@@ -9,7 +9,7 @@ function geocodeLocation(position, infoWindow, markerName) {
     }, function (responses) {
         console.log('hhh')
         if (responses && responses.length > 0) {
-            infoWindow.setContent(getInfoContent(markerName), responses[0].formatted_address);
+            infoWindow.setContent(getInfoContent(markerName, responses[0].formatted_address));
         } else {
             infoWindow.setContent(getInfoContent(markerName));
         }
@@ -64,14 +64,14 @@ function initMap() {
     map.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(map);
-        geocodeLocation(position, infoWindow, 'tempMarker');
+        geocodeLocation(tempMarker.getPosition(), infoWindow, 'tempMarker');
 
     })
 }
 
 function getInfoContent(markerName, address) {
 
-    return "<div style='text-align: center;'>" + address + "<br>" +
+    return "<div style='text-align: center;'><div>" + address + "</div><br>" +
         "<button onclick='chooseLocation(" + markerName + ")'>არჩევა</button></div>";
 }
 
