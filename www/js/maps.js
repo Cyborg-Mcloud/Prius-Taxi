@@ -64,10 +64,9 @@ function initMap() {
     map.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(map);
-        geocodeLocation(position, infoWindow, markerName);
+        geocodeLocation(position, infoWindow, 'tempMarker');
 
     })
-
 }
 
 function getInfoContent(markerName, address) {
