@@ -3,7 +3,7 @@ var mystatus = 0;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var myid = 0;
-
+var map;
 
 var nogps = 0;
 var wlon = 44.7814581;
@@ -457,10 +457,10 @@ function onSuccess(position) {
     };
 
     positionMarker.setPosition(pos);
-    positionMarker.setMap(gmap);
+    positionMarker.setMap(map);
     infoWindow.setContent(getInfoContent('positionMarker'));
-    infoWindow.open(gmap);
-    gmap.setCenter(pos);
+    infoWindow.open(map);
+    map.setCenter(pos);
 
     nogps = 0;
     // console.log("GPS on success");

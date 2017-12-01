@@ -9,7 +9,7 @@ function initMap() {
 
     var position = {lat: MyLat, lng: MyLong};
 
-    gmap = new google.maps.Map(document.getElementById('gmap'), {
+    map = new google.maps.Map(document.getElementById('gmap'), {
         zoom: 18,
         center: position,
         zIndex: 70
@@ -39,16 +39,17 @@ function initMap() {
 
     };
     MyMarker = new google.maps.Marker({
-        icon: myicon
+        icon: myicon,
+        map: map
     });
-    positionMarker = new google.maps.Marker({position: position, map: gmap, icon: gpsIcon});
+    positionMarker = new google.maps.Marker({position: position, map: map, icon: gpsIcon});
     infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
-    gmap.addListener('click', function (e) {
+    map.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
-        tempMarker.setMap(gmap);
+        tempMarker.setMap(map);
         infoWindow.setContent(getInfoContent('tempMarker'));
-        infoWindow.open(gmap, tempMarker);
+        infoWindow.open(map, tempMarker);
     })
 }
 
@@ -59,7 +60,7 @@ function getInfoContent(markerName) {
 
 function setLocation(marker) {
     MyMarker.setPosition(marker.getPosition());
-    gmap.panTo(MyMarker.getPosition());
+    map.panTo(MyMarker.getPosition());
     if (marker === tempMarker) marker.setMap(null);
 }
 

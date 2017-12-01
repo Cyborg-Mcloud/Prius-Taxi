@@ -127,9 +127,9 @@ function cignorewifi() {
 
 function setme() {
     if (MyMarker !== undefined) {
-        gmap.panTo(positionMarker.getPosition());
+        map.panTo(positionMarker.getPosition());
         infoWindow.setContent(getInfoContent('positionMarker'));
-        infoWindow.open(gmap, positionMarker);
+        infoWindow.open(map, positionMarker);
     }
     // MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
     console.log("setme");
@@ -296,7 +296,7 @@ function setmypos() {
 
     var myLatLng = {lat: MyLat, lng: MyLong};
     positionMarker.setPosition(myLatLng);
-    gmap.panTo(myLatLng);
+    map.panTo(myLatLng);
     console.log("move marker");
 }
 
