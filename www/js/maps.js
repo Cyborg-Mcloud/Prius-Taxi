@@ -1,6 +1,7 @@
 var MyLat;
 var MyLong;
 var infoWindow, tempMarker, geocoder;
+var dirService, dirRender;
 
 function geocodeLocation(position, infoWindow, markerName) {
 
@@ -32,6 +33,8 @@ function initMap() {
     });
 
     geocoder = new google.maps.Geocoder();
+    dirRender = new google.maps.DirectionsRenderer();
+    dirService = new google.maps.DirectionsService();
     var myicon = {
         url: "resources/pin.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
@@ -65,7 +68,6 @@ function initMap() {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(map);
         geocodeLocation(tempMarker.getPosition(), infoWindow, 'tempMarker');
-
     })
 }
 
@@ -86,6 +88,49 @@ function chooseLocation(marker) {
         function (choice) {
             if (choice === 1) setLocation(marker);
         }, 'დადასტურება', ['დიახ', 'არა'])
+}
+
+function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
+    var start = from_loc;
+    var end = to_loc;
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function (response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            directionsDisplay.setMap(map);
+        } else {
+            addMarkers(map, [from_loc, to_loc], map.getBounds());
+        }
+    });
+}
+
+function addMarkers(map, markers, bounds) {
+    // Loop through our array of markers & place each one on the map
+
+    addMarker(map, markers[0], bounds, 'A');
+    addMarker(map, markers[1], bounds, 'B');
+}
+
+function addMarker(map, position, bounds, label) {
+
+    console.log(position);
+    bounds.extend(position);
+    var marker = new google.maps.Marker({
+        position: {lat: position['lat'], lng: position['lng']},
+        map: map,
+        label: label
+    });
+    console.log(marker.position);
+    marker.addListener('click', function () {
+        map.setOptions({zoom: map.zoom + 2, center: position});
+    });
+    // Automatically center the map fitting all markers on the screen
+    map.fitBounds(bounds);
+
 }
 
 //  mapTypeId: 'satellite',
