@@ -2,16 +2,18 @@ var MyLat;
 var MyLong;
 var infoWindow, tempMarker, geocoder;
 
-function geocodeLocation(position) {
+function geocodeLocation(position, infoWindow, markerName) {
+
     geocoder.geocode({
         latLng: position
     }, function (responses) {
         console.log('hhh')
         if (responses && responses.length > 0) {
-            return responses[0].formatted_address;
+            infoWindow.setContent(getInfoContent(markerName), responses[0].formatted_address);
         } else {
-            console.log('Cannot determine address at this location.');
+            infoWindow.setContent(getInfoContent(markerName));
         }
+        infoWindow.open(map, tempMarker);
     });
 }
 
@@ -62,8 +64,8 @@ function initMap() {
     map.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(map);
-        infoWindow.setContent(getInfoContent('tempMarker'), geocodeLocation(tempMarker.getPosition()));
-        infoWindow.open(map, tempMarker);
+        geocodeLocation(position, infoWindow, markerName);
+
     })
 
 }
