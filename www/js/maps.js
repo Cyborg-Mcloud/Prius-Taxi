@@ -12,8 +12,7 @@ function initMap() {
     gmap = new google.maps.Map(document.getElementById('gmap'), {
         zoom: 18,
         center: position,
-        zIndex: 70,
-        gestureHandling: 'none'
+        zIndex: 70
 
     });
 
