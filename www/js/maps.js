@@ -1,16 +1,17 @@
 var MyLat;
 var MyLong;
 
+
 function initMap() {
 
     MyLat = 41.718287;
     MyLong = 44.778728;
 
-    var myLatLng = {lat: MyLat, lng: MyLong};
+    var position = {lat: MyLat, lng: MyLong};
 
     gmap = new google.maps.Map(document.getElementById('gmap'), {
         zoom: 18,
-        center: myLatLng,
+        center: position,
         zIndex: 70,
         gestureHandling: 'none'
 
@@ -31,16 +32,26 @@ function initMap() {
         anchor: new google.maps.Point(25, 25) // anchor
 
     };
+    var gpsIcon = {
+        url: "resources/images/Clustericon.svg", // url
+        scaledSize: new google.maps.Size(50, 50), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(25, 25) // anchor
 
-
+    };
     MyMarker = new google.maps.Marker({
-        position: myLatLng,
+        position: position,
         map: gmap,
         icon: myicon
 
     });
-
-
+    var infoWindow = new google.maps.InfoWindow();
+    var tempMarker = new google.maps.Marker();
+    gmap.addListener('click', function (e) {
+        tempMarker.setPosition(e.latLng);
+        tempMarker.setMap(gmap);
+        infoWindow.open(tempMarker, map);
+    })
 }
 
 //  mapTypeId: 'satellite',
