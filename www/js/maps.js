@@ -12,12 +12,11 @@ function geocodeLocation(position, infoWindow, markerName, targetMarkerName) {
     }, function (responses) {
         console.log(markerName + " " + targetMarkerName)
         if (responses && responses.length > 0) {
-
             infoWindow.setContent(getInfoContent(markerName, targetMarkerName, responses[0].formatted_address));
         } else {
             infoWindow.setContent(getInfoContent(markerName, targetMarkerName));
         }
-        infoWindow.open(map, tempMarker);
+
     });
 }
 
@@ -84,7 +83,8 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
     startPosListener = map.addListener('click', function (e) {
-        geocodeOnClick(e, 'startMarker')
+        geocodeOnClick(e, 'startMarker');
+        infoWindow.open(map, tempMarker);
     });
     setState(0);
 }
@@ -114,11 +114,13 @@ function setState(newState) {
             startPosListener = map.addListener('click', function (e) {
                 console.log('staart')
                 geocodeOnClick(e, 'startMarker')
+                infoWindow.open(map, tempMarker);
             });
             break;
         case 1:
             endPosListener = map.addListener('click', function (e) {
                 geocodeOnClick(e, 'endMarker')
+                infoWindow.open(map, tempMarker);
             });
             break;
         case 2:
@@ -140,7 +142,7 @@ function setLocation(marker, target) {
     target.setPosition(marker.getPosition());
     map.panTo(target.getPosition());
 
-    if (marker === tempMarker) {
+    if (marker === tempMarker || marker === positionMarker) {
         switchState();
         marker.setMap(null);
     }

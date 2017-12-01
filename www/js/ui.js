@@ -128,7 +128,8 @@ function cignorewifi() {
 function setme() {
     if (startMarker !== undefined) {
         map.panTo(positionMarker.getPosition());
-        geocodeLocation(positionMarker.getPosition(), infoWindow, 'positionMarker');
+        geocodeLocation(positionMarker.getPosition(), infoWindow, 'positionMarker', state === 0 ? 'startMarker' : 'endMarker');
+
         infoWindow.open(map, positionMarker);
     }
     // startMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
