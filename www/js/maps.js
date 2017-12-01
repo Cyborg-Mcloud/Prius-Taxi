@@ -1,6 +1,6 @@
 var MyLat;
 var MyLong;
-
+var infoWindow, tempMarker;
 
 function initMap() {
 
@@ -44,8 +44,8 @@ function initMap() {
         icon: myicon
 
     });
-    var infoWindow = new google.maps.InfoWindow({content: ''});
-    var tempMarker = new google.maps.Marker();
+    infoWindow = new google.maps.InfoWindow({content: ''});
+    tempMarker = new google.maps.Marker();
     gmap.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(gmap);
