@@ -44,7 +44,7 @@ function initMap() {
         icon: myicon
 
     });
-    infoWindow = new google.maps.InfoWindow({content: ''});
+    infoWindow = new google.maps.InfoWindow({content: INFO_CONTENT});
     tempMarker = new google.maps.Marker();
     gmap.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
@@ -53,4 +53,6 @@ function initMap() {
     })
 }
 
+const INFO_CONTENT = "<div style='text-align: center;'>" +
+    "<button>არჩევა</button></div>";
 //  mapTypeId: 'satellite',
