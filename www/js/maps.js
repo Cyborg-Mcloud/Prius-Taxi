@@ -44,7 +44,7 @@ function initMap() {
         icon: myicon
 
     });
-    var infoWindow = new google.maps.InfoWindow();
+    var infoWindow = new google.maps.InfoWindow({content: ''});
     var tempMarker = new google.maps.Marker();
     gmap.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
