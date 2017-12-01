@@ -36,7 +36,7 @@ function initMap() {
     dirRender = new google.maps.DirectionsRenderer();
     dirService = new google.maps.DirectionsService();
     var myicon = {
-        url: "resources/pin.svg", // url
+        url: "resources/pin_start.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(15, 18), // anchor
