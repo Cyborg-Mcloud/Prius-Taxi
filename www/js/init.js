@@ -1,7 +1,9 @@
 var mystatus = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
-
+$(document).ready(function () {
+    document.getElementById("GPS_search_screen").style.display = "none";
+});
 var myid = 0;
 var map;
 
@@ -13,7 +15,7 @@ var MyPass = "nopass";
 var MyZoom = 17;
 var mytel = "";
 
-var MyMarker, positionMarker;
+
 var MyLat;
 var MyLong;
 var MyAlt;

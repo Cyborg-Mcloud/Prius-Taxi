@@ -126,12 +126,12 @@ function cignorewifi() {
 }
 
 function setme() {
-    if (MyMarker !== undefined) {
+    if (startMarker !== undefined) {
         map.panTo(positionMarker.getPosition());
         geocodeLocation(positionMarker.getPosition(), infoWindow, 'positionMarker');
         infoWindow.open(map, positionMarker);
     }
-    // MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
+    // startMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
     // console.log("setme");
     // if (myself == 0) {
     //     myself = 1;
