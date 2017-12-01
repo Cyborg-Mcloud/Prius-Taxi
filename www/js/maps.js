@@ -39,12 +39,9 @@ function initMap() {
 
     };
     MyMarker = new google.maps.Marker({
-        position: position,
-        map: gmap,
         icon: myicon
-
     });
-    positionMarker = new google.maps.Marker({icon: gpsIcon});
+    positionMarker = new google.maps.Marker({position: position, map: gmap, icon: gpsIcon});
     infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
     gmap.addListener('click', function (e) {
