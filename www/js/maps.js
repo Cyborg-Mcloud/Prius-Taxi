@@ -33,8 +33,22 @@ function initMap() {
     });
 
     geocoder = new google.maps.Geocoder();
-    dirRender = new google.maps.DirectionsRenderer();
+    dirRender = new google.maps.DirectionsRenderer({suppressMarkers: true});
     dirService = new google.maps.DirectionsService();
+    START_ICON = {
+        url: "resources/pin_start.svg", // url
+        scaledSize: new google.maps.Size(30, 36), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(15, 18), // anchor
+        ratation: 30
+    };
+    END_ICON = {
+        url: "resources/pin_end.svg", // url
+        scaledSize: new google.maps.Size(30, 36), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(15, 18), // anchor
+        ratation: 30
+    };
     var myicon = {
         url: "resources/pin_start.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
@@ -48,7 +62,6 @@ function initMap() {
         scaledSize: new google.maps.Size(50, 50), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(25, 25) // anchor
-
     };
     var gpsIcon = {
         url: "resources/images/Clustericon.svg", // url
@@ -90,6 +103,13 @@ function chooseLocation(marker) {
         }, 'დადასტურება', ['დიახ', 'არა'])
 }
 
+function getPosition(loc) {
+    return {
+        lat: loc.lat(),
+        lng: loc.lng()
+    }
+}
+
 function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
     var start = from_loc;
     var end = to_loc;
@@ -100,7 +120,11 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
     };
     directionsService.route(request, function (response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
+            var route = response.routes[0].legs[0];
+            addMarker(map, getPosition(route.start_location), map.getBounds(), undefined, START_ICON);
+            addMarker(map, getPosition(route.end_location), map.getBounds(), undefined, END_ICON);
             directionsDisplay.setDirections(response);
+
             directionsDisplay.setMap(map);
         } else {
             addMarkers(map, [from_loc, to_loc], map.getBounds());
@@ -115,15 +139,16 @@ function addMarkers(map, markers, bounds) {
     addMarker(map, markers[1], bounds, 'B');
 }
 
-function addMarker(map, position, bounds, label) {
+function addMarker(map, position, bounds, label, icon) {
 
     console.log(position);
     bounds.extend(position);
     var marker = new google.maps.Marker({
         position: {lat: position['lat'], lng: position['lng']},
-        map: map,
-        label: label
+        map: map
     });
+    if (label !== undefined) marker.setLabel(label);
+    if (icon !== undefined) marker.setIcon(icon);
     console.log(marker.position);
     marker.addListener('click', function () {
         map.setOptions({zoom: map.zoom + 2, center: position});
@@ -132,5 +157,7 @@ function addMarker(map, position, bounds, label) {
     map.fitBounds(bounds);
 
 }
+
+var START_ICON, END_ICON;
 
 //  mapTypeId: 'satellite',
