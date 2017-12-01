@@ -290,7 +290,7 @@ function setmypos() {
     DrawHomePos();
 
     var myLatLng = {lat: MyLat, lng: MyLong};
-    MyMarker.setPosition(myLatLng);
+    positionMarker.setPosition(myLatLng);
     gmap.panTo(myLatLng);
     console.log("move marker");
 }

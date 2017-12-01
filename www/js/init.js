@@ -458,7 +458,7 @@ function onSuccess(position) {
 
     positionMarker.setPosition(pos);
     positionMarker.setMap(gmap);
-    infoWindow.setContent('Location found.');
+    infoWindow.setContent(getInfoContent('positionMarker'));
     infoWindow.open(gmap);
     gmap.setCenter(pos);
 
