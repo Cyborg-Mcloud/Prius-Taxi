@@ -73,8 +73,8 @@ function initMap() {
 
 function getInfoContent(markerName, address) {
 
-    return "<div class='btn' style='text-align: center; color:black'><div>" + address + "</div><br>" +
-        "<button onclick='chooseLocation(" + markerName + ")'>არჩევა</button></div>";
+    return "<div style='text-align: center; color:black'><div>" + address + "</div><br>" +
+        "<button class='btn'onclick='chooseLocation(" + markerName + ")'>არჩევა</button></div>";
 }
 
 function setLocation(marker) {
