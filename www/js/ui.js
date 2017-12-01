@@ -36,6 +36,7 @@ function chat_send() {
 function change_start() {
 
 }
+
 function change_status(newstat) {
     console.log("status change: " + newstat + " / " + mystatus);
     if (newstat != mystatus) {
@@ -125,7 +126,7 @@ function cignorewifi() {
 }
 
 function setme() {
-    if (MyMarker !== undefined) gmap.panTo(MyMarker.getPosition());
+    if (MyMarker !== undefined) gmap.panTo(positionMarker.getPosition());
     // MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
     console.log("setme");
     if (myself == 0) {
