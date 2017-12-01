@@ -44,7 +44,8 @@ function initMap() {
         icon: myicon
 
     });
-    infoWindow = new google.maps.InfoWindow({content: INFO_CONTENT});
+    positionMarker = new google.maps.Marker({icon: gpsIcon});
+    infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
     gmap.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
@@ -53,6 +54,21 @@ function initMap() {
     })
 }
 
-const INFO_CONTENT = "<div style='text-align: center;'>" +
-    "<button>არჩევა</button></div>";
+function getInfoContent(markerName) {
+    return "<div style='text-align: center;'>" +
+        "<button onclick='chooseLocation(" + markerName + ")'>არჩევა</button></div>";
+}
+
+function setLocation(marker) {
+    MyMarker.setPosition(marker.getPosition());
+    gmap.panTo(MyMarker.getPosition());
+}
+
+function chooseLocation(marker) {
+    navigator.notification.confirm('დარწმუნებული ხართ, რომ გსურთ ამ ლოკაციის არჩევა?',
+        function (choice) {
+            if (choice === 1) setLocation(marker);
+        }, 'დადასტურება', ['დიახ', 'არა'])
+}
+
 //  mapTypeId: 'satellite',

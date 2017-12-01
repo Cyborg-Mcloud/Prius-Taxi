@@ -13,7 +13,7 @@ var MyPass = "nopass";
 var MyZoom = 17;
 var mytel = "";
 
-var MyMarker;
+var MyMarker, positionMarker;
 var MyLat;
 var MyLong;
 var MyAlt;
