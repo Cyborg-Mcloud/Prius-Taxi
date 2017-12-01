@@ -2,9 +2,9 @@ var MyLat;
 var MyLong;
 var infoWindow, tempMarker, geocoder;
 
-function geocodeLocation(position2) {
+function geocodeLocation(position) {
     geocoder.geocode({
-        latLng: MyMarker.getPosition()
+        latLng: position
     }, function (responses) {
         console.log('hhh')
         if (responses && responses.length > 0) {
