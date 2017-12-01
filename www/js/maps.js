@@ -63,7 +63,7 @@ function getInfoContent(markerName) {
 function setLocation(marker) {
     MyMarker.setPosition(marker.getPosition());
     gmap.panTo(MyMarker.getPosition());
-    if (marker !== positionMarker) marker.setMap(null);
+    if (marker === tempMarker) marker.setMap(null);
 }
 
 function chooseLocation(marker) {
