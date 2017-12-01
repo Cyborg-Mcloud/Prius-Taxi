@@ -128,19 +128,19 @@ function cignorewifi() {
 function setme() {
     if (MyMarker !== undefined) {
         map.panTo(positionMarker.getPosition());
-        infoWindow.setContent(getInfoContent('positionMarker'));
+        geocodeLocation(positionMarker.getPosition(), infoWindow, 'positionMarker');
         infoWindow.open(map, positionMarker);
     }
     // MyMarker.setOptions({position: {lat: MyLat, lng: MyLong}})
-    console.log("setme");
-    if (myself == 0) {
-        myself = 1;
-        document.getElementById("cbut").src = 'resources/center_sel.svg';
-    }
-    else {
-        myself = 0;
-        document.getElementById("cbut").src = 'resources/center.svg';
-    }
+    // console.log("setme");
+    // if (myself == 0) {
+    //     myself = 1;
+    //     document.getElementById("cbut").src = 'resources/center_sel.svg';
+    // }
+    // else {
+    //     myself = 0;
+    //     document.getElementById("cbut").src = 'resources/center.svg';
+    // }
 
 }
 
