@@ -1,6 +1,19 @@
 var MyLat;
 var MyLong;
-var infoWindow, tempMarker;
+var infoWindow, tempMarker, geocoder;
+
+function geocodeLocation(position2) {
+    geocoder.geocode({
+        latLng: MyMarker.getPosition()
+    }, function (responses) {
+        console.log('hhh')
+        if (responses && responses.length > 0) {
+            return responses[0].formatted_address;
+        } else {
+            console.log('Cannot determine address at this location.');
+        }
+    });
+}
 
 function initMap() {
 
@@ -16,6 +29,7 @@ function initMap() {
 
     });
 
+    geocoder = new google.maps.Geocoder();
     var myicon = {
         url: "resources/pin.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
@@ -48,13 +62,15 @@ function initMap() {
     map.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(map);
-        infoWindow.setContent(getInfoContent('tempMarker'));
+        infoWindow.setContent(getInfoContent('tempMarker'), geocodeLocation(tempMarker.getPosition()));
         infoWindow.open(map, tempMarker);
     })
+
 }
 
-function getInfoContent(markerName) {
-    return "<div style='text-align: center;'>" +
+function getInfoContent(markerName, address) {
+
+    return "<div style='text-align: center;'>" + address + "<br>" +
         "<button onclick='chooseLocation(" + markerName + ")'>არჩევა</button></div>";
 }
 
