@@ -451,6 +451,17 @@ function onResume() {
 
 
 function onSuccess(position) {
+    var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+
+    positionMarker.setPosition(pos);
+    positionMarker.setMap(map);
+    infoWindow.setContent('Location found.');
+    infoWindow.open(gmap);
+    gmap.setCenter(pos);
+
     nogps = 0;
     // console.log("GPS on success");
     document.getElementById("GPS_search_screen").style.display = "none";
