@@ -49,7 +49,7 @@ function initMap() {
     gmap.addListener('click', function (e) {
         tempMarker.setPosition(e.latLng);
         tempMarker.setMap(gmap);
-        infoWindow.open(tempMarker, gmap);
+        infoWindow.open(gmap, tempMarker);
     })
 }
 
