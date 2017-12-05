@@ -7,30 +7,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Prius Taxi</title>
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/func.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/io.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Prius Taxi</title>
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/func.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/io.js"></script>
 
 
 </head>
 <style>
-    body {
-        color: white;
-        margin: 0px;
-        padding: 0px;
-    }
+  body {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+  }
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 </style>
 <body bgcolor=#e3b202>
 
@@ -42,37 +42,53 @@
 
 
 <div id='fanjara' style='position:relative; overflow:hidden; width:400px; height:600px;'>
-    <div style="width: 100%; position:fixed; top:45px;z-index:272; text-align: center;">
+  <div style="width: 100%; position:fixed; top:45px;z-index:272; text-align: center;">
         <span id='topMessage' style="color:black;  margin:5px; ">
             აირჩიეთ საწყისი ლოკაცია</span>
-    </div>
-    <div style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; '>
-        <a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img
-                src='resources/but_info.png'></a>
-        <!--	<div id='infodiv' style='float:right;  color:Black; display:none;'></div>-->
-        <a style='float:right; margin-top:7px; margin-right: 7px; ' href='Javascript: show_settings();' id='regbut'><img
-                src='resources/but_register.png'></a>
+  </div>
+  <div style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; '>
+    <a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img
+            src='resources/but_info.png'></a>
+    <!--	<div id='infodiv' style='float:right;  color:Black; display:none;'></div>-->
+    <a style='float:right; margin-top:7px; margin-right: 7px; ' href='Javascript: show_settings();' id='regbut'><img
+            src='resources/but_register.png'></a>
 
 
-    </div>
-    <!-- MAIN MAP -->
-    <!--<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>-->
+  </div>
+  <!-- MAIN MAP -->
+  <!--<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>-->
 
 
-    <script src="js/maps.js"></script>
-    <style>
+  <script src="js/maps.js"></script>
+  <style>
 
-        td {
-            font-size: 10px;
-        }
-    </style>
+    td {
+      font-size: 10px;
+    }
+  </style>
 
-    <div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;'>
-        <div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
-            <div id="gmap"
-                 style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
+  <div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;'>
+    <div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
+      <div class="modal-body">
+        <div class="pac-card" id="pac-card">
+          <div>
+            <div id="title">
+              მისამართის ძებნა
+              <span class="close">&times;</span>
 
+            </div>
+
+
+            <div id="pac-container">
+              <input id="pac-input" type="text" placeholder="შეიყვანეთ მისამართი">
+            </div>
+
+          </div>
         </div>
+        <div id="gmap"
+             style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
+
+      </div>
     </div>
     <!--key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ-->
     <!--key=AIzaSyAMaeW61XOXEKHCrzM6J5nulpyZpeeTb4k-->
@@ -82,27 +98,27 @@
     <div id='arrived_screen'
          style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
 
-        <br><br><br><br><br><br><br><br><br><br><br>
-        <center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();'
-                                                style='color:white; background-color:green; padding:10px; text-align:center; '>ჩამოვდივარ</a>
-        </center>
-        <br><br>
-        <center>
-            <div id='taxi_number' style='color:white;'></div>
-        </center>
+      <br><br><br><br><br><br><br><br><br><br><br>
+      <center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();'
+                                              style='color:white; background-color:green; padding:10px; text-align:center; '>ჩამოვდივარ</a>
+      </center>
+      <br><br>
+      <center>
+        <div id='taxi_number' style='color:white;'></div>
+      </center>
     </div>
 
 
     <div id='GPS_search_screen'
          style='display:inline; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:301; background-color:#e3b202; color:white; '>
-        <br><br><br><br><br><br><br><br>
-        <center><img src='resources/taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
+      <br><br><br><br><br><br><br><br>
+      <center><img src='resources/taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
     </div>
 
     <div id='taxi_search_screen'
          style='display:none; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:302; background-color:#e3b202; color:white; '>
-        <br><br><br><br><br><br><br><br>
-        <center><img src='resources/taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
+      <br><br><br><br><br><br><br><br>
+      <center><img src='resources/taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
     </div>
 
 
@@ -127,16 +143,16 @@
 
 
     <div id='chat_div' style='position:fixed; right:10px; bottom:50px; z-index:254;  '>
-        <a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img
-                src='resources/chat.svg'
-                style='width:50px; height:50px;'></a>
-        <div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
-            <div id='chat_txt'
-                 style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202; border-radius:5px;'></div>
-            <input type='text' size=30 id='chat_send_text' style='z-index:305; text-size:16px;'
-                   onkeyup='chat_key(event);'>
-            <!--<input type='button' value='send' onclick='chat_send();' style='z-index:305;'>-->
-        </div>
+      <a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img
+              src='resources/chat.svg'
+              style='width:50px; height:50px;'></a>
+      <div id='chat_window' style='display:inline; width:98%; height:200px; background-color:white; display:none;'>
+        <div id='chat_txt'
+             style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202; border-radius:5px;'></div>
+        <input type='text' size=30 id='chat_send_text' style='z-index:305; text-size:16px;'
+               onkeyup='chat_key(event);'>
+        <!--<input type='button' value='send' onclick='chat_send();' style='z-index:305;'>-->
+      </div>
     </div>
 
     <a id='call_but' style='position:fixed; bottom:60px; left:80px; height:100px; width:210px; z-index:252;  '
@@ -144,56 +160,57 @@
 
 
     <a href='Javascript: setme();' style='position:fixed; top:60px; right:5px; margin:5px; z-index:252; '>
-        <img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
+      <img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
     <!--<a href='Javascript: show_settings();' style='position:fixed; top:55px; right:5px; margin:5px; z-index:252;' ><img src='settings.png'></a>-->
 
 
     <div id="bottom_menu"
          style=' width:100%; position:fixed; bottom:0px; left:0px; height:90px; z-index:251; background-color:#3f3f3f; filter: alpha(opacity=90);	-moz-opacity: 0.9; -khtml-opacity: 0.9;  opacity: 0.9;   '>
-        <img src='resources/phone.png'>
-        <div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
+      <img src='resources/phone.png'>
+      <div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
 
-        <div id='certilebi' name='certilebi'
-             style=' position:fixed; bottom:0px; left:0px; width:100%; background-color:#ffce00;'>
-            <table width=100%>
-                <!--<tr>-->
-                <!--<td>დაწყება:</td>-->
-                <!--<td>-->
-                <!--<input type='radio' name='startp' id='startp_1' onchange='change_start();' checked> მიმდინარე-->
-                <!--ლოკაცია &nbsp;&nbsp;-->
-                <!--<input type='radio' name='startp' id='startp_2' onchange='change_start();'> მითითება რუკაზე-->
-                <!--</td>-->
-                <!--</tr>-->
-                <tr>
-                    <td>დასრულება:</td>
-                    <td>
-                        <button class='btn' id="switchButton" onclick="switchState()">თავიდან არჩევა</button>
-                    </td>
-                </tr>
+      <div id='certilebi' name='certilebi'
+           style=' position:fixed; bottom:0px; left:0px; width:100%; background-color:#ffce00;'>
+        <table width=100%>
+          <!--<tr>-->
+          <!--<td>დაწყება:</td>-->
+          <!--<td>-->
+          <!--<input type='radio' name='startp' id='startp_1' onchange='change_start();' checked> მიმდინარე-->
+          <!--ლოკაცია &nbsp;&nbsp;-->
+          <!--<input type='radio' name='startp' id='startp_2' onchange='change_start();'> მითითება რუკაზე-->
+          <!--</td>-->
+          <!--</tr>-->
+          <tr>
+            <td>დასრულება:</td>
+            <td>
+              <button class='btn' id="switchButton" onclick="switchState()">თავიდან არჩევა</button>
+            </td>
+          </tr>
 
-            </table>
+        </table>
 
 
-        </div>
+      </div>
     </div>
 
-</div>
+  </div>
 
-<div style='position:fixed; left:0px; top:0px; display:none; z-index:10000; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
-     id='nogps'>
+  <div style='position:fixed; left:0px; top:0px; display:none; z-index:10000; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
+       id='nogps'>
     <Br><Br><Br>
     <Center>ვერ ხერხდება GPS ლოკაცის მიღება</center>
-</div>
+  </div>
 
 
-<div style='position:fixed; left:0px; top:0px; display:none; z-index:10001; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
-     id='myint'>
+  <div style='position:fixed; left:0px; top:0px; display:none; z-index:10001; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
+       id='myint'>
     <Br><Br><Br>
     <Center>ჩართეთ ინტერნეტ კავშირი</center>
-</div>
+  </div>
 
 
-<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:355px;'>
+  <div id='settings_sheet'
+       style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:355px;'>
     <br>
     <div id='mydiv'></div>
     <br>
@@ -203,43 +220,43 @@
     <div id='erorebi' style='display:none;'>Tilebi (zoom:16)</div>
 
     <center>
-        <b>პროფილი</b>
-        <div id='login_page' style='width:355px; '>
-            <table>
-                <tr>
-                    <td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
-                    <td><input type='text' id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა"
-                               size=16></td>
-                </tr>
-                <tr>
-                    <td style='font-size:12px;'>პაროლი:</td>
-                    <td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
-                    </td>
-                    <td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png'
-                                                                                  width=20px></a>
-                    </td>
-                </tr>
-            </table>
-            <Br><br>
-            <a href='#' onclick="window.open('http://developer.design.ge/prius/reg.php', '_system');"
-               style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
-        </div>
+      <b>პროფილი</b>
+      <div id='login_page' style='width:355px; '>
+        <table>
+          <tr>
+            <td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
+            <td><input type='text' id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა"
+                       size=16></td>
+          </tr>
+          <tr>
+            <td style='font-size:12px;'>პაროლი:</td>
+            <td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
+            </td>
+            <td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png'
+                                                                          width=20px></a>
+            </td>
+          </tr>
+        </table>
+        <Br><br>
+        <a href='#' onclick="window.open('http://developer.design.ge/prius/reg.php', '_system');"
+           style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
+      </div>
 
-        <div id='loggedin_page' style='width:355px;'>
-            <div id='loggedin_info'></div>
-            <a href='Javascript: logout();'
-               style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
-        </div>
-        <br>
+      <div id='loggedin_page' style='width:355px;'>
+        <div id='loggedin_info'></div>
+        <a href='Javascript: logout();'
+           style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
+      </div>
+      <br>
 
 
-        <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
-                <input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
-        <a href='Javascript: show_map();'
-           style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან
-            დაბრუნება</a></center>
+      <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
+              <input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
+      <a href='Javascript: show_map();'
+         style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან
+        დაბრუნება</a></center>
     </center>
-</div>
+  </div>
 </div>
 
 <script src="js/ui.js"></script>
