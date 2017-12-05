@@ -10,6 +10,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Prius Taxi</title>
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.js"></script>
@@ -69,26 +70,22 @@
 
   <div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;'>
     <div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
-      <div class="modal-body">
-        <div class="pac-card" id="pac-card">
-          <div>
-            <div id="title">
-              მისამართის ძებნა
-              <span class="close">&times;</span>
-
-            </div>
-
-
-            <div id="pac-container">
-              <input id="pac-input" type="text" placeholder="შეიყვანეთ მისამართი">
-            </div>
-
+      <div class="pac-card" id="pac-card">
+        <div>
+          <div id="title">
+            მისამართის ძებნა
           </div>
-        </div>
-        <div id="gmap"
-             style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
 
+
+          <div id="pac-container">
+            <input id="pac-input" type="text" placeholder="შეიყვანეთ მისამართი">
+          </div>
+
+        </div>
       </div>
+      <div id="gmap"
+           style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
+
     </div>
     <!--key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ-->
     <!--key=AIzaSyAMaeW61XOXEKHCrzM6J5nulpyZpeeTb4k-->
