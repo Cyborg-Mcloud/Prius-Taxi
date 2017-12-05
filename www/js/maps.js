@@ -30,8 +30,10 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('gmap'), {
         zoom: 18,
         center: position,
-        zIndex: 70
-
+        zIndex: 70,
+        fullscreenControl: false,
+        streetViewControl: false,
+        mapTypeControl: false,
     });
 
     geocoder = new google.maps.Geocoder();

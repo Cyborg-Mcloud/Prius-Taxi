@@ -328,9 +328,9 @@ function isValidInput(input1) {
 
 function call_taxi() {
     function onPrompt(result) {
-
         if (result.buttonIndex === 0) {
             if (isValidInput(result.input1)) {
+
                 mytel = result.input1;
                 WriteData();
             } else {
@@ -338,20 +338,32 @@ function call_taxi() {
                     undefined, 'არასწორი ტელეფონის ნომერი')
             }
         }
-
     }
 
     if (mytel === "" || mytel.length < 6) {
 
         // mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
         // WriteData();
-        navigator.notification.prompt(
-            'რა ნომერზე დაგიკავშირდეთ?',  // message
-            onPrompt,                  // callback to invoke
-            'ტელეფონის ნომერი',            // title
-            ['დადასტურება', 'გაუქმება'],             // buttonLabels
-            mytel === undefined ? '5' : mytel                 // defaultText
-        );
+        try {
+            navigator.notification.prompt(
+                'რა ნომერზე დაგიკავშირდეთ?',  // message
+                onPrompt,                  // callback to invoke
+                'ტელეფონის ნომერი',            // title
+                ['დადასტურება', 'გაუქმება'],             // buttonLabels
+                mytel === undefined ? '5' : mytel                 // defaultText
+            );
+        } catch (E) {
+            var num = prompt('რა ნომერზე დაგიკავშირდეთ?');
+            var result = {};
+            console.log(num)
+            if (num !== null) {
+                result['buttonIndex'] = 0;
+                result['input1'] = num;
+            } else {
+                result.buttonIndex = 1;
+            }
+            onPrompt(result)
+        }
     }
 
     if ((mytel !== "" && mytel != null) || mytel.length >= 6) {
