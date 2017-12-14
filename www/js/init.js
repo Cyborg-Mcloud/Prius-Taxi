@@ -460,7 +460,8 @@ function onSuccess(position) {
 
     positionMarker.setPosition(pos);
     positionMarker.setMap(map);
-    infoWindow.setContent(getInfoContent('positionMarker'));
+    // infoWindow.setContent(getInfoContent('positionMarker'));
+    geocodeLocation(pos, infoWindow, 'positionMarker', 'startMarker');
     infoWindow.open(map);
     map.setCenter(pos);
 
