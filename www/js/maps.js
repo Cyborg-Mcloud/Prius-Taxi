@@ -72,7 +72,8 @@ function initMap() {
         url: "resources/images/Clustericon.svg", // url
         scaledSize: new google.maps.Size(50, 50), // size
         origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(25, 25) // anchor
+        anchor: new google.maps.Point(49, 49) // anchor
+
 
     };
     startMarker = new google.maps.Marker({
