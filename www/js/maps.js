@@ -70,9 +70,9 @@ function initMap() {
     };
     var gpsIcon = {
         url: "resources/images/Clustericon.svg", // url
-        scaledSize: new google.maps.Size(30, 30), // size
+        scaledSize: new google.maps.Size(40, 40), // size
         origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(29, 29) // anchor
+        anchor: new google.maps.Point(39, 39) // anchor
 
 
     };
