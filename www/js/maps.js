@@ -70,9 +70,9 @@ function initMap() {
     };
     var gpsIcon = {
         url: "resources/images/Clustericon.svg", // url
-        scaledSize: new google.maps.Size(40, 40), // size
+        scaledSize: new google.maps.Size(30, 30), // size
         origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(39, 39) // anchor
+        anchor: new google.maps.Point(29, 29) // anchor
 
 
     };
@@ -83,7 +83,12 @@ function initMap() {
     endMarker = new google.maps.Marker({
         icon: END_ICON, map: map
     });
-    positionMarker = new google.maps.Marker({position: position, map: map, icon: gpsIcon});
+    positionMarker = new google.maps.Marker({
+        position: position,
+        map: map,
+        icon: gpsIcon,
+        optimized: false
+    });
     infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
     startPosListener = map.addListener('click', function (e) {
