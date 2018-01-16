@@ -121,8 +121,11 @@ function onDeviceReady() {
 //    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
         console.log('succ')
 
+
+		// es ari accurasy settingi fine location-ze da mere authorizacis motxovna da tu gps gamortulia an auth ar aqvs dialogs agdebs
 		req_loc_acc();
 		req_loc_auth();
+		// -------------------------------------
 
         console.log("device ready, checking connection");
         checkConnection();
@@ -150,7 +153,7 @@ function onDeviceReady() {
             });
         }, {enableHighAccuracy: true, maximumAge: 0});
         var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
-		watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
+//		watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 
         document.addEventListener("resume", onResume, false);
 
@@ -436,7 +439,7 @@ function onResume() {
         checkConnection();
 
         var opts = {timeout: 30000, enableHighAccuracy: true};
-        watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
+//        watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 
         Start();
     }
@@ -511,6 +514,19 @@ function getpos() {
 function onRequestSuccess( success)
 	{
     console.log("Successfully requested accuracy "+success.message);
+	navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
+		console.log(e);
+		return onSuccess({
+			coords: {
+				latitude: 41.7151,
+				longitude: 44.8271,
+				altitude: 0,
+				heading: 0,
+				speed: 0,
+				accuracy: 1
+			}
+		});
+	}, {enableHighAccuracy: true, maximumAge: 0});
     }
 
 function onRequestFailure(error)
@@ -530,28 +546,31 @@ function req_loc_auth()
 	{
 	console.log("requesting auth");
 	cordova.plugins.diagnostic.isLocationAuthorized(function (authorized) {
-            if(!authorized)
-				{
+		if(!authorized)
+			{
 
-                cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {console.log("Requested location authorization: authorization was " + status);}, onError, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
-				}
-			else
-				{
-                onError("App is already authorized to use location");
-	            }
+			cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {
+				console.log("Requested location authorization: authorization was " + status);
+				  navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
+					console.log(e);
+					return onSuccess({
+						coords: {
+							latitude: 41.7151,
+							longitude: 44.8271,
+							altitude: 0,
+							heading: 0,
+							speed: 0,
+							accuracy: 1
+						}
+					});
+				}, {enableHighAccuracy: true, maximumAge: 0});
+			}, onError, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
+			}
+		else
+			{
+			onError("App is already authorized to use location");
+			}
 		}, onError);
-	}
-
-
-function checkState()
-	{
-    console.log("Checking location state...");
-
-    function evaluateMode(mode)
-		{
-        document.getElementById("curlocmode").innerHTML=mode; 
-	    }
-    cordova.plugins.diagnostic.getLocationMode(evaluateMode, onError);
 	}
 
 
