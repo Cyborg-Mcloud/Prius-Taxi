@@ -518,6 +518,7 @@ function onRequestSuccess( success)
 	var b=k.split("agreed");
 	if (b.length>1)
 		{
+		// aplikaciis restarti tu motxovna gaxda sachiro da userma ok utxra
 		location.reload();
 		}
 	
