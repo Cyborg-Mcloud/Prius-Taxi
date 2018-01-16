@@ -117,9 +117,12 @@ var watchID = null;
 
 // ----------------------------------------------------------------
 function onDeviceReady() {
-    var permissions = cordova.plugins.permissions;
-    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
+//    var permissions = cordova.plugins.permissions;
+//    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
         console.log('succ')
+
+		req_loc_acc();
+		req_loc_auth();
 
         console.log("device ready, checking connection");
         checkConnection();
@@ -147,13 +150,13 @@ function onDeviceReady() {
             });
         }, {enableHighAccuracy: true, maximumAge: 0});
         var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
-        // watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+		watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 
         document.addEventListener("resume", onResume, false);
 
-    }, function () {
-        console.log('looL')
-    });
+  //  }, function () {
+  //      console.log('looL')
+   // });
 
 
     // qveda amosagebia
@@ -433,7 +436,7 @@ function onResume() {
         checkConnection();
 
         var opts = {timeout: 30000, enableHighAccuracy: true};
-        watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 
         Start();
     }
@@ -504,27 +507,55 @@ function getpos() {
 }
 
 
-function onWatchSuccess(position) {
 
-    // console.log("on watch success");
-
-    MyLat = position.coords.latitude;
-    MyLong = position.coords.longitude;
-    MyAlt = position.coords.altitude;
-    MyHead = position.coords.heading;
-    MySpeed = position.coords.speed;
-    MyAcc = position.coords.accuracy;
-    if (inpause == 0) {
-        var element = document.getElementById('geopos');
-        element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
-            'Longitude: ' + position.coords.longitude + '<br />';
-//							'Altitude: '           + position.coords.altitude              + '<br />' +
-//							'Accuracy: '           + position.coords.accuracy              + '<br />' +
-//							'Heading: '            + position.coords.heading               + '<br />' +
-//							'Speed: '              + position.coords.speed                 + '<br />';
-
-        setmypos();
-        //	document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";
-
+function onRequestSuccess( success)
+	{
+    console.log("Successfully requested accuracy "+success.message);
     }
-}
+
+function onRequestFailure(error)
+	{
+    console.log("Accuracy request failed: error code="+error.code+"; error message="+error.message);
+	}
+
+function req_loc_acc()
+	{
+	var accuracy = 3;
+	var accuracyName  = "High Accuracy";
+	console.log("requesting acc");
+	cordova.plugins.locationAccuracy.request(onRequestSuccess, onRequestFailure, cordova.plugins.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY);
+	}
+
+function req_loc_auth()
+	{
+	console.log("requesting auth");
+	cordova.plugins.diagnostic.isLocationAuthorized(function (authorized) {
+            if(!authorized)
+				{
+
+                cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {console.log("Requested location authorization: authorization was " + status);}, onError, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
+				}
+			else
+				{
+                onError("App is already authorized to use location");
+	            }
+		}, onError);
+	}
+
+
+function checkState()
+	{
+    console.log("Checking location state...");
+
+    function evaluateMode(mode)
+		{
+        document.getElementById("curlocmode").innerHTML=mode; 
+	    }
+    cordova.plugins.diagnostic.getLocationMode(evaluateMode, onError);
+	}
+
+
+function open_loc_settings()
+	{
+	cordova.plugins.diagnostic.switchToLocationSettings();
+	}
