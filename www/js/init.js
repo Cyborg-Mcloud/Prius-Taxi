@@ -510,10 +510,16 @@ function getpos() {
 }
 
 
-
+var restartme=0;
 function onRequestSuccess( success)
 	{
     console.log("Successfully requested accuracy "+success.message);
+	var k=success.message;
+	var b=k.split("agreed");
+	if (b.length>1)
+		{
+		location.reload();
+		}
 	navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
 		console.log(e);
 		return onSuccess({
