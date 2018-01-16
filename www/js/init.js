@@ -510,7 +510,7 @@ function getpos() {
 }
 
 
-var restartme=0;
+
 function onRequestSuccess( success)
 	{
     console.log("Successfully requested accuracy "+success.message);
@@ -520,19 +520,7 @@ function onRequestSuccess( success)
 		{
 		location.reload();
 		}
-	navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
-		console.log(e);
-		return onSuccess({
-			coords: {
-				latitude: 41.7151,
-				longitude: 44.8271,
-				altitude: 0,
-				heading: 0,
-				speed: 0,
-				accuracy: 1
-			}
-		});
-	}, {enableHighAccuracy: true, maximumAge: 0});
+	
     }
 
 function onRequestFailure(error)
@@ -557,20 +545,8 @@ function req_loc_auth()
 
 			cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {
 				console.log("Requested location authorization: authorization was " + status);
-				  navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
-					console.log(e);
-					return onSuccess({
-						coords: {
-							latitude: 41.7151,
-							longitude: 44.8271,
-							altitude: 0,
-							heading: 0,
-							speed: 0,
-							accuracy: 1
-						}
-					});
-				}, {enableHighAccuracy: true, maximumAge: 0});
-			}, onError, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
+				 
+				}, onError, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
 			}
 		else
 			{
