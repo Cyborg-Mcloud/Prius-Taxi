@@ -327,46 +327,16 @@ function isValidInput(input1) {
 }
 
 function call_taxi() {
-    function onPrompt(result) {
-        if (result.buttonIndex === 0) {
-            if (isValidInput(result.input1)) {
+   
+    if (mytel == "" || mytel.length < 6) 
+		{
 
-                mytel = result.input1;
-                WriteData();
-            } else {
-                navigator.notification.alert('გთხოვთ სწორად შეიყვანოთ ტელეფონის ნომერი\n(5XX-XXX-XXX)',
-                    undefined, 'არასწორი ტელეფონის ნომერი')
-            }
-        }
+         mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
+         WriteData();
+      
     }
 
-    if (mytel == "" || mytel.length < 6) {
-
-        // mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
-        // WriteData();
-        try {
-            navigator.notification.prompt(
-                'რა ნომერზე დაგიკავშირდეთ?',  // message
-                onPrompt,                  // callback to invoke
-                'ტელეფონის ნომერი',            // title
-                ['დადასტურება', 'გაუქმება'],             // buttonLabels
-                mytel === undefined ? '5' : mytel                 // defaultText
-            );
-        } catch (E) {
-            var num = prompt('რა ნომერზე დაგიკავშირდეთ?');
-            var result = {};
-            console.log(num)
-            if (num !== null) {
-                result['buttonIndex'] = 0;
-                result['input1'] = num;
-            } else {
-                result.buttonIndex = 1;
-            }
-            onPrompt(result)
-        }
-    }
-
-    if ((mytel !== "" && mytel != null) || mytel.length >= 6) 
+    if ((mytel != "" && mytel != null) && mytel.length >= 6) 
 		{
 		var start_lat = startMarker.getPosition().lat();
 		var start_lng = startMarker.getPosition().lng();
