@@ -167,7 +167,7 @@ function geocodeOnClick(e, target)
 		geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker', target);
 	    infoWindow.open(map, startMarker);
 		}
-	else if (state==)
+	else if (state==2)
 		{
 		endMarker.setPosition(e.latLng);
 		endMarker.setMap(map);	
