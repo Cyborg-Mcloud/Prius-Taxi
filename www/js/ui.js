@@ -340,7 +340,7 @@ function call_taxi() {
         }
     }
 
-    if (mytel === "" || mytel.length < 6) {
+    if (mytel == "" || mytel.length < 6) {
 
         // mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
         // WriteData();

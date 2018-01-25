@@ -23,6 +23,7 @@ function WriteData() {
     setCookie_e(COOKIE_NAMES.lng, wlon);
     setCookie_e(COOKIE_NAMES.id, myloginid);
     setCookie_e(COOKIE_NAMES.tel, mytel);
+	console.log("writing: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel);
     // window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite, fail);
 }
 
@@ -35,5 +36,5 @@ function ReadData() {
     wlon = getCookie(COOKIE_NAMES.lng);
     myloginid = getCookie(COOKIE_NAMES.id);
     mytel = getCookie(COOKIE_NAMES.tel);
-
+	console.log("reading: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel);
 }
