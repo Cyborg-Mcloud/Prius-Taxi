@@ -114,6 +114,7 @@ var watchID = null;
 // powermanagement -ის ფუნქციები
 //window.powermanagement.acquire();
 //window.powermanagement.release();
+var gps_start=0;
 
 // ----------------------------------------------------------------
 function onDeviceReady() {
@@ -223,6 +224,7 @@ function MainProg() {
             wlon = MyLong;
             wlat = MyLat;
             setmypos();
+			 map.panTo(myLatLng);
         }
     }
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
@@ -459,17 +461,14 @@ function onResume() {
 
 
 function onSuccess(position) {
-    var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-    };
-
-    positionMarker.setPosition(pos);
-    positionMarker.setMap(map);
+   
+	
+	
+    
     // infoWindow.setContent(getInfoContent('positionMarker'));
-    geocodeLocation(pos, infoWindow, 'positionMarker', 'startMarker');
-    infoWindow.open(map);
-    map.setCenter(pos);
+ 
+
+	
 
     nogps = 0;
 	console.log("GPS on success");
@@ -486,9 +485,33 @@ function onSuccess(position) {
     wlat = MyLat;
 	console.log("on succ, sett long: "+MyLat+ " - " +MyLong);
 
-    if (started == 0) {
+var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+
+    positionMarker.setPosition(pos);
+
+	if (gps_start==0)
+		{
+		// gps-is pirveli gashveba
+		positionMarker.setMap(map);
+
+		gps_start=1;
+		startMarker.setPosition(pos);
+		startMarker.setMap(map);
+
+		geocodeLocation(pos, infoWindow, 'startMarker');
+		infoWindow.open(map, startMarker);
+	    
+		map.setCenter(pos);
+		}
+
+    // programis dastartva
+	if (started == 0) 
+		{
         Start();
-    }
+	    }
 
     setmypos();
 //	document.getElementById('geopos_short').innerHTML="<table width=100% cellspacing=0><tr><td>Accuracy: "+MyAcc+"</td><td>Altitude: "+MyAlt+"</td></tr></table>";

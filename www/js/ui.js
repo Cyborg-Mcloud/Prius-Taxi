@@ -297,8 +297,8 @@ function setmypos() {
 
     var myLatLng = {lat: MyLat, lng: MyLong};
     positionMarker.setPosition(myLatLng);
-    map.panTo(myLatLng);
-    console.log("move marker");
+   
+    console.log("move main marker");
 }
 
 function check_user_click() {
