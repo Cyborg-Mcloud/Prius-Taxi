@@ -98,6 +98,11 @@ function initMap()
         geocodeOnClick(e);
        // infoWindow.open(map, tempMarker);
     });
+
+	positionMarker.addListener('click', function () {
+      //  map.setOptions({zoom: map.zoom + 2, center: position});
+	   geocodeOnClick(e);
+    });
     setState(0);
 
     var card = document.getElementById('pac-card');
@@ -184,6 +189,11 @@ function setState(newState)
 
     state = newState;
     document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
+	if (state==0)
+		{
+		directionsDisplay.setMap(null);
+		endMarker.setMap(null);
+		}
 	if (state==2)
 		{
 		calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
