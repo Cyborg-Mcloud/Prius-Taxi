@@ -1,5 +1,4 @@
-var MyLat;
-var MyLong;
+
 var infoWindow, tempMarker, geocoder;
 var dirService, dirRender;
 var startMarker, endMarker, positionMarker;
@@ -25,8 +24,6 @@ function geocodeLocation(position, infoWindow, markerName) {
 function initMap() 
 	{
 
-    MyLat = 41.718287;
-    MyLong = 44.778728;
 
     var position = {lat: MyLat, lng: MyLong};
 

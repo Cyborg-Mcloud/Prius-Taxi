@@ -8,6 +8,7 @@ var myid = 0;
 var map;
 
 var nogps = 0;
+
 var wlon = 44.7814581;
 var wlat = 41.7102118;
 var MyUser = "nouser";
@@ -16,8 +17,8 @@ var MyZoom = 17;
 var mytel = "";
 
 
-var MyLat;
-var MyLong;
+var MyLat = 41.718287;
+var MyLong = 44.778728;
 var MyAlt;
 var MyHead;
 var MySpeed;
