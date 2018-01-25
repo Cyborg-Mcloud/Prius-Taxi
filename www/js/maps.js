@@ -160,14 +160,14 @@ function initMap()
 function geocodeOnClick(e, target) 
 	{
     // infoWindow.close();
-	if (state==1)
+	if (state==0)
 		{
 		startMarker.setPosition(e.latLng);
 		startMarker.setMap(map);
 		geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker', target);
 	    infoWindow.open(map, startMarker);
 		}
-	else if (state==2)
+	else if (state==1)
 		{
 		endMarker.setPosition(e.latLng);
 		endMarker.setMap(map);	
@@ -190,7 +190,7 @@ const SWITCH_TEXTS = ['დანიშნულების არჩევა',
 
 function setState(newState)
 	{
-	chooseLocation(curstate);
+	chooseLocation(state);
 
     state = newState;
     document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
@@ -235,7 +235,7 @@ function setLocation(marker, target) {
 
 function chooseLocation(curstate) 
 	{
-	if (curstate==1)
+	if (curstate==0)
 		{
 
 		}
