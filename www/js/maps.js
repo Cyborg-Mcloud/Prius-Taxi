@@ -21,7 +21,8 @@ function geocodeLocation(position, infoWindow, markerName, targetMarkerName) {
     });
 }
 
-function initMap() {
+function initMap() 
+	{
 
     MyLat = 41.718287;
     MyLong = 44.778728;
@@ -106,9 +107,6 @@ function initMap() {
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
     var autocomplete = new google.maps.places.Autocomplete(input);
 
-    // Bind the map's bounds (viewport) property to the autocomplete object,
-    // so that the autocomplete requests use the current map bounds for the
-    // bounds option in the request.
     autocomplete.bindTo('bounds', map);
     autocomplete.addListener('place_changed', function () {
         // infoWindow.close();
@@ -159,24 +157,41 @@ function initMap() {
 
 }
 
-function geocodeOnClick(e, target) {
+function geocodeOnClick(e, target) 
+	{
     // infoWindow.close();
-    tempMarker.setPosition(e.latLng);
-    tempMarker.setMap(map);
-    geocodeLocation(tempMarker.getPosition(), infoWindow, 'tempMarker', target);
-    infoWindow.open(map, tempMarker);
-}
+	if (state==1)
+		{
+		startMarker.setPosition(e.latLng);
+		startMarker.setMap(map);
+		geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker', target);
+	    infoWindow.open(map, startMarker);
+		}
+	else if (state==)
+		{
+		endMarker.setPosition(e.latLng);
+		endMarker.setMap(map);	
+		geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker', target);
+	    infoWindow.open(map, endMarker);
+		}
+    //tempMarker.setPosition(e.latLng);
+    //tempMarker.setMap(map);
+    
+	}
 
 function getInfoContent(markerName, targetMarkerName, address) {
 
-    return "<div style='text-align: center; color:black'><div>" + address + "</div><br>" +
-        "<button class='btn'onclick='chooseLocation(" + markerName + "," + targetMarkerName + ")'>არჩევა</button></div>";
+    return "<div style='text-align: center; color:black'><div>" + address + "</div><br>";
+//        "<button class='btn'onclick='chooseLocation(" + markerName + "," + targetMarkerName + ")'>არჩევა</button></div>";
 }
 
 var state = 0;
 const SWITCH_TEXTS = ['დანიშნულების არჩევა', 'დასაწყისის არჩევა', 'თავიდან არჩევა'];
 
-function setState(newState) {
+function setState(newState)
+	{
+	chooseLocation(curstate);
+
     state = newState;
     document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
     google.maps.event.removeListener(startPosListener);
@@ -218,18 +233,13 @@ function setLocation(marker, target) {
     }
 }
 
-function chooseLocation(marker, target) {
-    try {
-        navigator.notification.confirm('დარწმუნებული ხართ, რომ გსურთ ამ ლოკაციის არჩევა?',
-            function (choice) {
-                if (choice === 1) setLocation(marker, target);
-            }, 'დადასტურება', ['დიახ', 'არა'])
-    } catch (e) {
-        if (confirm(
-                'დარწმუნებული ხართ, რომ გსურთ ამ ლოკაციის არჩევა?'
-            )) setLocation(marker, target);
-    }
-}
+function chooseLocation(curstate) 
+	{
+	if (curstate==1)
+		{
+
+		}
+	}
 
 function getPosition(loc) {
     return {

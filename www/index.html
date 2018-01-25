@@ -44,8 +44,7 @@
 
 <div id='fanjara' style='position:relative; overflow:hidden; width:400px; height:600px;'>
   <div style="width: 100%; position:fixed; top:45px;z-index:272; text-align: center;">
-        <span id='topMessage' style="color:black;  margin:5px; ">
-            აირჩიეთ საწყისი ლოკაცია</span>
+        <span id='topMessage' style="color:black;  margin:5px; ">აირჩიეთ საწყისი ლოკაცია</span>
   </div>
   <div style='position:fixed; left:0px; top:0px; width:100%; height:50px; background-color:white; z-index:211; '>
     <a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img
@@ -61,6 +60,7 @@
 
 
   <script src="js/maps.js"></script>
+
   <style>
 
     td {
@@ -72,12 +72,10 @@
     <div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
       <div class="pac-card" id="pac-card">
         <div>
-          <div id="title">
-            მისამართის ძებნა
-          </div>
+        
 
           <div id="pac-container">
-            <input id="pac-input" type="text" placeholder="შეიყვანეთ მისამართი">
+            <input id="pac-input" type="text" placeholder="მისამართის ძებნა">
           </div>
 
         </div>
@@ -91,8 +89,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ&callback=initMap&language=ka&libraries=places"></script>
 
-    <div id='arrived_screen'
-         style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
+    <div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
 
       <br><br><br><br><br><br><br><br><br><br><br>
       <center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();'
@@ -138,7 +135,7 @@
         -moz-opacity: 0.5; -khtml-opacity: 0.5;  opacity: 0.5;'>Finding geolocation...</div>-->
 
 
-    <div id='chat_div' style='position:fixed; right:10px; bottom:50px; z-index:254;  '>
+   <!-- <div id='chat_div' style='position:fixed; right:10px; bottom:50px; z-index:254;  '>
       <a href='Javascript: chat_click();' style='position:absolute; top:-25px; right:0px;'><img
               src='resources/chat.svg'
               style='width:50px; height:50px;'></a>
@@ -147,11 +144,11 @@
              style='width:99%; border:1px solid gray; height:150px; overflow:auto; background-color:white; color:#e3b202; border-radius:5px;'></div>
         <input type='text' size=30 id='chat_send_text' style='z-index:305; text-size:16px;'
                onkeyup='chat_key(event);'>
-        <!--<input type='button' value='send' onclick='chat_send();' style='z-index:305;'>-->
+        <!--<input type='button' value='send' onclick='chat_send();' style='z-index:305;'>
       </div>
-    </div>
+    </div>-->
 
-    <a id='call_but' style='position:fixed; bottom:60px; left:80px; height:100px; width:210px; z-index:252;  '
+    <a id='call_but' style='position:fixed; bottom:40px; left:80px; height:100px; width:210px; z-index:252;  '
        href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>
 
 
