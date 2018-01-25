@@ -472,15 +472,9 @@ function onSuccess(position) {
     map.setCenter(pos);
 
     nogps = 0;
-    // console.log("GPS on success");
+	console.log("GPS on success");
     document.getElementById("GPS_search_screen").style.display = "none";
-//	var element = document.getElementById('geopos');
-//	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-//                            'Longitude: '          + position.coords.longitude             + '<br />';
-    //'Altitude: '           + position.coords.altitude              + '<br />' +
-    //'Accuracy: '           + position.coords.accuracy              + '<br />' +
-    //'Heading: '            + position.coords.heading               + '<br />' +
-    //'Speed: '              + position.coords.speed                 + '<br />';
+
     MyLat = position.coords.latitude;
     MyLong = position.coords.longitude;
     MyAlt = position.coords.altitude;
@@ -490,7 +484,7 @@ function onSuccess(position) {
 
     wlon = MyLong;
     wlat = MyLat;
-    // console.log("on succ, sett long");
+	console.log("on succ, sett long: "+MyLat+ " - " +MyLong);
 
     if (started == 0) {
         Start();

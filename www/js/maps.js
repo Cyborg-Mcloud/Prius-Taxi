@@ -3,14 +3,14 @@ var MyLong;
 var infoWindow, tempMarker, geocoder;
 var dirService, dirRender;
 var startMarker, endMarker, positionMarker;
-var startPosListener, endPosListener;
+var startPosListener, endPosListener, selPosListener;
 
 function geocodeLocation(position, infoWindow, markerName, targetMarkerName) {
-    console.log("ff")
+    console.log("geocodeLocation")
     geocoder.geocode({
         latLng: position
     }, function (responses) {
-        console.log(markerName + " " + targetMarkerName)
+        console.log("geocodeLocation: "+ markerName + " " + targetMarkerName)
         if (responses && responses.length > 0) {
             console.log(responses[0].formatted_address)
             infoWindow.setContent(getInfoContent(markerName, targetMarkerName, responses[0].formatted_address));
@@ -92,9 +92,10 @@ function initMap()
     });
     infoWindow = new google.maps.InfoWindow({content: getInfoContent('')});
     tempMarker = new google.maps.Marker();
-    startPosListener = map.addListener('click', function (e) {
-        geocodeOnClick(e, 'startMarker');
-        infoWindow.open(map, tempMarker);
+
+    selPosListener = map.addListener('click', function (e) {
+        geocodeOnClick(e);
+       // infoWindow.open(map, tempMarker);
     });
     setState(0);
 
@@ -157,7 +158,7 @@ function initMap()
 
 }
 
-function geocodeOnClick(e, target) 
+function geocodeOnClick(e) 
 	{
     // infoWindow.close();
 	if (state==0)
@@ -173,46 +174,28 @@ function geocodeOnClick(e, target)
 		endMarker.setMap(map);	
 		geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker', target);
 	    infoWindow.open(map, endMarker);
-		}
-    //tempMarker.setPosition(e.latLng);
-    //tempMarker.setMap(map);
-    
+		}    
 	}
 
-function getInfoContent(markerName, targetMarkerName, address) {
-
+function getInfoContent(markerName, targetMarkerName, address) 
+	{
     return "<div style='text-align: center; color:black'><div>" + address + "</div><br>";
-//        "<button class='btn'onclick='chooseLocation(" + markerName + "," + targetMarkerName + ")'>არჩევა</button></div>";
-}
+	}
 
 var state = 0;
-const SWITCH_TEXTS = ['დანიშნულების არჩევა', 'დასაწყისის არჩევა', 'თავიდან არჩევა'];
+const SWITCH_TEXTS = ['დასაწყისის არჩევა', 'დანიშნულების არჩევა', 'თავიდან არჩევა'];
 
 function setState(newState)
 	{
-	chooseLocation(state);
+	//chooseLocation(state);
 
     state = newState;
     document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
-    google.maps.event.removeListener(startPosListener);
-    google.maps.event.removeListener(endPosListener);
-    switch (state) {
-        case 0:
-            startPosListener = map.addListener('click', function (e) {
-                console.log('staart')
-                geocodeOnClick(e, 'startMarker')
-            });
-            break;
-        case 1:
-            endPosListener = map.addListener('click', function (e) {
-                geocodeOnClick(e, 'endMarker')
-            });
-            break;
-        case 2:
-            calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
-            break;
-    }
-}
+	if (state==2)
+		{
+		calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
+		}
+	}
 
 function switchState() {
     if (state === 1 && (startMarker.getPosition() === undefined || endMarker.getPosition() === undefined)) {
@@ -285,8 +268,9 @@ function addMarker(marker, map, position) {
     map.fitBounds(bounds);
 }
 
-function addAndGetMarker(map, position, bounds, label, icon) {
-    console.log(position);
+function addAndGetMarker(map, position, bounds, label, icon) 
+	{
+    console.log("addAndGetMarker: "+position);
     bounds.extend(position);
     var marker = new google.maps.Marker({
         position: {lat: position['lat'], lng: position['lng']},
@@ -294,7 +278,7 @@ function addAndGetMarker(map, position, bounds, label, icon) {
     });
     if (label !== undefined) marker.setLabel(label);
     if (icon !== undefined) marker.setIcon(icon);
-    console.log(marker.position);
+    console.log("addAndGetMarker: "+marker.position);
     marker.addListener('click', function () {
         map.setOptions({zoom: map.zoom + 2, center: position});
     });
