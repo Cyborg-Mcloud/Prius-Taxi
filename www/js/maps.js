@@ -188,7 +188,7 @@ function setState(newState)
     document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
 	if (state==0)
 		{
-		directionsDisplay.setMap(null);
+		dirRender.setMap(null);
 		endMarker.setMap(null);
 		}
 	if (state==2)

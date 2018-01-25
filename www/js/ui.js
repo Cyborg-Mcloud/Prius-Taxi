@@ -366,12 +366,23 @@ function call_taxi() {
         }
     }
 
-    if ((mytel !== "" && mytel != null) || mytel.length >= 6) {
+    if ((mytel !== "" && mytel != null) || mytel.length >= 6) 
+		{
+		var start_lat = startMarker.getPosition().lat();
+		var start_lng = startMarker.getPosition().lng();
+		var end_lat = 0;
+		var end_lng = 0;
+	
+		if (state==2)
+			{
+			end_lat=endMarker.getPosition().lat();
+			end_lng=endMarker.getPosition().lng();
+			}
         if (MyUser !== "nouser" && MyUser !== "") {
-            url = "http://developer.design.ge/geotaxi/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid + "&tel=" + mytel;
+            url = "http://developer.design.ge/geotaxi/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         else {
-            url = "http://developer.design.ge/geotaxi/call.php?lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid + "&tel=" + mytel;
+            url = "http://developer.design.ge/geotaxi/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         callingtaxi = 1;
         console.log("taxi call: " + url);
