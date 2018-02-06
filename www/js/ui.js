@@ -48,12 +48,16 @@ function change_status(newstat) {
             document.getElementById("info_text").innerHTML = "მიმდინარეობს ტაქსის ძიება";
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
+            document.getElementById("certilebi").style.display = "none";
+
+			
         }
         else if (newstat == 2) {
             document.getElementById("taxi_search_screen").style.display = "none";
             uplimit = 1;
             document.getElementById("call_but").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი მოდის";
+            document.getElementById("certilebi").style.display = "none";
             myself = 1;
         }
         else if (newstat == 3) {
@@ -62,6 +66,8 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "inline";
             document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
+            document.getElementById("certilebi").style.display = "none";
+
             myself = 1;
         }
         else if (newstat == 4) {
@@ -70,7 +76,7 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი გელოდებათ, ბორტი: " + taxiname;
-
+            document.getElementById("certilebi").style.display = "none";
             myself = 1;
         }
         else if (newstat == 5) {
@@ -79,6 +85,8 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
             document.getElementById("info_text").innerHTML = "თქვენ მოძრაობთ";
+            document.getElementById("certilebi").style.display = "none";
+
             myself = 1;
         }
 
@@ -87,6 +95,8 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "inline";
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
+            document.getElementById("certilebi").style.display = "inline";
+
         }
         mystatus = newstat;
     }

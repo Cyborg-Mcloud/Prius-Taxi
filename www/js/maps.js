@@ -159,20 +159,23 @@ function initMap()
 function geocodeOnClick(e) 
 	{
     // infoWindow.close();
-	if (state==0)
+	if (mystatus==0)
 		{
-		startMarker.setPosition(e.latLng);
-		startMarker.setMap(map);
-		geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
-	    infoWindow.open(map, startMarker);
+		if (state==0)
+			{
+			startMarker.setPosition(e.latLng);
+			startMarker.setMap(map);
+			geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
+			infoWindow.open(map, startMarker);
+			}
+		else if (state==1)
+			{
+			endMarker.setPosition(e.latLng);
+			endMarker.setMap(map);	
+			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
+			infoWindow.open(map, endMarker);
+			}    
 		}
-	else if (state==1)
-		{
-		endMarker.setPosition(e.latLng);
-		endMarker.setMap(map);	
-		geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
-	    infoWindow.open(map, endMarker);
-		}    
 	}
 
 function getInfoContent(address) 
