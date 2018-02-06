@@ -232,7 +232,7 @@ function MainProg() {
     }
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
 
-    setTimeout("MainProg();", 2000);
+    setTimeout("MainProg();", 1000);
 }
 
 var taxilong = 0;
@@ -371,10 +371,10 @@ function update_data() {
                     if (mystatus > 0) {
                         callingtaxi = 0;
                         notified = 0;
-                        document.getElementById("taxibox").style.visibility = "hidden";
                         uplimit = 5;
                         document.getElementById("call_but").style.display = "inline";
                         document.getElementById("arrived_screen").style.display = "none";
+
                         change_status(0);
                     }
                     check_chat(parseInt(mr));
