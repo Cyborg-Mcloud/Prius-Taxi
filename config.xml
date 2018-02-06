@@ -68,9 +68,9 @@
     <engine name="ios" spec="^4.5.4"/>
     <engine name="android" spec="^6.4.0"/>-->
 
- <plugin name="cordova.plugins.diagnostic" version="*" />
- <plugin name="cordova-plugin-globalization" source="npm" />
-    <plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
+	<plugin name="cordova.plugins.diagnostic" version="*" />
+	<plugin name="cordova-plugin-globalization" source="npm" />
+	<plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
 
 
 </widget>

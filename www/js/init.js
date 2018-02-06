@@ -168,10 +168,10 @@ function onDeviceReady() {
     // kc = checkIfFileExists("locdata.txt");
 
 
-    //if (started==0)
-    //	{
-    //	Start();
-    //	}
+    if (started==0)
+    	{
+    	Start();
+    	}
     //setmypos();
 }
 
@@ -230,7 +230,7 @@ function MainProg() {
     }
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge: 0});
 
-    setTimeout("MainProg();", 1000);
+    setTimeout("MainProg();", 2000);
 }
 
 var taxilong = 0;
