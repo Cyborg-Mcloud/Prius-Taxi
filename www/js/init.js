@@ -218,6 +218,7 @@ function MainProg() {
         // console.log("I am running");
         updatacounter++;
         if (updatacounter > uplimit) {
+			console.log("uploading data");
             UpData();
             updatacounter = 0;
         }
