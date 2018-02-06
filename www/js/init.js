@@ -128,7 +128,7 @@ function onDeviceReady() {
 		req_loc_acc();
 		req_loc_auth();
 		// -------------------------------------
-
+ReadData();
         console.log("device ready, checking connection");
         checkConnection();
 
