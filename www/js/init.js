@@ -386,12 +386,15 @@ function check_chat(chatid) {
 }
 
 function UpData() {
-    if (myid == 0 || myid == "") {
+    if (myid == 0 || myid == "") 
+		{
         myid = Math.floor(Math.random() * 100000000);
         WriteData();
-    }
-    if (callingtaxi == 0) {
-
+	    }
+    console.log("update, callingtaxi: "+callingtaxi);
+	if (callingtaxi == 0)
+		{
+		
         if (MyUser != "nouser" && MyUser != "") {
             url = "http://developer.design.ge/geotaxi/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
         }
