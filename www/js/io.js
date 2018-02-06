@@ -7,7 +7,8 @@ const COOKIE_NAMES = {
     lat: 'WLat',
     lng: 'WLon',
     id: 'LoginId',
-    tel: 'Tel_n'
+    tel: 'Tel_n',
+	myid: 'myid'
 };
 
 function setCookie_e(cname, cval) {
@@ -23,7 +24,10 @@ function WriteData() {
     setCookie_e(COOKIE_NAMES.lng, wlon);
     setCookie_e(COOKIE_NAMES.id, myloginid);
     setCookie_e(COOKIE_NAMES.tel, mytel);
-	console.log("writing: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel);
+    setCookie_e(COOKIE_NAMES.myid, myid);
+
+	
+	console.log("writing: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel+ " - "+myid);
     // window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite, fail);
 }
 
@@ -36,5 +40,6 @@ function ReadData() {
     wlon = getCookie(COOKIE_NAMES.lng);
     myloginid = getCookie(COOKIE_NAMES.id);
     mytel = getCookie(COOKIE_NAMES.tel);
-	console.log("reading: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel);
+    myid = getCookie(COOKIE_NAMES.myid);
+	console.log("reading: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel+ " - "+myid);
 }
