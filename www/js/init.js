@@ -226,6 +226,7 @@ function MainProg() {
             wlon = MyLong;
             wlat = MyLat;
             setmypos();
+			 var myLatLng = {lat: MyLat, lng: MyLong};
 			 map.panTo(myLatLng);
         }
     }
@@ -305,7 +306,9 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-
+						var latlng = new google.maps.LatLng(taxilat, taxilong);
+						 carMarker.setPosition(latlng);
+						 carMarker.setMap(map);
                     }
                 }
                 else if (a[0] == "taxi_arrived") {
@@ -317,6 +320,11 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+
+						var latlng = new google.maps.LatLng(taxilat, taxilong);
+						 carMarker.setPosition(latlng);
+						 carMarker.setMap(map);
+
                         document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
                             window.plugin.notification.local.schedule({
@@ -338,6 +346,10 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+
+						var latlng = new google.maps.LatLng(taxilat, taxilong);
+						 carMarker.setPosition(latlng);
+						 carMarker.setMap(map);
                     }
                 }
                 else if (a[0] == "you_moving") {
@@ -349,6 +361,10 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+
+						var latlng = new google.maps.LatLng(taxilat, taxilong);
+						 carMarker.setPosition(latlng);
+						 carMarker.setMap(map);
                     }
                 }
                 else {

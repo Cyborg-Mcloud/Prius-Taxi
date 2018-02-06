@@ -1,7 +1,7 @@
 
 var infoWindow, tempMarker, geocoder;
 var dirService, dirRender;
-var startMarker, endMarker, positionMarker;
+var startMarker, endMarker, carMarker, positionMarker;
 var startPosListener, endPosListener, selPosListener;
 
 function geocodeLocation(position, infoWindow, markerName) {
@@ -81,6 +81,9 @@ function initMap()
     });
     endMarker = new google.maps.Marker({
         icon: END_ICON, map: map
+    });
+	carMarker = new google.maps.Marker({
+        icon: caricon, map: map
     });
     positionMarker = new google.maps.Marker({
         position: position,

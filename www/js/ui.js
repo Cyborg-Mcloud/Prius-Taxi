@@ -191,8 +191,8 @@ function DrawUsers() {
         console.log("draw taxi: " + taxilong + " / " + taxilat + " onme:" + myself);
 
 
-        document.getElementById("taxibox").style.visibility = "visible";
-        document.getElementById("taxitext").innerHTML = taxiname;
+      //  document.getElementById("taxibox").style.visibility = "visible";
+        //document.getElementById("taxitext").innerHTML = taxiname;
 
 
     }
