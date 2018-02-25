@@ -189,6 +189,7 @@ function geocodeOnClick(e)
 			endMarker.setMap(map);	
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
 			infoWindow.open(map, endMarker);
+			calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
 			}    
 		}
 	}
