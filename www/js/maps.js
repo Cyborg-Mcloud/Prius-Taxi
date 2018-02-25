@@ -131,7 +131,22 @@ function initMap()
             map.fitBounds(place.geometry.viewport);
         } else {
             map.setCenter(place.geometry.location);
-            map.setZoom(17); // Why 17? Because it looks good.
+            map.setZoom(17); 
+			if (state==0)
+				{
+				startMarker.setPosition(place.geometry.location);
+				startMarker.setMap(map);
+				geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
+				infoWindow.open(map, startMarker);
+				}
+			else if (state==1)
+				{
+				endMarker.setPosition(place.geometry.location);
+				endMarker.setMap(map);	
+				geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
+				infoWindow.open(map, endMarker);
+				} 
+
         }
 
         //tempMarker.setPosition(place.geometry.location);
