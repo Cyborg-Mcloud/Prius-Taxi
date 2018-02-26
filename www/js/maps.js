@@ -144,7 +144,7 @@ function initMap()
             map.fitBounds(place.geometry.viewport);
         } else {
             map.setCenter(place.geometry.location);
-            map.setZoom(17); 
+        //    map.setZoom(17); 
 		
 				startMarker.setPosition(place.geometry.location);
 				startMarker.setMap(map);
@@ -173,7 +173,7 @@ function initMap()
         infoWindow.open(map, tempMarker);
     });
 
-	autocomplete2.addListener('place_changed2', function () {
+	autocomplete2.addListener('place_changed', function () {
         // infoWindow.close();
         tempMarker.setVisible(false);
         var place = autocomplete2.getPlace();
@@ -189,7 +189,7 @@ function initMap()
             map.fitBounds(place.geometry.viewport);
         } else {
             map.setCenter(place.geometry.location);
-            map.setZoom(17); 
+           // map.setZoom(17); 
 			
 			endMarker.setPosition(place.geometry.location);
 			endMarker.setMap(map);	
@@ -355,7 +355,7 @@ function addAndGetMarker(map, position, bounds, label, icon)
         map.setOptions({zoom: map.zoom + 2, center: position});
     });
     // Automatically center the map fitting all markers on the screen
-    map.fitBounds(bounds);
+ //   map.fitBounds(bounds);
 
 }
 
