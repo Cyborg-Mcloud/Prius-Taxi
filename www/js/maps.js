@@ -15,12 +15,12 @@ function geocodeLocation(position, infoWindow, markerName) {
             infoWindow.setContent(getInfoContent(responses[0].formatted_address));
 			if (state==0)
 				{
-				document.getElementById("pac-input").value=getInfoContent(responses[0].formatted_address);
+				document.getElementById("pac-input").value=responses[0].formatted_address;
 
 				}
 			else
 				{
-				document.getElementById("pac-input2").value=getInfoContent(responses[0].formatted_address);
+				document.getElementById("pac-input2").value=responses[0].formatted_address;
 				}
         } else {
       //      infoWindow.setContent(getInfoContent(markerName));
