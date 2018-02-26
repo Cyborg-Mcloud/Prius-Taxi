@@ -262,6 +262,7 @@ function setState(newState)
 		{
 		dirRender.setMap(null);
 		endMarker.setMap(null);
+		document.getElementById("pac-input2").value="";
 		}
 	if (state==2)
 		{

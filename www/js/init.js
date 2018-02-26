@@ -523,7 +523,7 @@ var pos = {
 		startMarker.setMap(map);
 
 		geocodeLocation(pos, infoWindow, 'startMarker');
-		infoWindow.open(map, startMarker);
+//		infoWindow.open(map, startMarker);
 	    
 		map.setCenter(pos);
 		}
