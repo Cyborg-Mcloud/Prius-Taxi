@@ -149,7 +149,7 @@ function initMap()
 				startMarker.setPosition(place.geometry.location);
 				startMarker.setMap(map);
 				geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
-				infoWindow.open(map, startMarker);
+//				infoWindow.open(map, startMarker);
 			
 
         }
@@ -170,7 +170,7 @@ function initMap()
         // infoWindowContent.children['place-icon'].src = place.icon;
         // infoWindowContent.children['place-name'].textContent = place.name;
         // infoWindowContent.children['place-address'].textContent = address;
-        infoWindow.open(map, tempMarker);
+//        infoWindow.open(map, tempMarker);
     });
 
 	autocomplete2.addListener('place_changed', function () {
@@ -194,7 +194,7 @@ function initMap()
 			endMarker.setPosition(place.geometry.location);
 			endMarker.setMap(map);	
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
-			infoWindow.open(map, endMarker);
+			//infoWindow.open(map, endMarker);
 			
 
         }
@@ -214,7 +214,7 @@ function initMap()
         // infoWindowContent.children['place-icon'].src = place.icon;
         // infoWindowContent.children['place-name'].textContent = place.name;
         // infoWindowContent.children['place-address'].textContent = address;
-        infoWindow.open(map, tempMarker);
+//        infoWindow.open(map, tempMarker);
     });
 
 
@@ -231,14 +231,14 @@ function geocodeOnClick(e)
 			startMarker.setPosition(e.latLng);
 			startMarker.setMap(map);
 			geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
-			infoWindow.open(map, startMarker);
+//			infoWindow.open(map, startMarker);
 			}
 		else if (state==1)
 			{
 			endMarker.setPosition(e.latLng);
 			endMarker.setMap(map);	
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
-			infoWindow.open(map, endMarker);
+//			infoWindow.open(map, endMarker);
 			calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
 			}    
 		}
