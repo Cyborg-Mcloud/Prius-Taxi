@@ -107,15 +107,19 @@ function initMap()
 
     var card = document.getElementById('pac-card');
     var input = document.getElementById('pac-input');
+    var input2 = document.getElementById('pac-input2');
 
     var strictBounds = document.getElementById('strict-bounds-selector');
 
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
     var autocomplete = new google.maps.places.Autocomplete(input);
+    var autocomplete2 = new google.maps.places.Autocomplete(input2);
 
     autocomplete.bindTo('bounds', map);
-    autocomplete.addListener('place_changed', function () {
+	autocomplete2.bindTo('bounds', map);
+  
+	autocomplete.addListener('place_changed', function () {
         // infoWindow.close();
         tempMarker.setVisible(false);
         var place = autocomplete.getPlace();
@@ -132,22 +136,41 @@ function initMap()
         } else {
             map.setCenter(place.geometry.location);
             map.setZoom(17); 
-			if (state==0)
-				{
+		
 				startMarker.setPosition(place.geometry.location);
 				startMarker.setMap(map);
 				geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
 				infoWindow.open(map, startMarker);
-				}
-			else if (state==1)
-				{
-				endMarker.setPosition(place.geometry.location);
-				endMarker.setMap(map);	
-				geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
-				infoWindow.open(map, endMarker);
-				} 
+			
 
         }
+
+	autocomplete2.addListener('place_changed2', function () {
+        // infoWindow.close();
+        tempMarker.setVisible(false);
+        var place = autocomplete2.getPlace();
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17); 
+			
+			endMarker.setPosition(place.geometry.location);
+			endMarker.setMap(map);	
+			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
+			infoWindow.open(map, endMarker);
+			
+
+        }
+
 
         //tempMarker.setPosition(place.geometry.location);
 		geocodeOnClick({latLng: place.geometry.location})

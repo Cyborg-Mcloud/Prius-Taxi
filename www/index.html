@@ -75,7 +75,8 @@
         
 
           <div id="pac-container">
-            <input id="pac-input" type="text" placeholder="მისამართის ძებნა" style='width:100%;'>
+            <input id="pac-input" type="text" placeholder="საწყისი მისამართი" style='width:300px;' onfocus='setState(0);'><br>
+			<input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი" style='width:300px;' onfocus='setState(1);'>
           </div>
 
         </div>
@@ -173,12 +174,12 @@
           <!--<input type='radio' name='startp' id='startp_2' onchange='change_start();'> მითითება რუკაზე-->
           <!--</td>-->
           <!--</tr>-->
-          <tr>
+         <!-- <tr>
             <td>დასრულება:</td>
             <td>
               <button class='btn' id="switchButton" onclick="switchState()">თავიდან არჩევა</button>
             </td>
-          </tr>
+          </tr>-->
 
         </table>
 
