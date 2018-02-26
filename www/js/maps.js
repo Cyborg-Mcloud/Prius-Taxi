@@ -121,7 +121,7 @@ function initMap()
     var strictBounds = document.getElementById('strict-bounds-selector');
 
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
+//    map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
     var autocomplete = new google.maps.places.Autocomplete(input);
     var autocomplete2 = new google.maps.places.Autocomplete(input2);
 
@@ -257,7 +257,7 @@ function setState(newState)
 	//chooseLocation(state);
 
     state = newState;
-    document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
+  //  document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
 	if (state==0)
 		{
 		dirRender.setMap(null);
