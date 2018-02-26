@@ -13,6 +13,15 @@ function geocodeLocation(position, infoWindow, markerName) {
         if (responses && responses.length > 0) {
             console.log(responses[0].formatted_address)
             infoWindow.setContent(getInfoContent(responses[0].formatted_address));
+			if (state==0)
+				{
+				document.getElementById("pac-input").value=getInfoContent(responses[0].formatted_address;
+
+				}
+			else
+				{
+				document.getElementById("pac-input2").value=getInfoContent(responses[0].formatted_address;
+				}
         } else {
       //      infoWindow.setContent(getInfoContent(markerName));
 		  console.log("position not received");
@@ -144,6 +153,25 @@ function initMap()
 			
 
         }
+        //tempMarker.setPosition(place.geometry.location);
+		geocodeOnClick({latLng: place.geometry.location});
+
+        // geocodePosition(place.geometry.location, currentField);
+        tempMarker.setVisible(true);
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        // infoWindowContent.children['place-icon'].src = place.icon;
+        // infoWindowContent.children['place-name'].textContent = place.name;
+        // infoWindowContent.children['place-address'].textContent = address;
+        infoWindow.open(map, tempMarker);
+    });
 
 	autocomplete2.addListener('place_changed2', function () {
         // infoWindow.close();
@@ -170,10 +198,7 @@ function initMap()
 			
 
         }
-
-
-        //tempMarker.setPosition(place.geometry.location);
-		geocodeOnClick({latLng: place.geometry.location})
+		geocodeOnClick({latLng: place.geometry.location});
 
         // geocodePosition(place.geometry.location, currentField);
         tempMarker.setVisible(true);
@@ -191,6 +216,8 @@ function initMap()
         // infoWindowContent.children['place-address'].textContent = address;
         infoWindow.open(map, tempMarker);
     });
+
+
 
 }
 
