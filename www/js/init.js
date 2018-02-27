@@ -299,6 +299,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+						document.getElementById("driver_info").innerHTML =  taxiname;
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
@@ -322,8 +323,8 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-
-                        document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
+document.getElementById("driver_info").innerHTML =  taxiname;
+                        //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
                             window.plugin.notification.local.schedule({
                                 id: "321123",  // A unique id of the notifiction
@@ -346,6 +347,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+						document.getElementById("driver_info").innerHTML =  taxiname;
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
@@ -364,6 +366,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+						document.getElementById("driver_info").innerHTML =  taxiname;
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
