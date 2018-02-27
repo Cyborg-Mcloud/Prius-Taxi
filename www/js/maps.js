@@ -319,7 +319,7 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
         origin: start,
         destination: end,
         travelMode: google.maps.TravelMode.DRIVING,
-		unitSystem:UnitSystem.METRIC
+		unitSystem:google.maps.UnitSystem.METRIC
     };
     directionsService.route(request, function (response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
