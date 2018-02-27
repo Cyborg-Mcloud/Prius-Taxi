@@ -275,8 +275,8 @@ function update_data() {
                 console.log("chat receive: " + mr);
                 a = mr.split("|");
                 chatis = a[1];
-                document.getElementById("chat_txt").innerHTML = chatis;
-                document.getElementById("chat_txt").scrollTop = document.getElementById("chat_txt").scrollHeight;
+               // document.getElementById("chat_txt").innerHTML = chatis;
+               // document.getElementById("chat_txt").scrollTop = document.getElementById("chat_txt").scrollHeight;
                 ;
             }
             else {
