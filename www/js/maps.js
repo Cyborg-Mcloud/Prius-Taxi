@@ -334,8 +334,8 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
 				totalDistance += legs[i].distance.value;
 				totalDuration += legs[i].duration.value;
 				}
-			document.getElementById("dirinfo").innerHTML="მანძილი: ".totalDistance;
-			document.getElementById("dirinfo").innerHTML+="სავარაუდო ფასი: "+(sit_price+totalDistance*kmprice);
+			document.getElementById("dirinfo").innerHTML="მანძილი: "+(totalDistance/1000)+"კმ, ";
+			document.getElementById("dirinfo").innerHTML+="სავ. ფასი: "+parseInt(sit_price+(totalDistance/1000)*kmprice);
 			
 			directionsDisplay.setDirections(response);
             directionsDisplay.setMap(map);

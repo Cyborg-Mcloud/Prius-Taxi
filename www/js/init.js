@@ -230,7 +230,7 @@ var taxilong = 0;
 var taxilat = 0;
 var taxiname = "";
 var notified = 0;
-var sit_price=1;
+var sit_price=3;
 var kmprice=0.75;
 var chatis = "";
 
