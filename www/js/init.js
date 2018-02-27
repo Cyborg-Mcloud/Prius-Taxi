@@ -380,6 +380,7 @@ document.getElementById("driver_info").innerHTML =  taxiname;
                         callingtaxi = 0;
                         notified = 0;
                         uplimit = 5;
+						carMarker.setMap(null);
                         document.getElementById("call_but").style.display = "inline";
                         document.getElementById("arrived_screen").style.display = "none";
 
