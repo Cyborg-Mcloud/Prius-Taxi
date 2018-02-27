@@ -318,15 +318,26 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
     var request = {
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.DRIVING,
+		unitSystem:UnitSystem.METRIC
     };
     directionsService.route(request, function (response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
             var route = response.routes[0].legs[0];
             addMarker(startMarker, map, getPosition(route.start_location), map.getBounds());
             addMarker(endMarker, map, getPosition(route.end_location), map.getBounds());
-            directionsDisplay.setDirections(response);
-
+			var totalDistance = 0;
+			var totalDuration = 0;
+			var legs = response.routes[0].legs;
+			for(var i=0; i<legs.length; ++i) 
+				{
+				totalDistance += legs[i].distance.value;
+				totalDuration += legs[i].duration.value;
+				}
+			document.getElementById("dirinfo").innerHTML=totalDistance;
+			document.getElementById("dirinfo").innerHTML+=totalDuration;
+			
+			directionsDisplay.setDirections(response);
             directionsDisplay.setMap(map);
         } else {
             addMarkers(map, [from_loc, to_loc], map.getBounds());
