@@ -195,16 +195,7 @@ function onError(e) {
     if (nogps > 1) {
         document.getElementById("nogps").style.display = "inline";
     }
-    // return onSuccess({
-    //     coords: {
-    //         latitude: 41.7151,
-    //         longitude: 44.8271,
-    //         altitude: 0,
-    //         heading: 0,
-    //         speed: 0,
-    //         accuracy: 1
-    //     }
-    // });
+ 
 }
 
 var updatacounter = 0;
@@ -239,7 +230,8 @@ var taxilong = 0;
 var taxilat = 0;
 var taxiname = "";
 var notified = 0;
-
+var sit_price=1;
+var kmprice=0.75;
 var chatis = "";
 
 function update_data() {
@@ -302,15 +294,19 @@ function update_data() {
                     callingtaxi = 0;
                     change_status(2);
                     b = a[1].split(";");
-                    if (b[0] != "") {
+                    if (b[0] != "") 
+						{
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-                    }
-                }
+						sit_price=parseInt(b[5]);
+						kmprice=parseInt(b[6]);
+
+						}
+					}
                 else if (a[0] == "taxi_arrived") {
                     callingtaxi = 0;
 
@@ -320,6 +316,8 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+						sit_price=parseInt(b[5]);
+						kmprice=parseInt(b[6]);
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -338,36 +336,43 @@ function update_data() {
 
                     }
                 }
-                else if (a[0] == "taxi_waiting") {
+                else if (a[0] == "taxi_waiting") 
+					{
                     callingtaxi = 0;
                     change_status(4);
                     b = a[1].split(";");
-                    if (b[0] != "") {
+                    if (b[0] != "") 
+						{
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-
+						sit_price=parseInt(b[5]);
+						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-                    }
-                }
-                else if (a[0] == "you_moving") {
+						}
+					}
+                else if (a[0] == "you_moving") 
+					{
                     notified = 0;
                     callingtaxi = 0;
                     change_status(5);
                     b = a[1].split(";");
-                    if (b[0] != "") {
+                    if (b[0] != "") 
+						{
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-
+						sit_price=parseInt(b[5]);
+						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-                    }
-                }
-                else {
+						}
+					}
+                else 
+					{
                     if (mystatus > 0) {
                         callingtaxi = 0;
                         notified = 0;

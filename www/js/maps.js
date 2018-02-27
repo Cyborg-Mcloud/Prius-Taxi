@@ -13,14 +13,18 @@ function geocodeLocation(position, infoWindow, markerName) {
         if (responses && responses.length > 0) {
             console.log(responses[0].formatted_address)
             infoWindow.setContent(getInfoContent(responses[0].formatted_address));
+			myaddr=responses[0].formatted_address.replace;
+			myaddr=myaddr.replace(", საქართველო","");
+			myaddr=myaddr.replace("საქართველო","");
+
 			if (state==0)
 				{
-				document.getElementById("pac-input").value=responses[0].formatted_address;
+				document.getElementById("pac-input").value=myaddr;
 
 				}
 			else
 				{
-				document.getElementById("pac-input2").value=responses[0].formatted_address;
+				document.getElementById("pac-input2").value=myaddr;
 				}
         } else {
       //      infoWindow.setContent(getInfoContent(markerName));
@@ -192,7 +196,8 @@ function initMap()
            // map.setZoom(17); 
 			
 			endMarker.setPosition(place.geometry.location);
-			endMarker.setMap(map);	
+			endMarker.setMap(map);
+			end_set=1;
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
 			//infoWindow.open(map, endMarker);
 			
@@ -237,6 +242,7 @@ function geocodeOnClick(e)
 			{
 			endMarker.setPosition(e.latLng);
 			endMarker.setMap(map);	
+			end_set=1;
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
 //			infoWindow.open(map, endMarker);
 			calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
@@ -262,6 +268,7 @@ function setState(newState)
 		{
 		dirRender.setMap(null);
 		endMarker.setMap(null);
+		end_set=0;
 		document.getElementById("pac-input2").value="";
 		}
 	if (state==2)

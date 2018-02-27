@@ -335,7 +335,7 @@ var callingtaxi = 0;
 function isValidInput(input1) {
     return true;
 }
-
+var end_set=0;
 function call_taxi() {
    
     if (mytel == "" || mytel.length < 6) 
@@ -353,7 +353,7 @@ function call_taxi() {
 		var end_lat = 0;
 		var end_lng = 0;
 	
-		if (state==2)
+		if (end_set==1)
 			{
 			end_lat=endMarker.getPosition().lat();
 			end_lng=endMarker.getPosition().lng();
