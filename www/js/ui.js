@@ -27,7 +27,7 @@ function chat_click() {
 function chat_send() {
     chat_txt = document.getElementById("chat_send_text").value;
     document.getElementById("chat_send_text").value = "";
-    url = "http://developer.design.ge/geotaxi/chat.php?send=1&myid=" + myid + "&chat_txt=" + chat_txt;
+    url = "http://taxiprius.com.ge/chat.php?send=1&myid=" + myid + "&chat_txt=" + chat_txt;
     console.log("send chat: " + url);
     gamehttp.open('GET', url, true);
     gamehttp.send(null);
@@ -106,10 +106,10 @@ function change_status(newstat) {
 
 function chamovdivar() {
     if (MyUser != "nouser" && MyUser != "") {
-        url = "http://developer.design.ge/geotaxi/chamovdivar.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid;
+        url = "http://taxiprius.com.ge/chamovdivar.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid;
     }
     else {
-        url = "http://developer.design.ge/geotaxi/chamovdivar.php?lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid;
+        url = "http://taxiprius.com.ge/chamovdivar.php?lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid;
     }
     console.log("taxi chamovdivar: " + url);
     gamehttp.open('GET', url, true);
@@ -274,7 +274,7 @@ function saveuser() {
     WriteData();
 
 
-    url = "http://developer.design.ge/prius/login.php?login=1&unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass;
+    url = "http://taxiprius.com.ge/login.php?login=1&unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass;
     console.log("login: " + url);
     gamehttp.open('GET', url, true);
     gamehttp.send(null);
@@ -359,10 +359,10 @@ function call_taxi() {
 			end_lng=endMarker.getPosition().lng();
 			}
         if (MyUser !== "nouser" && MyUser !== "") {
-            url = "https://developer.design.ge/geotaxi/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "https://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         else {
-            url = "https://developer.design.ge/geotaxi/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "https://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         callingtaxi = 1;
         console.log("taxi call: " + url);

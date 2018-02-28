@@ -402,7 +402,7 @@ document.getElementById("driver_info").innerHTML =  taxiname;
 function check_chat(chatid) {
     if (chatid != last_chat) {
         last_chat = chatid;
-        url = "http://developer.design.ge/geotaxi/chat.php?req=1&myid=" + myid;
+        url = "http://taxiprius.com.ge/chat.php?req=1&myid=" + myid;
 
         console.log("request chat: " + url);
         gamehttp.open('GET', url, true);
@@ -421,10 +421,10 @@ function UpData() {
 		{
 		
         if (MyUser != "nouser" && MyUser != "") {
-            url = "https://developer.design.ge/geotaxi/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
+            url = "https://taxiprius.com.ge/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
         }
         else {
-            url = "https://developer.design.ge/geotaxi/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
+            url = "https://taxiprius.com.ge/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
         }
          console.log("just upload: " + url);
         //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
