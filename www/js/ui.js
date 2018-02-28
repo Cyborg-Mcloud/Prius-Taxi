@@ -359,10 +359,10 @@ function call_taxi() {
 			end_lng=endMarker.getPosition().lng();
 			}
         if (MyUser !== "nouser" && MyUser !== "") {
-            url = "https://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "http://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         else {
-            url = "https://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "http://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
         }
         callingtaxi = 1;
         console.log("taxi call: " + url);

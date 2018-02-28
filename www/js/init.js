@@ -421,10 +421,10 @@ function UpData() {
 		{
 		
         if (MyUser != "nouser" && MyUser != "") {
-            url = "https://taxiprius.com.ge/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
+            url = "http://taxiprius.com.ge/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
         }
         else {
-            url = "https://taxiprius.com.ge/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
+            url = "http://taxiprius.com.ge/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
         }
          console.log("just upload: " + url);
         //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
