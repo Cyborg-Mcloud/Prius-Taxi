@@ -352,7 +352,9 @@ function call_taxi() {
 		var start_lng = startMarker.getPosition().lng();
 		var end_lat = 0;
 		var end_lng = 0;
-	
+		document.getElementById("pac-input").style.disabled="true";
+		document.getElementById("pac-input2").style.disabled="true";
+
 		if (end_set==1)
 			{
 			end_lat=endMarker.getPosition().lat();

@@ -299,6 +299,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
+						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname;
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -366,7 +367,7 @@ document.getElementById("driver_info").innerHTML =  taxiname;
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						document.getElementById("driver_info").innerHTML =  taxiname;
+						//document.getElementById("driver_info").innerHTML =  taxiname;
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
@@ -381,9 +382,22 @@ document.getElementById("driver_info").innerHTML =  taxiname;
                         notified = 0;
                         uplimit = 5;
 						carMarker.setMap(null);
+						taxiname="";
                         document.getElementById("call_but").style.display = "inline";
                         document.getElementById("arrived_screen").style.display = "none";
+						document.getElementById("driver_info").style.display="none";
+						document.getElementById("pac-input").value="";
+						document.getElementById("pac-input2").value="";
 
+						document.getElementById("pac-input").style.disabled="false";
+						document.getElementById("pac-input2").style.disabled="false";
+
+						startMarker.setMap(null);
+						endMarker.setMap(null);
+						dirRender.setMap(null);
+						endMarker.setMap(null);
+						end_set=0;
+						//document.getElementById("driver_info").innerHTML =  taxiname;
                         change_status(0);
                     }
                     check_chat(parseInt(mr));
