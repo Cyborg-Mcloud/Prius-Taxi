@@ -61,11 +61,13 @@
 
 #pac-input2:focus {
     background-color:#e8b427; 
+	color:white;
 }
 
 #pac-input:focus {
     background-color:#32e875;
 	color:white;
+	
 }
 
 </style>
@@ -132,7 +134,7 @@
 
 
 	<div id='dirinfo' style='color:black; background-color:white; padding:10px;'></div>
-	<div id='driver_info' style='position:fixed; bottom:30px; left:15%px; height:100px; width:70%px; z-index:252; color:black; background-color:white; padding:10px; border:1px solid gray;'></div>
+	<div id='driver_info' style='position:fixed; bottom:30px; left:15%; height:120px; width:70%px; z-index:252; color:black; background-color:white; padding:10px; border:1px solid gray; display:none;'></div>
 
     <a id='call_but' style='position:fixed; bottom:30px; left:80px; height:100px; width:210px; z-index:252;  '
        href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>
@@ -168,8 +170,9 @@
   </div>
 
 
-  <div id='settings_sheet'
-       style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; width:355px;'>
+  <div id='settings_sheet'  style='visibility:hidden; position:absolute; left:0px; top:0px; width:100%;'>
+  <table width=100%>
+  <tr><td width=80% background='black;' style='color:white; padding:10px;'>
     <br>
     <div id='mydiv'></div>
     <br>
@@ -180,7 +183,7 @@
 
     <center>
       <b>პროფილი</b>
-      <div id='login_page' style='width:355px; '>
+      <div id='login_page' style=' '>
         <table>
           <tr>
             <td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
@@ -215,6 +218,12 @@
          style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან
         დაბრუნება</a></center>
     </center>
+	</td>
+	<td onclick='show_map();'>
+
+	</td>
+	</tr>
+	</table>
   </div>
 </div>
 
