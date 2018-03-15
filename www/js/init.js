@@ -324,7 +324,7 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-document.getElementById("driver_info").innerHTML =  taxiname;
+						document.getElementById("driver_info").innerHTML =  taxiname;
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
                             window.plugin.notification.local.schedule({

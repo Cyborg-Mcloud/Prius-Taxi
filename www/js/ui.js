@@ -355,16 +355,26 @@ function call_taxi() {
 		document.getElementById("pac-input").style.disabled="true";
 		document.getElementById("pac-input2").style.disabled="true";
 
+		var start_str=document.getElementById("pac-input").value;
+		var end_str=document.getElementById("pac-input2").value;
+
+		start_str=start_str.replace("'","");
+		end_str=end_str.replace("'","");
+
+		start_str=start_str.replace(", Tbilisi, Georgia","");
+		end_str=end_str.replace(", Tbilisi, Georgia","");
+
+
 		if (end_set==1)
 			{
 			end_lat=endMarker.getPosition().lat();
 			end_lng=endMarker.getPosition().lng();
 			}
         if (MyUser !== "nouser" && MyUser !== "") {
-            url = "http://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "http://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
         }
         else {
-            url = "http://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng;
+            url = "http://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
         }
         callingtaxi = 1;
         console.log("taxi call: " + url);
