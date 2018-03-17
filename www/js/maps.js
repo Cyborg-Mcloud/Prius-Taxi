@@ -229,6 +229,7 @@ function initMap()
 
 function geocodeOnClick(e) 
 	{
+		console.log("geocodeOnClick: "+mystatus+ " / "+state);
     // infoWindow.close();
 	if (mystatus==0)
 		{
@@ -262,7 +263,7 @@ const SWITCH_TEXTS = ['დასაწყისის არჩევა', 'დ�
 function setState(newState)
 	{
 	//chooseLocation(state);
-
+console.log("set state: "+newState);
     state = newState;
   //  document.getElementById('switchButton').innerHTML = SWITCH_TEXTS[state];
 	if (state==0)
@@ -279,6 +280,7 @@ function setState(newState)
 	}
 
 function switchState() {
+	console.log("switch state: "+state);
     if (state === 1 && (startMarker.getPosition() === undefined || endMarker.getPosition() === undefined)) {
         setState(0);
         return;
@@ -288,6 +290,7 @@ function switchState() {
 }
 
 function setLocation(marker, target) {
+	console.log("setLocation: ");
     target.setPosition(marker.getPosition());
     map.panTo(target.getPosition());
 

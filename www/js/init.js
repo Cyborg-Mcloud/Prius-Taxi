@@ -214,6 +214,7 @@ function MainProg() {
             updatacounter = 0;
         }
         if (myself == 1 && inpause == 0) {
+			console.log("MainProg->myself: "+myself);
             wlon = MyLong;
             wlat = MyLat;
             setmypos();
