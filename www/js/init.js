@@ -122,6 +122,8 @@ function onDeviceReady() {
 //    var permissions = cordova.plugins.permissions;
 //    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
         console.log('succ')
+	console.log("setting immersive");
+	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
 
 
 		// es ari accurasy settingi fine location-ze da mere authorizacis motxovna da tu gps gamortulia an auth ar aqvs dialogs agdebs
@@ -623,3 +625,18 @@ function open_loc_settings()
 	{
 	cordova.plugins.diagnostic.switchToLocationSettings();
 	}
+
+function successFunction()
+{
+    console.info("immersive worked!");
+}
+
+function errorFunction(error)
+{
+    console.error(error);
+}
+
+function trace(value)
+{
+    console.log(value);
+}
