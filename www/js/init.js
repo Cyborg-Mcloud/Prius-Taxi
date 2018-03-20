@@ -1,9 +1,9 @@
 var mystatus = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
-$(document).ready(function () {
-    document.getElementById("GPS_search_screen").style.display = "none";
-});
+
+  
+
 var myid = 0;
 var map;
 
@@ -115,66 +115,66 @@ var watchID = null;
 // powermanagement -ის ფუნქციები
 //window.powermanagement.acquire();
 //window.powermanagement.release();
+
 var gps_start=0;
 
 // ----------------------------------------------------------------
 function onDeviceReady() {
-//    var permissions = cordova.plugins.permissions;
-//    permissions.requestPermission('ACCESS_FINE_LOCATION', function () {
-        console.log('succ')
+	console.log('succ')
 	console.log("setting immersive");
 	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+	document.getElementById("GPS_search_screen").style.display = "none";
+
+	// es ari accurasy settingi fine location-ze da mere authorizacis motxovna da tu gps gamortulia an auth ar aqvs dialogs agdebs
+	req_loc_acc();
+	req_loc_auth();
+	// -------------------------------------
+
+	ReadData();
+	console.log("device ready, checking connection");
+	checkConnection();
+
+	document.addEventListener("pause", onPause, false);
+	//document.addEventListener("backbutton", onBackKeyDown, false);
+	//document.addEventListener("menubutton", onMenuDown, false);
+	//document.addEventListener("searchbutton", onSearchDown, false);
+	document.addEventListener("volumedownbutton", onVolumeDown, false);
+	document.addEventListener("volumeupbutton", onVolumeUp, false);
+
+	console.log("device ready, getting position");
+
+	navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
+		console.log(e);
+		return onSuccess({
+			coords: {
+				latitude: 41.7151,
+				longitude: 44.8271,
+				altitude: 0,
+				heading: 0,
+				speed: 0,
+				accuracy: 1
+			}
+		});
+	}, {enableHighAccuracy: true, maximumAge: 0});
+	var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
+	//		watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
+
+	document.addEventListener("resume", onResume, false);
+
+	//  }, function () {
+	//      console.log('looL')
+	// });
 
 
-		// es ari accurasy settingi fine location-ze da mere authorizacis motxovna da tu gps gamortulia an auth ar aqvs dialogs agdebs
-		req_loc_acc();
-		req_loc_auth();
-		// -------------------------------------
-ReadData();
-        console.log("device ready, checking connection");
-        checkConnection();
-
-        document.addEventListener("pause", onPause, false);
-        //document.addEventListener("backbutton", onBackKeyDown, false);
-        //document.addEventListener("menubutton", onMenuDown, false);
-        //document.addEventListener("searchbutton", onSearchDown, false);
-        document.addEventListener("volumedownbutton", onVolumeDown, false);
-        document.addEventListener("volumeupbutton", onVolumeUp, false);
-
-        console.log("device ready, getting position");
-
-        navigator.geolocation.getCurrentPosition(onSuccess, function (e) {
-            console.log(e);
-            return onSuccess({
-                coords: {
-                    latitude: 41.7151,
-                    longitude: 44.8271,
-                    altitude: 0,
-                    heading: 0,
-                    speed: 0,
-                    accuracy: 1
-                }
-            });
-        }, {enableHighAccuracy: true, maximumAge: 0});
-        var opts = {timeout: 5000, enableHighAccuracy: true, maximumAge: 0};
-//		watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
-
-        document.addEventListener("resume", onResume, false);
-
-  //  }, function () {
-  //      console.log('looL')
-   // });
+	// qveda amosagebia
+	// kc = checkIfFileExists("locdata.txt");
 
 
-    // qveda amosagebia
-    // kc = checkIfFileExists("locdata.txt");
-
-
-    if (started==0)
-    	{
-    	Start();
-    	}
-    //setmypos();
+	if (started==0)
+	{
+	Start();
+	}
+	//setmypos();
 }
 
 // ------------------------
