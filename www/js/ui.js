@@ -1,3 +1,14 @@
+
+function sel_green()
+{
+document.getElementById("pac-input").focus();
+}
+
+function sel_orange()
+{
+document.getElementById("pac-input2").focus();
+}
+
 var last_chat = 0;
 
 var chatopened = 0;
