@@ -363,11 +363,17 @@ function call_taxi() {
 		var start_lng = startMarker.getPosition().lng();
 		var end_lat = 0;
 		var end_lng = 0;
+
+		document.getElementById("input_boxes").style.display="none";
+		document.getElementById("on_call_menu").style.display="inline";
+
 		document.getElementById("pac-input").style.disabled="true";
 		document.getElementById("pac-input2").style.disabled="true";
 
 		var start_str=document.getElementById("pac-input").value;
 		var end_str=document.getElementById("pac-input2").value;
+
+
 
 		start_str=start_str.replace("'","");
 		end_str=end_str.replace("'","");

@@ -309,6 +309,9 @@ function update_data() {
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
+			
+						document.getElementById("input_boxes").style.display="none";
+						document.getElementById("on_call_menu").style.display="inline";
 
 						}
 					}
@@ -352,6 +355,9 @@ function update_data() {
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
 						document.getElementById("driver_info").innerHTML =  taxiname;
+						document.getElementById("input_boxes").style.display="none";
+						document.getElementById("on_call_menu").style.display="inline";
+
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
@@ -394,6 +400,11 @@ function update_data() {
 
 						document.getElementById("pac-input").style.disabled="false";
 						document.getElementById("pac-input2").style.disabled="false";
+
+						document.getElementById("input_boxes").style.display="inline";
+						document.getElementById("on_call_menu").style.display="none";
+
+
 
 						startMarker.setMap(null);
 						endMarker.setMap(null);
