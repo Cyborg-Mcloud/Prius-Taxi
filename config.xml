@@ -36,7 +36,7 @@
 	<platform name="ios">
         <allow-intent href="itms:taxiprius.com.ge"/>
         <allow-intent href="itms-apps:taxiprius.com.ge"/>
-		<gap:config-file platform="ios" parent="com.apple.developer.associated-domains" mode="replace">
+		<!--<gap:config-file platform="ios" parent="com.apple.developer.associated-domains" mode="replace">
 			<array>
 				<string>applinks:taxiprius.com.ge</string>
 			</array>
@@ -62,7 +62,7 @@
 
 			 </array>
 
-		</config-file>
+		</config-file>-->
     </platform>
 
 
