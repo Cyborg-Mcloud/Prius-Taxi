@@ -9,12 +9,12 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Prius Taxi</title>
-  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!--  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">-->
   <link href="css/main.css" rel="stylesheet">
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  <script src="js/jquery-3.2.1.min.js"></script>
+<!--  <script src="js/jquery-3.2.1.min.js"></script>-->
 <!--  <script src="js/popper.js"></script>-->
-  <script src="js/bootstrap.min.js"></script>
+<!--  <script src="js/bootstrap.min.js"></script>-->
   <script type="text/javascript" charset="utf-8" src="js/func.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/io.js"></script>
@@ -32,29 +32,6 @@
     text-decoration: none;
     color: white;
   }
-</style>
-<body bgcolor=#e3b202>
-
-<!--<div style='width:256px; height:256px; position:relative; position:absolute; left:0px; top:0px; z-index:99;' >
-    <img   id='myimg' style='width:256px; height:256px;'>
-    <div style='position:absolute; left:0px; top:0px; background-color:red; width:7px; height:7px;' id='persona'></div>
-</div>-->
-<!-- MOUSE OVER LAYER -->
-
-
-<div id='fanjara' style='position:relative; overflow:hidden; width:400px; height:600px;'>
- <!-- <div style="width: 100%; position:fixed; top:45px;z-index:272; text-align: center;">
-        <span id='topMessage' style="color:black;  margin:5px; ">აირჩიეთ საწყისი ლოკაცია</span>
-  </div>-->
-  <div style='position:fixed; left:0px; top:0px; width:100%; height:100px; background-color:#ffce00; z-index:211; padding-top:20px;'>
-    <a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
-    <!--	<div id='infodiv' style='float:right;  color:Black; display:none;'></div>-->
-    <!--<a style='float:right; margin-top:7px; margin-right: 7px; ' href='Javascript: show_settings();' id='regbut'><img
-            src='resources/but_register.png'></a>-->
-<!--<div class="pac-card" id="pac-card">
-        <div>-->
-        
-<style>
 
 #pac-input{width:174px;  border:1px solid #13ae48;  border-radius:4px;padding:3px; background-color:white; color:black;}
 #pac-input2{width:174px;  border:1px solid #ecac00; border-radius:4px;padding:3px;background-color:white; color:black;}
@@ -70,161 +47,143 @@
 	
 }
 
+
+td {
+  font-size: 10px;
+}
 </style>
-        <!--  <div id="pac-container"> -->
-            <table width=100%><Tr><td style='color:Black;' align=center><b>დაწყება</b></td><td style='color:Black;' align=center><b>დასრულება</b></td></tr>
+<body bgcolor=#e3b202>
 
-			<Tr><td align=center><input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' ></td>
-			<td  align=center><input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();'></td></tr>
+<div id='fanjara' style='position:relative; overflow:hidden; width:400px; height:600px;'>
+	<!--                                          zeda meniu -->
+	<div style='position:fixed; left:0px; top:0px; width:100%; height:100px; background-color:#ffce00; z-index:211; padding-top:20px;'>
+		<a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
+      
+	<!--									mimartulebis asarchevebi-->
+		<div id='input_boxes'>
+			<table width=100%>
+				<Tr>
+					<td style='color:Black;' align=center><b>დაწყება</b></td>
+					<td style='color:Black;' align=center><b>დასრულება</b></td>
+				</tr>
+
+				<Tr>
+					<td align=center><input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' ></td>
+					<td  align=center><input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();'></td>
+				</tr>
 			</table>
-		
-     <!--     </div>-->
-
-       <!-- </div>
-      </div>-->
-
-  </div>
-  <!-- MAIN MAP -->
-  <!--<div id='mouser' name='mouser' style='position:fixed; left:0px; top:50px; width:355px; height:500px; z-index:250; display:none;' ontouchstart="mdown(event);" ontouchend="mup(event);"  ontouchmove="getmousecoord(event);" ></div>-->
-
+		</div>
+	</div>
 
   <script src="js/maps.js"></script>
 
-  <style>
+	<div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;'>
+		<div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
+			<!--																	mtavari ruka -->
+			<div id="gmap"  style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
+			<!--key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ-->
+			<!--key=AIzaSyAMaeW61XOXEKHCrzM6J5nulpyZpeeTb4k-->			
+		    <script async defer         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ&callback=initMap&language=ka&libraries=places"></script>
+		</div>
+		
+		<!--							taxi mosulia ekrani -->
+	    <div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
+			<br><br><br><br><br><br><br><br><br><br><br>
+			<center>თქვენი ტაქსი ადგილზეა<br><Br>
+			<a href='javascript: chamovdivar();' style='color:white; background-color:green; padding:10px; text-align:center; '>ჩამოვდივარ</a>
+			</center>
+			<br><br>
+			<center>
+			<div id='taxi_number' style='color:white;'></div>
+			</center>
+	    </div>
 
-    td {
-      font-size: 10px;
-    }
-  </style>
+		
+		<div id='GPS_search_screen' style='display:inline; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:301; background-color:#e3b202; color:white; '>
+			<br><br><br><br><br><br><br><br>
+			<center><img src='resources/taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
+		</div>
 
-  <div id='charcho' style='position:fixed; left:0px; top:50px; width:365px; height:600px;  z-index:1;'>
-    <div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
-      
-      <div id="gmap"  style='position:absolute; left:0px; top:0px; height:600px; width:365px; display:block;'></div>
+		<div id='taxi_search_screen' style='display:none; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:302; background-color:#e3b202; color:white; '>
+			<br><br><br><br><br><br><br><br>
+			<center><img src='resources/taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
+		</div>
 
-    </div>
-    <!--key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ-->
-    <!--key=AIzaSyAMaeW61XOXEKHCrzM6J5nulpyZpeeTb4k-->
-    <script async defer         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ&callback=initMap&language=ka&libraries=places"></script>
+		<div id='dirinfo' style='color:black; background-color:white; padding:10px;'></div>
 
-    <div id='arrived_screen'  style='display:none; position:fixed; top:50px; left:0px;  width:400px; height:620px; z-index:300; background-color:#e3b202; color:white; '>
+		<div id='driver_info' style='position:fixed; bottom:30px; left:15%; height:120px; width:200px; z-index:252; color:black; background-color:white; padding:10px; border:1px solid gray; display:none;'></div>
 
-      <br><br><br><br><br><br><br><br><br><br><br>
-      <center>თქვენი ტაქსი ადგილზეა<br><Br><a href='javascript: chamovdivar();'
-                                              style='color:white; background-color:green; padding:10px; text-align:center; '>ჩამოვდივარ</a>
-      </center>
-      <br><br>
-      <center>
-        <div id='taxi_number' style='color:white;'></div>
-      </center>
-    </div>
+		<a id='call_but' style='position:fixed; bottom:30px; left:80px; height:100px; width:210px; z-index:252;' href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>
 
+		<a href='Javascript: setme();' style='position:fixed; bottom:60px; right:5px; margin:5px; z-index:252; '><img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
 
-    <div id='GPS_search_screen'
-         style='display:inline; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:301; background-color:#e3b202; color:white; '>
-      <br><br><br><br><br><br><br><br>
-      <center><img src='resources/taxi_icon.png'><br><br>... მიმდინარეობს თქვენი ლოკაციის დადგენა ...</center>
-    </div>
+		<div id="bottom_menu" style=' width:210px; position:fixed; bottom:0px; left:80px; height:31px; z-index:251; background-color:#ffce00; '>
+			<div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
+		</div>
+	</div>
+	
+	<div style='position:fixed; left:0px; top:0px; display:none; z-index:10000; height:20%; width:100%; color:red; font-weight:Bold; background:white;' id='nogps'>
+		<Br><Br><Br>
+		<Center>ვერ ხერხდება GPS ლოკაცის მიღება</center>
+	</div>
 
-    <div id='taxi_search_screen'
-         style='display:none; position:fixed; top:0px; left:0px;  width:365px; height:650px; z-index:302; background-color:#e3b202; color:white; '>
-      <br><br><br><br><br><br><br><br>
-      <center><img src='resources/taxi_icon.png'><br><br>... უახლოესი თავისუფალი ტაქსის ძიება ...</center>
-    </div>
-
-
-	<div id='dirinfo' style='color:black; background-color:white; padding:10px;'></div>
-	<div id='driver_info' style='position:fixed; bottom:30px; left:15%; height:120px; width:200px; z-index:252; color:black; background-color:white; padding:10px; border:1px solid gray; display:none;'></div>
-
-    <a id='call_but' style='position:fixed; bottom:30px; left:80px; height:100px; width:210px; z-index:252;  '
-       href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>
-
-
-    <a href='Javascript: setme();' style='position:fixed; bottom:60px; right:5px; margin:5px; z-index:252; '>
-      <img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
-    <!--<a href='Javascript: show_settings();' style='position:fixed; top:55px; right:5px; margin:5px; z-index:252;'><img-->
-    <!--src='resources/settings.png'></a>-->
-
-
-    <div id="bottom_menu"
-         style=' width:210px; position:fixed; bottom:0px; left:80px; height:31px; z-index:251; background-color:#ffce00;   '><!--filter: alpha(opacity=90);	-moz-opacity: 0.9; -khtml-opacity: 0.9;  opacity: 0.9; -->
-    <!--  <img src='resources/phone.png'>-->
-      <div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
-
-    
-    </div>
-
-  </div>
-
-  <div style='position:fixed; left:0px; top:0px; display:none; z-index:10000; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
-       id='nogps'>
-    <Br><Br><Br>
-    <Center>ვერ ხერხდება GPS ლოკაცის მიღება</center>
-  </div>
+	<div style='position:fixed; left:0px; top:0px; display:none; z-index:10001; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
+	id='myint'>
+		<Br><Br><Br>
+		<Center>ჩართეთ ინტერნეტ კავშირი</center>
+	</div>
 
 
-  <div style='position:fixed; left:0px; top:0px; display:none; z-index:10001; height:20%; width:100%; color:red; font-weight:Bold; background:white;'
-       id='myint'>
-    <Br><Br><Br>
-    <Center>ჩართეთ ინტერნეტ კავშირი</center>
-  </div>
+	<div id='settings_sheet'  style='visibility:hidden; position:absolute; left:0px; top:0px; width:100%;'>
+		<table width=100%>
+			<tr>
+			<td width=80% background='black;' style='color:white; padding:10px;'>
+				<br>
+				<div id='mydiv'></div>
+				<br>
+				<p id="geopos" style='display:none;'>Finding geolocation...</p>
+				<br><br><br><Br><br>
+
+				<div id='erorebi' style='display:none;'>Tilebi (zoom:16)</div>
+
+				<center>
+				<b>პროფილი</b>
+				<div id='login_page' style=' '>
+					<table>
+					  <tr>
+						<td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
+						<td><input type='text' id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა"
+								   size=16></td>
+					  </tr>
+					  <tr>
+						<td style='font-size:12px;'>პაროლი:</td>
+						<td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
+						</td>
+						<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png' width=20px></a>
+						</td>
+					  </tr>
+					</table>
+					<Br><br>
+					<a href='#' onclick="window.open('http://taxiprius.com.ge/user_reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
+				</div>
+
+				<div id='loggedin_page' style='width:355px;'>
+					<div id='loggedin_info'></div>
+					<a href='Javascript: logout();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
+				</div>
+				<br>
 
 
-  <div id='settings_sheet'  style='visibility:hidden; position:absolute; left:0px; top:0px; width:100%;'>
-  <table width=100%>
-  <tr><td width=80% background='black;' style='color:white; padding:10px;'>
-    <br>
-    <div id='mydiv'></div>
-    <br>
-    <p id="geopos" style='display:none;'>Finding geolocation...</p>
-    <br><br><br><Br><br>
+				<a href='Javascript: show_map();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან
+				დაბრუნება</a>
+				</center>
+			</td>
+			<td onclick='show_map();'>
 
-    <div id='erorebi' style='display:none;'>Tilebi (zoom:16)</div>
-
-    <center>
-      <b>პროფილი</b>
-      <div id='login_page' style=' '>
-        <table>
-          <tr>
-            <td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
-            <td><input type='text' id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა"
-                       size=16></td>
-          </tr>
-          <tr>
-            <td style='font-size:12px;'>პაროლი:</td>
-            <td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
-            </td>
-            <td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png'
-                                                                          width=20px></a>
-            </td>
-          </tr>
-        </table>
-        <Br><br>
-        <a href='#' onclick="window.open('http://taxiprius.com.ge/user_reg.php', '_system');"
-           style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
-      </div>
-
-      <div id='loggedin_page' style='width:355px;'>
-        <div id='loggedin_info'></div>
-        <a href='Javascript: logout();'
-           style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
-      </div>
-      <br>
-
-
-      <!--		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> რუქის ქეშის იგნორირება<br>
-              <input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> რუქის ქეშის იგნორირება WiFi-სას<br>-->
-      <a href='Javascript: show_map();'
-         style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>უკან
-        დაბრუნება</a></center>
-    </center>
-	</td>
-	<td onclick='show_map();'>
-
-	</td>
-	</tr>
-	</table>
-  </div>
+			</td>
+			</tr>
+		</table>
+	</div>
 </div>
 
 <script src="js/ui.js"></script>
