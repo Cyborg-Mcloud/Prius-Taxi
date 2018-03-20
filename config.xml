@@ -3,14 +3,15 @@
 		id="com.designge.priustaxi" 
 
 		package="com.designge.priustaxi"
-        version="1.1.4"
-        versionCode="28" 
+        version="1.1.5"
+        versionCode="29" 
 		xmlns="http://www.w3.org/ns/widgets"
 		xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Prius Taxi</name>
     <icon src="www/resources/taxi.png"/>
 	<icon src="www/resources/taxi_1024.jpg" width="1024" height="1024" />
 
+	<icon gap:platform="ios" width="40" height="40" src="www/resources/icon_40.png"  />
 	<icon gap:platform="ios" width="57" height="57" src="www/resources/icon_57.png"  />
     <icon gap:platform="ios" width="72" height="72" src="www/resources/icon_72.png"  />
     <icon gap:platform="ios" width="72" height="114" src="www/resources/icon-57-2x.png" />
@@ -31,10 +32,10 @@
     <access origin="*"/>
     <allow-intent href="*"/>
     <allow-navigation href="*"/>
-    <platform name="ios">
+ <!--   <platform name="ios">
         <allow-intent href="itms:*"/>
         <allow-intent href="itms-apps:*"/>
-    </platform>
+    </platform>-->
 
 
     <preference name="target-device" value="handset"/>
