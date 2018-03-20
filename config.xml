@@ -41,7 +41,31 @@
 				<string>applinks:taxiprius.com.ge</string>
 			</array>
 		</gap:config-file> 
+
+		  <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
+      <array>
+        <string>applinks:taxiprius.com.ge</string>
+      </array>
+    </config-file>
+
+    <config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
+      <array>
+        <string>applinks:taxiprius.com.ge</string>
+      </array>
+    </config-file>
+
+			<config-file platform="ios" target="Entitlements-*.plist" parent="com.apple.developer.associated-domains" mode="replace">
+
+			 <array>  
+
+				  <string>applinks:taxiprius.com.ge</string>
+
+			 </array>
+
+		</config-file>
     </platform>
+
+
 
 	
 
