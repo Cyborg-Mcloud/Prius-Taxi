@@ -115,6 +115,15 @@ function change_status(newstat) {
 
 }
 
+function cancel_call()
+{
+url = "http://taxiprius.com.ge/user_cancel.php?unique=" + myid;
+console.log("taxi cancel: " + url);
+gamehttp.open('GET', url, true);
+gamehttp.send(null);
+
+}
+
 function chamovdivar() {
     if (MyUser != "nouser" && MyUser != "") {
         url = "http://taxiprius.com.ge/chamovdivar.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&unique=" + myid;
