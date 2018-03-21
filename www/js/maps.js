@@ -238,6 +238,7 @@ function geocodeOnClick(e)
 			startMarker.setPosition(e.latLng);
 			startMarker.setMap(map);
 			geocodeLocation(startMarker.getPosition(), infoWindow, 'startMarker');
+			document.getElementById("pac-input").blur();
 //			infoWindow.open(map, startMarker);
 			}
 		else if (state==1)
@@ -247,6 +248,7 @@ function geocodeOnClick(e)
 			end_set=1;
 			geocodeLocation(endMarker.getPosition(), infoWindow, 'endMarker');
 //			infoWindow.open(map, endMarker);
+			document.getElementById("pac-input2").blur();
 			calcRoute(startMarker.getPosition(), endMarker.getPosition(), dirService, dirRender);
 			}    
 		}
