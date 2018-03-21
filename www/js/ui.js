@@ -69,7 +69,7 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი მოდის";
 //            document.getElementById("certilebi").style.display = "none";
-            myself = 1;
+        //    myself = 1;
         }
         else if (newstat == 3) {
             uplimit = 1;
@@ -79,7 +79,7 @@ function change_status(newstat) {
             document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
 
-            myself = 1;
+//            myself = 1;
         }
         else if (newstat == 4) {
             uplimit = 1;
@@ -88,7 +88,7 @@ function change_status(newstat) {
             document.getElementById("arrived_screen").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი გელოდებათ, ბორტი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
-            myself = 1;
+      //      myself = 1;
         }
         else if (newstat == 5) {
             uplimit = 5;
@@ -98,7 +98,7 @@ function change_status(newstat) {
             document.getElementById("info_text").innerHTML = "თქვენ მოძრაობთ";
 //            document.getElementById("certilebi").style.display = "none";
 
-            myself = 1;
+       //     myself = 1;
         }
 
         else if (newstat == 0) {
