@@ -236,7 +236,7 @@ var notified = 0;
 var sit_price=3;
 var kmprice=0.75;
 var chatis = "";
-
+var meters=0;
 function update_data() {
     if (gamehttp.readyState == 4) {
         mr = gamehttp.responseText;
@@ -309,7 +309,7 @@ function update_data() {
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
-			
+
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 
@@ -376,9 +376,12 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						//document.getElementById("driver_info").innerHTML =  taxiname;
+
+
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
+						meters=parseInt(b[7]);
+						document.getElementById("driver_info").innerHTML =  "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
