@@ -302,14 +302,15 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						document.getElementById("driver_info").style.display="inline";
-						document.getElementById("driver_info").innerHTML =  taxiname;
+					
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 
+						document.getElementById("driver_info").style.display="inline";
+						document.getElementById("driver_info").innerHTML =  taxiname;
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 
@@ -376,13 +377,20 @@ function update_data() {
 						{
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
-                        taxiname = b[2];
 
 
 						sit_price=parseInt(b[5]);
 						kmprice=parseInt(b[6]);
 						meters=parseInt(b[7]);
+                        taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
+
 						document.getElementById("driver_info").innerHTML =  "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
+
+						document.getElementById("driver_info").style.display="inline";
+						document.getElementById("input_boxes").style.display="none";
+						document.getElementById("on_call_menu").style.display="inline";
+
+
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
