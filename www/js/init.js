@@ -306,8 +306,8 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-						sit_price=parseInt(b[5]);
-						kmprice=parseInt(b[6]);
+						sit_price=parseInt(b[4]);
+						kmprice=parseInt(b[5]);
 
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname;
@@ -325,8 +325,8 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						sit_price=parseInt(b[5]);
-						kmprice=parseInt(b[6]);
+						sit_price=parseInt(b[4]);
+						kmprice=parseInt(b[5]);
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -359,8 +359,8 @@ function update_data() {
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 
-						sit_price=parseInt(b[5]);
-						kmprice=parseInt(b[6]);
+						sit_price=parseInt(b[4]);
+						kmprice=parseInt(b[5]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
@@ -379,9 +379,9 @@ function update_data() {
                         taxilat = parseFloat(b[1]);
 
 
-						sit_price=parseInt(b[5]);
-						kmprice=parseInt(b[6]);
-						meters=parseInt(b[7]);
+						sit_price=parseInt(b[4]);
+						kmprice=parseInt(b[5]);
+						meters=parseInt(b[6]);
                         taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
 console.log(kmprice+ " / "+sit_price+ " / "+meters);
 						document.getElementById("driver_info").innerHTML =  "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
