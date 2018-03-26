@@ -308,7 +308,7 @@ function update_data() {
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[4]);
 						kmprice=parseInt(b[5]);
-
+						document.getElementById("end_screen").style.display="none";
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname;
 						document.getElementById("input_boxes").style.display="none";

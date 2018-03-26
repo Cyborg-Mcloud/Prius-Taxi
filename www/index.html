@@ -131,18 +131,18 @@ td {
 		<div id='driver_info' style='position:fixed; bottom:30px; left:15%; height:120px; width:200px; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;'></div>
 
 
-<div id='end_screen' style='position:fixed; bottom:60px; left:15%; height:150px; width:200px; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;'>
-<Center><a href='Javascript: card_pay();' style='background-color:blue; border-radius:3px; padding:5px; color:white;'>ბარათით გადახდა</a></center><Br><Br>
+<div id='end_screen' style='position:fixed; bottom:100px; left:15%; height:150px; width:200px; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;'>
+<Center><a href='Javascript: card_pay();' style='background-color:blue; border-radius:3px; padding:5px; color:white;'>ბარათით გადახდა</a></center><Br>
 <div id='end_info'></div>
 
-<center><a href='Javascript: close_end_info();' style='border:1px solid gray; border-radius:3px; padding:10px;'>OK</a>
+<center><a href='Javascript: close_end_info();' style='border:1px solid gray; border-radius:3px; padding:10px; background-color:green; color:white;'>OK</a>
 
 </div>
 
 <Script>
 function card_pay()
 	{
-	window.open('http://taxiprius.com.ge/barati_req.php?tanxa='+tanxa+"&unid="+myid, '_system');
+	window.open('http://taxiprius.com.ge/banki_req.php?tanxa='+tanxa+"&unid="+myid, '_system');
 	}
 
 function close_end_info()
