@@ -203,7 +203,7 @@ function onError(e) {
 var updatacounter = 0;
 var uplimit = 5;
 
-
+var tanxa=0;
 function MainProg() {
      console.log("main prog: " + started);
     // console.log("focus is on: " + document.activeElement.getAttribute('id'));
@@ -384,7 +384,7 @@ function update_data() {
 						meters=parseInt(b[6]);
                         taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
 console.log(kmprice+ " / "+sit_price+ " / "+meters);
-						document.getElementById("driver_info").innerHTML =  "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
+						document.getElementById("driver_info").innerHTML =  "მანძილი: "+parseInt((meters/1000)*100)/100+" კმ.<hr>თანხა: "+parseInt( (meters*kmprice+sit_price)*100 )/100+" ლარი";
 
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("input_boxes").style.display="none";
@@ -399,6 +399,11 @@ console.log(kmprice+ " / "+sit_price+ " / "+meters);
                 else 
 					{
                     if (mystatus > 0) {
+
+
+						document.getElementById("end_screen").style.display="inline";
+						tanxa=parseInt( (meters*kmprice+sit_price)*100 )/100;
+						document.getElementById("end_info").innerHTML = "მანძილი: "+parseInt((meters/1000)*100)/100+" კმ.<hr>თანხა: "+parseInt( (meters*kmprice+sit_price)*100 )/100+" ლარი";
                         callingtaxi = 0;
                         notified = 0;
                         uplimit = 5;
