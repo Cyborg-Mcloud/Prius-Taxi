@@ -388,7 +388,7 @@ console.log(kmprice+ " / "+sit_price+ " / "+meters);
 
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("input_boxes").style.display="none";
-						document.getElementById("on_call_menu").style.display="inline";
+						document.getElementById("on_call_menu").style.display="none";
 
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
