@@ -383,7 +383,7 @@ function update_data() {
 						kmprice=parseInt(b[6]);
 						meters=parseInt(b[7]);
                         taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
-
+console.log(kmprice+ " / "+sit_price+ " / "+meters);
 						document.getElementById("driver_info").innerHTML =  "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
 
 						document.getElementById("driver_info").style.display="inline";
