@@ -367,6 +367,7 @@ function update_data() {
 					}
                 else if (a[0] == "you_moving") 
 					{
+					console.log("you moving");
                     notified = 0;
                     callingtaxi = 0;
                     change_status(5);
