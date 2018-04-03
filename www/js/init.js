@@ -416,11 +416,14 @@ console.log(kmprice+ " / "+sit_price+ " / "+meters);
 					{
                     if (mystatus > 0) {
 
-
-						document.getElementById("end_screen").style.display="inline";
-						tanxa=parseInt( (meters*kmprice+sit_price)*100 )/100;
-						document.getElementById("end_info").innerHTML = "მანძილი: "+parseInt((meters/1000)*100)/100+" კმ.<hr>თანხა: "+parseInt( (meters*kmprice+sit_price)*100 )/100+" ლარი";
-                        callingtaxi = 0;
+						if (mystatus==5)
+							{
+							document.getElementById("end_screen").style.display="inline";
+							tanxa=parseInt( (meters*kmprice+sit_price)*100 )/100;
+							document.getElementById("end_info").innerHTML = "მანძილი: "+parseInt((meters/1000)*100)/100+" კმ.<hr>თანხა: "+parseInt( (meters*kmprice+sit_price)*100 )/100+" ლარი";
+						  
+							}
+						callingtaxi = 0;
                         notified = 0;
                         uplimit = 5;
 						carMarker.setMap(null);
