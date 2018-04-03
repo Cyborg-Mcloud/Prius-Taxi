@@ -307,7 +307,7 @@ function update_data() {
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[4]);
-						kmprice=parseInt(b[5]);
+						kmprice=parseFloat(b[5]);
 						document.getElementById("end_screen").style.display="none";
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname;
@@ -326,7 +326,7 @@ function update_data() {
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
 						sit_price=parseInt(b[4]);
-						kmprice=parseInt(b[5]);
+						kmprice=parseFloat(b[5]);
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -376,7 +376,7 @@ function update_data() {
 						document.getElementById("on_call_menu").style.display="inline";
 
 						sit_price=parseInt(b[4]);
-						kmprice=parseInt(b[5]);
+						kmprice=parseFloat(b[5]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
@@ -396,13 +396,13 @@ function update_data() {
 
 
 						sit_price=parseInt(b[4]);
-						kmprice=parseInt(b[5]);
+						kmprice=parseFloat(b[5]);
 						meters=parseInt(b[6]);
                         taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
 						console.log(kmprice+ " / "+sit_price+ " / "+meters);
 						var metrebi=parseInt((meters/1000)*100)/100;
-						var metrebi_real=parseInt(meters*1.1*100)/100;
-						var	tanxa=parseInt( (metrebi*kmprice+sit_price)*100 )/100;
+						var metrebi_real=parseInt(metrebi*1.1*100)/100;
+						var	tanxa=parseInt( (metrebi_real*kmprice+sit_price)*100 )/100;
 						document.getElementById("driver_info").innerHTML =  "მანძილი: "+metrebi+" კმ. / "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 
 						document.getElementById("driver_info").style.display="inline";
@@ -422,9 +422,9 @@ function update_data() {
 						if (mystatus==5)
 							{
 							var metrebi=parseInt((meters/1000)*100)/100;
-							var metrebi_real=parseInt(meters*1.1*100)/100;
+							var metrebi_real=parseInt(metrebi*1.1*100)/100;
 							document.getElementById("end_screen").style.display="inline";
-							var tanxa=parseInt( (metrebi*kmprice+sit_price)*100 )/100;
+							var tanxa=parseInt( (metrebi_real*kmprice+sit_price)*100 )/100;
 							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi+" კმ. / "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 						  
 							}
