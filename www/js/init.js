@@ -335,27 +335,27 @@ function update_data() {
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
 
-							if (“Notification” in window) {
-							  Notification.requestPermission(function (permission) {
+
+//							  Notification.requestPermission(function (permission) {
 								// If the user accepts, let’s create a notification
-								if (permission === ‘granted’) {
-								  var notification = new Notification(“ტაქსი მოვიდ”, {
-									   tag: ‘message1’, 
-									   body: “თქვენი ტაქსი მოვიდა და გელოდებათ” 
-								  }); 
-								  notification.onshow  = function() { console.log(‘show’); };
-								  notification.onclose = function() { console.log(‘close’); };
-								  notification.onclick = function() { console.log(‘click’); };
-								}
-							  });
-							}
+//								if (permission === ‘granted’) {
+//								  var notification = new Notification(“ტაქსი მოვიდ”, {
+//									   tag: ‘message1’, 
+//									   body: “თქვენი ტაქსი მოვიდა და გელოდებათ” 
+//								  }); 
+//								  notification.onshow  = function() { console.log(‘show’); };
+//								  notification.onclose = function() { console.log(‘close’); };
+//								  notification.onclick = function() { console.log(‘click’); };
+//								}
+//							  });
+							
 
-                        //    window.plugin.notification.local.schedule({
-                          //      id: "321123",  // A unique id of the notifiction
-                            //    text: "თქვენი ტაქსი მოვიდა და გელოდებათ",  // The message that is displayed
-                              //  title: "ტაქსი მოვიდა",  // The title of the message
+                            window.plugin.notification.local.schedule({
+								id: "321123",  // A unique id of the notifiction
+								text: "თქვენი ტაქსი მოვიდა და გელოდებათ",  // The message that is displayed
+								title: "ტაქსი მოვიდა",  // The title of the message
 
-//                            });
+                            });
                             notified = 1;
                         }
 
