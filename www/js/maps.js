@@ -48,6 +48,8 @@ function initMap()
         fullscreenControl: false,
         streetViewControl: false,
         mapTypeControl: false,
+		disableDefaultUI: true
+
     });
 
     geocoder = new google.maps.Geocoder();
