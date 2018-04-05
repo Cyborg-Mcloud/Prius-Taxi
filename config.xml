@@ -71,8 +71,8 @@
 	
 
     <preference name="target-device" value="handset"/>
-<!--    <preference name="phonegap-version" value="cli-8.0.0"/>-->
-<preference name="phonegap-version" value="cli-7.0.1"/>
+   <preference name="phonegap-version" value="cli-8.0.0"/>
+<!--<preference name="phonegap-version" value="cli-7.0.1"/>-->
 
     <preference name="orientation" value="portrait"/>
     <preference name="webviewbounce" value="false"/>
