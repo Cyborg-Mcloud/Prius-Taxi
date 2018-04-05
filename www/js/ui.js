@@ -76,7 +76,7 @@ function change_status(newstat) {
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "inline";
-            document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
+          //  document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
 
 //            myself = 1;
