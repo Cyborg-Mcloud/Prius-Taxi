@@ -68,6 +68,7 @@ function change_status(newstat) {
             uplimit = 1;
             document.getElementById("call_but").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი მოდის";
+			document.getElementById("driver_info").style.display="inline";
 //            document.getElementById("certilebi").style.display = "none";
         //    myself = 1;
         }
@@ -76,6 +77,7 @@ function change_status(newstat) {
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "inline";
+			document.getElementById("driver_info").style.display="inline";
           //  document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
 
@@ -86,6 +88,7 @@ function change_status(newstat) {
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
+			document.getElementById("driver_info").style.display="inline";
             document.getElementById("info_text").innerHTML = "ტაქსი გელოდებათ, ბორტი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
       //      myself = 1;
