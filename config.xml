@@ -10,12 +10,7 @@
     <icon src="www/resources/taxi.png"/>
 	<icon src="www/resources/taxi_1024.jpg" width="1024" height="1024" />
 
-	<icon gap:platform="ios" width="40" height="40" src="www/resources/icon_40.png"  />
-	<icon gap:platform="ios" width="57" height="57" src="www/resources/icon_57.png"  />
-    <icon gap:platform="ios" width="72" height="72" src="www/resources/icon_72.png"  />
-    <icon gap:platform="ios" width="72" height="114" src="www/resources/icon-57-2x.png" />
-    <icon gap:platform="ios" width="144" height="144" src="www/resources/icon-72-2x.png"  />
-    <icon gap:platform="ios" width="120" height="120" src="www/resources/icon_120.png"  />
+	
 
 	<platform name="android">
         <preference name="android-minSdkVersion" value="18"/>
@@ -33,6 +28,13 @@
     <allow-navigation href="*"/>
 
 	<platform name="ios">
+		<icon gap:platform="ios" width="40" height="40" src="www/resources/icon_40.png"  />
+		<icon gap:platform="ios" width="57" height="57" src="www/resources/icon_57.png"  />
+		<icon gap:platform="ios" width="72" height="72" src="www/resources/icon_72.png"  />
+		<icon gap:platform="ios" width="72" height="114" src="www/resources/icon-57-2x.png" />
+		<icon gap:platform="ios" width="144" height="144" src="www/resources/icon-72-2x.png"  />
+		<icon gap:platform="ios" width="120" height="120" src="www/resources/icon_120.png"  />
+
         <allow-intent href="itms:taxiprius.com.ge"/>
         <allow-intent href="itms-apps:taxiprius.com.ge"/>
 		<gap:config-file platform="ios" parent="com.apple.developer.associated-domains" mode="replace">
@@ -69,7 +71,9 @@
 	
 
     <preference name="target-device" value="handset"/>
-    <preference name="phonegap-version" value="cli-8.0.0"/>
+<!--    <preference name="phonegap-version" value="cli-8.0.0"/>-->
+<preference name="phonegap-version" value="cli-7.0.1"/>
+
     <preference name="orientation" value="portrait"/>
     <preference name="webviewbounce" value="false"/>
     <preference name="DisallowOverscroll" value="true"/>
