@@ -252,15 +252,13 @@ function update_data() {
                 a = mr.split("|");
 
                 console.log("loginid:" + a[1]);
-                if (a[1] != "error") {
+                if (a[1] != "error") 
+					{
                     myloginid = a[1];
                     MyUser = a[2];
                     WriteData();
-
-                }
-                else {
-                    alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");
-                }
+	                }
+                else {alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");}
 
                 if (myloginid > 0) {
                     document.getElementById("loggedin_page").style.visibility = "visible";

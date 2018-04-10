@@ -191,19 +191,20 @@ function changemap() {
 
 var curwindow = 0;
 
-function show_settings() {
+function show_settings() 
+	{
 
     checkConnection();
 
     curwindow = 1;
-    document.getElementById("fanjara").style.visibility = "hidden";
+    //document.getElementById("fanjara").style.visibility = "hidden";
     document.getElementById("settings_sheet").style.visibility = "visible";
 }
 
 
 function show_map() {
     curwindow = 0;
-    document.getElementById("fanjara").style.visibility = "visible";
+   // document.getElementById("fanjara").style.visibility = "visible";
     document.getElementById("settings_sheet").style.visibility = "hidden";
 }
 
