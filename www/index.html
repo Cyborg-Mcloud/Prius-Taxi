@@ -174,7 +174,7 @@ function close_end_info()
 
 	<div id='settings_sheet'  style=' position:absolute; left:10%; top:180px; width:80%; background-color:white; color:gray; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px; z-index:10000;'>
 		
-				<br>
+
 				<div id='mydiv'></div>
 				<br>
 			<!--	<p id="geopos" style='display:none;'>Finding geolocation...</p>
@@ -187,15 +187,17 @@ function close_end_info()
 				<div id='login_page' style=' '>
 					<table>
 					  <tr>
-						<td style='font-size:12px;'>მობ. ან ელ-ფოსტა:</td>
+						<td style='font-size:12px;'>მობ# ან ელფოსტა:</td>
 						<td><input type='text' id='myname' name='myname' value='youuser' Placeholder="მობ. ან ელ-ფოსტა"
-								   size=16></td>
+								   size=10></td>
 					  </tr>
 					  <tr>
 						<td style='font-size:12px;'>პაროლი:</td>
-						<td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=12>
+						<td><input type='password' id='mypass' name='mypass' value='yourpass' placeholder="პაროლი" size=10>
 						</td>
-						<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='resources/save.png' width=20px></a>
+					</tr>
+					<tr>
+						<td rowspan=2><a style='' href='Javascript: saveuser();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>შესვლა</a>
 						</td>
 					  </tr>
 					</table>
@@ -203,7 +205,7 @@ function close_end_info()
 					<a href='#' onclick="window.open('http://taxiprius.com.ge/user_reg.php', '_system');" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 				</div>
 
-				<div id='loggedin_page' style='width:355px;'>
+				<div id='loggedin_page' style='width:355px; display:none;'>
 					<div id='loggedin_info'></div>
 					<a href='Javascript: logout();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>გამოსვლა</a>
 				</div>
@@ -211,6 +213,7 @@ function close_end_info()
 
 
 				<a href='Javascript: show_map();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>დახურვა</a>
+				<Br><Br>
 				</center>
 
 
