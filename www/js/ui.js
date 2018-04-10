@@ -199,6 +199,7 @@ function show_settings()
     curwindow = 1;
     //document.getElementById("fanjara").style.visibility = "hidden";
     document.getElementById("settings_sheet").style.visibility = "visible";
+	console.log("showing settings");
 }
 
 
@@ -206,6 +207,7 @@ function show_map() {
     curwindow = 0;
    // document.getElementById("fanjara").style.visibility = "visible";
     document.getElementById("settings_sheet").style.visibility = "hidden";
+		console.log("hiding settings");
 }
 
 
