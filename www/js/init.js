@@ -261,7 +261,7 @@ function update_data() {
                 else {alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");}
 
                 if (myloginid > 0) {
-                    document.getElementById("loggedin_page").style.visibility = "visible";
+                    document.getElementById("loggedin_page").style.display = "inline";
                     document.getElementById("login_page").style.display = "none";
                     document.getElementById("regbut").style.display = "inline";
                     document.getElementById("loggedin_info").innerHTML = "მოგესალმებით " + MyUser;
