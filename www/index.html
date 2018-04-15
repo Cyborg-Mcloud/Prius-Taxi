@@ -3,7 +3,8 @@
 <meta http-equiv="Content-Security-Policy"
       content="img-src * 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://fonts.googleapis.com">
 
-<meta name="viewport" content="width=370, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=0.1,  minimal-ui, height=620">
+<!--<meta name="viewport" content="width=370, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=0.1,  minimal-ui, height=620">-->
+<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
 <head>
 
@@ -53,38 +54,30 @@ td {
 }
 </style>
 <body bgcolor=#e3b202>
-
-<div id='fanjara' style='position:relative; overflow:hidden; width:370px; height:620px;'>
+<!-- width:370px; height:620px;-->
+<div id='fanjara' style='position:relative; overflow:hidden; width:100%; height:100%;'>
 	<!--                                          zeda meniu -->
-	<div style='position:fixed; left:0px; top:0px; width:100%; height:110px; background-color:#ffce00; z-index:211; '>
+	<div style='position:fixed; left:0px; top:0px; width:100%; height:110px;  z-index:211; '><!--background-color:#ffce00;-->
 		
-		<a style='float:left; margin-top:7px; margin-left: 7px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
+		<a style='float:left; margin-top:7px; margin-left: 7px; margin-right:7px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
       
 	<!--									mimartulebis asarchevebi-->
-		<div id='input_boxes'>
-			<table width=100%>
-				<!--<Tr>
-					<td style='color:Black;' align=center><b>დაწყება</b></td>
-					
-				</tr>-->
-
+		<div id='input_boxes' style='float:left;'>
+			<table width=100% cellspacing=0 cellpadding=0 border=0;>
 				<Tr><td><a href='Javascript:sel_green();'><img src='resources/arr_green.png'></a></td>
 					<td align=left>
-						<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width:300px; font-size:14px;'>
+						<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width:80%; font-size:14px; padding:10px;'>
 					</td> 
 				</tr>
-<!--				<td>
-					<td style='color:Black;' align=center><b>დასრულება</b></td>
-				</tr>-->
 				<tr>
 				<td><a href='Javascript:sel_orange();'><img src='resources/arr_orange.png'></a></td>
-					<td  align=left><input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width:300px; font-size:14px;'>
+					<td  align=left><input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width:80%; font-size:14px; padding:10px;'>
 					</td>
 				</tr>
 			</table>
 		</div>
 
-		<div id='on_call_menu' style='display:none;'>
+		<div id='on_call_menu' style='display:none; background-color:white; float:left; width:90%;'>
 		<Br><br><br>
 			<center>
 			<a href='Javascript: cancel_call();' style='background-color:#c72322; padding:10px; padding-left:20px; padding-right:20px; border-radius:20px;'>გაუქმება</a>
