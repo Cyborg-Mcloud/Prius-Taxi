@@ -2,8 +2,8 @@
 <widget xmlns:gap="http://phonegap.com/ns/1.0" 
 		id="com.designge.priustaxi" 
 		package="com.designge.priustaxi"
-        version="1.2.2"
-        versionCode="36" 
+        version="1.2.3"
+        versionCode="37" 
 		xmlns="http://www.w3.org/ns/widgets"
 		xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Prius Taxi</name>
@@ -105,7 +105,9 @@
         <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
         <param name="ios-package" value="CDVNotification"/>
     </feature>
-
+<feature name="Geolocation">
+    <param name="ios-package" value="CDVLocation" />
+</feature>
 	<feature name="App">
         <param name="android-package" value="com.designge.priustaxi"/>
     </feature>
