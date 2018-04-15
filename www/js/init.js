@@ -308,7 +308,7 @@ function update_data() {
 						kmprice=parseFloat(b[5]);
 						document.getElementById("end_screen").style.display="none";
 						document.getElementById("driver_info").style.display="inline";
-						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='call.png'></a>";
+						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='resources/call.png'></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 
@@ -329,7 +329,7 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='call.png'></a>";
+						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='resources/call.png'></a>";
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
 
@@ -369,7 +369,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='call.png'></a>";
+						document.getElementById("driver_info").innerHTML =  taxiname+"<a href='Javascript: make_call();'><img src='resources/call.png'></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 
