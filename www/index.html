@@ -34,9 +34,9 @@
     text-decoration: none;
     color: white;
   }
-
-#pac-input{  border:2px solid #13ae48;  border-radius:4px;padding:4px;margin:0px; background-color:white; color:black;}
-#pac-input2{  border:2px solid #ecac00; border-radius:4px;padding:4px;margin:0px;background-color:white; color:black;}
+/*  border:2px solid #13ae48;  border-radius:4px;*/
+#pac-input{padding:4px;margin:0px; background-color:white; color:green; border:0px;}
+#pac-input2{  padding:4px;margin:0px;background-color:white; color:#32e875; border:0px;}
 
 #pac-input2:focus {
     background-color:#e8b427; 
@@ -60,13 +60,13 @@ td {
 	<!--                                          zeda meniu -->
 	<div style='position:fixed;box-shadow: rgba(0, 0, 0, 0.75) 0px 4px 23px 0px;left:0px;top:0px;width:100%; z-index:211; '><!--background-color:#ffce00;-->
 		
-		<a style='float:left;padding:7px;background-color:white;display: block;height: 57px;width: 8%;' href='Javascript: show_settings();'><img src='resources/settings.svg' height=30px></a>
+		<a style='float:left;padding:7px;background-color:white;display: block;height: 57px;width: ' href='Javascript: show_settings();'><img src='resources/settings.svg' height=30px></a>
       
 	<!--									mimartulebis asarchevebi-->
-		<div id='input_boxes' style='float:left; '>
+		<div id='input_boxes' style='float:left; width:81%;'>
 
-			<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width: 96%;font-size:14px;padding:10px;'>				
-			<input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width: 96%;font-size:14px;padding:10px;'>
+			<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width: 100%;font-size:14px;padding:10px;'>				
+			<input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width: 100%;font-size:14px;padding:10px;'>
 		</div>
 
 		<div id='on_call_menu' style='display:none; background-color:white; float:left; width:90%;'>
