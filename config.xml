@@ -51,11 +51,11 @@
       </array>
     </config-file>
 
-    <config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
-      <array>
-        <string>applinks:taxiprius.com.ge</string>
-      </array>
-    </config-file>
+		<config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
+		  <array>
+			<string>applinks:taxiprius.com.ge</string>
+		  </array>
+		</config-file>
 
 			<config-file platform="ios" target="Entitlements-*.plist" parent="com.apple.developer.associated-domains" mode="replace">
 
@@ -66,6 +66,10 @@
 			 </array>
 
 		</config-file>
+
+		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+			<string>need location access to find things nearby</string>
+		</edit-config>
     </platform>
 
 
