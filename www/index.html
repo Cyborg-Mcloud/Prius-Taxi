@@ -60,23 +60,13 @@ td {
 	<!--                                          zeda meniu -->
 	<div style='position:fixed; left:0px; top:0px; width:100%; border:1px solid red; z-index:211; '><!--background-color:#ffce00;-->
 		
-		<a style='float:left; padding:7px; background-color:white; width:10%; border:1px solid green;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
+		<a style='float:left; padding:7px; background-color:white;  border:1px solid green;' href='Javascript: show_settings();'><img src='resources/settings_1.png' height=30px></a>
       
 	<!--									mimartulebis asarchevebi-->
-		<div id='input_boxes' style='float:left; width:89%;'>
-			<table width=100% cellspacing=0 cellpadding=0 border=0;>
-				<Tr>
-				<!--<td><a href='Javascript:sel_green();'><img src='resources/arr_green.png'></a></td>-->
-					<td align=left>
-						<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width:100%; font-size:14px; padding:10px;'>
-					</td> 
-				</tr>
-				<tr>
-				<!--<td><a href='Javascript:sel_orange();'><img src='resources/arr_orange.png'></a></td>-->
-					<td  align=left><input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width:width:100%; font-size:14px; padding:10px;'>
-					</td>
-				</tr>
-			</table>
+		<div id='input_boxes' style='float:left; '>
+
+			<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width:100%; font-size:14px; padding:10px;'>				
+			<input id="pac-input2" type="text" placeholder="დანიშნულების მისამართი"  onfocus='setState(1);' onclick='this.select();' style='width:100%; font-size:14px; padding:10px;'>
 		</div>
 
 		<div id='on_call_menu' style='display:none; background-color:white; float:left; width:90%;'>
