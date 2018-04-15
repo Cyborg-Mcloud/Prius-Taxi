@@ -430,3 +430,20 @@ function logout() {
 function fail(error) {
     console.log(error.code);
 }
+
+function make_call()
+	{
+	var u=new Array();
+	u=taxiname.split("<hr>");
+
+	window.plugins.CallNumber.callNumber(onCallSuccess, onCallError, u[2], true);
+	}
+
+
+	function onCallSuccess(result){
+  console.log("call Success:"+result);
+}
+
+function onCallError(result) {
+  console.log("call Error:"+result);
+}
