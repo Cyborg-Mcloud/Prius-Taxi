@@ -157,6 +157,12 @@ function cignorewifi() {
         cache_ignore_wifi = 0;
     }
 }
+var win;
+function open_reg_window()
+{
+win=window.open('http://taxiprius.com.ge/user_reg.php',  '_blank', 'location=yes');
+
+}
 
 function setme() {
     if (startMarker !== undefined) {
