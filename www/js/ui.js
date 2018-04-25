@@ -203,6 +203,10 @@ function show_settings()
     checkConnection();
 
     curwindow = 1;
+	if (MyUser!="" && MyUser!="youuser" && MyUser!="nouser")
+		{
+		login_to_server();
+		}
     //document.getElementById("fanjara").style.visibility = "hidden";
     document.getElementById("settings_sheet").style.display = "inline";
 	console.log("showing settings");
@@ -293,28 +297,36 @@ function zoomme(sait) {
 var myloginid = 0;
 
 
-function saveuser() {
-    if (document.getElementById("myname").value != "" && document.getElementById("mypass").value != "") {
+function saveuser() 
+	{
+    if (document.getElementById("myname").value != "" && document.getElementById("mypass").value != "") 
+		{
         MyUser = document.getElementById("myname").value;
         MyPass = document.getElementById("mypass").value;
-    }
-    else {
+		}
+    else 
+		{
         MyUser = "nouser";
         MyPass = "nopass";
-    }
+		}
 
     WriteData();
 
 
-    url = "http://taxiprius.com.ge/login.php?login=1&unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass;
+	login_to_server();
+    if (started == 0) 
+		{
+        Start();
+		}
+	}
+
+function login_to_server()
+	{
+	url = "http://taxiprius.com.ge/login.php?login=1&unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass;
     console.log("login: " + url);
     gamehttp.open('GET', url, true);
     gamehttp.send(null);
-
-    if (started == 0) {
-        Start();
-    }
-}
+	}
 
 
 var curx;

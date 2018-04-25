@@ -32,7 +32,8 @@ function WriteData() {
 }
 
 /**Reads used data from cookies*/
-function ReadData() {
+function ReadData() 
+	{
     MyUser = getCookie(COOKIE_NAMES.user);
     MyPass = getCookie(COOKIE_NAMES.password);
     MyZoom = getCookie(COOKIE_NAMES.zoom);
@@ -42,4 +43,4 @@ function ReadData() {
     mytel = getCookie(COOKIE_NAMES.tel);
     myid = getCookie(COOKIE_NAMES.myid);
 	console.log("reading: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ " - "+myloginid+ " - "+mytel+ " - "+myid);
-}
+	}

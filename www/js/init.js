@@ -131,6 +131,14 @@ function onDeviceReady() {
 	// -------------------------------------
 
 	ReadData();
+
+	document.getElementById("myname").value=MyUser;
+	document.getElementById("mypass").value=MyPass;
+	if (MyUser!="" && MyUser!="youuser" && MyUser!="nouser")
+		{
+		login_to_server();
+		}
+
 	console.log("device ready, checking connection");
 	checkConnection();
 
@@ -466,7 +474,8 @@ function update_data() {
     }
 }
 
-function check_chat(chatid) {
+function check_chat(chatid) 
+	{
     if (chatid != last_chat) {
         last_chat = chatid;
         url = "http://taxiprius.com.ge/chat.php?req=1&myid=" + myid;
@@ -474,10 +483,11 @@ function check_chat(chatid) {
         console.log("request chat: " + url);
         gamehttp.open('GET', url, true);
         gamehttp.send(null);
-    }
-}
+		}
+	}
 
-function UpData() {
+function UpData() 
+	{
     if (myid == 0 || myid == "") 
 		{
         myid = Math.floor(Math.random() * 100000000);
@@ -486,21 +496,20 @@ function UpData() {
     console.log("update, callingtaxi: "+callingtaxi);
 	if (callingtaxi == 0)
 		{
-		
-        if (MyUser != "nouser" && MyUser != "") {
+        if (MyUser != "nouser" && MyUser != "") 
+			{
             url = "http://taxiprius.com.ge/upload.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed + "&passive=" + inpause + "&myid=" + myid;
-        }
-        else {
+	        }
+        else 
+			{
             url = "http://taxiprius.com.ge/upload.php?passive=" + inpause + "&myid=" + myid + "&lat=" + MyLat + "&long=" + MyLong + "&alt=" + MyAlt + "&head=" + MyHead + "&speed=" + MySpeed;
-        }
-         console.log("just upload: " + url);
+	        }
+		console.log("just upload: " + url);
         //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
         gamehttp.open('GET', url, true);
         gamehttp.send(null);
-    }
-
-
-}
+		}
+	}
 
 function Start() {
     console.log("Start / END");
