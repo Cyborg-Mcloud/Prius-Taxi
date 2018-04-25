@@ -250,11 +250,12 @@ function update_data() {
         mr = gamehttp.responseText;
         if (mr != "") {
             // console.log("data received from server: " + mr);
-            if (mr == "register") {
+            if (mr == "register") 
+				{
 
                 console.log("register received");
                 Start();
-            }
+	            }
             else if (mr.substring(0, 4) == "logi") {
                 console.log("login receive: " + mr);
                 a = mr.split("|");
@@ -268,18 +269,20 @@ function update_data() {
 	                }
                 else {alert("ელ.ფოსტა/მობილური ან პაროლი არასწორია!");}
 
-                if (myloginid > 0) {
-                    document.getElementById("loggedin_page").style.display = "inline";
+
+				if (myloginid > 0) 
+					{
+                    document.getElementById("loggedin_info").innerHTML = "მოგესალმებით " + MyUser;
+					document.getElementById("loggedin_page").style.display = "inline";
                     document.getElementById("login_page").style.display = "none";
                     document.getElementById("regbut").style.display = "inline";
-                    document.getElementById("loggedin_info").innerHTML = "მოგესალმებით " + MyUser;
-
-                }
-                else {
+	                }
+                else 
+					{
                     document.getElementById("loggedin_page").style.display = "none";
                     document.getElementById("login_page").style.display = "inline";
-                }
-            }
+	                }
+		        }
             else if (mr.substring(0, 4) == "chat") {
                 console.log("chat receive: " + mr);
                 a = mr.split("|");

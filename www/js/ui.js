@@ -199,17 +199,25 @@ var curwindow = 0;
 
 function show_settings() 
 	{
-
-    checkConnection();
-
-    curwindow = 1;
-	if (MyUser!="" && MyUser!="youuser" && MyUser!="nouser")
+	if (curwindow!=1)
 		{
-		login_to_server();
+	
+		checkConnection();
+
+		curwindow = 1;
+		if (MyUser!="" && MyUser!="youuser" && MyUser!="nouser")
+			{
+			login_to_server();
+			}
+		//document.getElementById("fanjara").style.visibility = "hidden";
+		document.getElementById("settings_sheet").style.display = "inline";
+		console.log("showing settings");
 		}
-    //document.getElementById("fanjara").style.visibility = "hidden";
-    document.getElementById("settings_sheet").style.display = "inline";
-	console.log("showing settings");
+	else
+		{
+		console.log("closing settings");
+		show_map();
+		}
 }
 
 
