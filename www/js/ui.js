@@ -445,8 +445,10 @@ function call_taxi() {
 
 function logout() {
     myloginid = 0;
+	MyUser="";
+	MyPass="";
     WriteData();
-    document.getElementById("regbut").style.display = "inline";
+
     document.getElementById("myname").value = "";
     document.getElementById("mypass").value = "";
     document.getElementById("loggedin_page").style.display = "none";
