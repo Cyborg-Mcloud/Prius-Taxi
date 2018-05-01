@@ -475,3 +475,15 @@ function make_call()
 function onCallError(result) {
   console.log("call Error:"+result);
 }
+
+function card_pay()
+	{
+	window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_blank', 'location=yes');
+	}
+
+function close_end_info()
+	{
+	tanxa=0;
+	document.getElementById("end_screen").style.display="none";
+
+	}

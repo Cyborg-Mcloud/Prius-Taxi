@@ -118,29 +118,16 @@ td {
 		<div id='driver_info' style='position:fixed; bottom:30px; left:10%; height:120px; width:80%; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:10px;'></div>
 
 
-		<div id='end_screen' style='position:fixed; bottom:100px; left:15%; width:200px; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;'>
+		<div id='end_screen' style='position:fixed; bottom:150px; left:15%; width:200px; z-index:252; color:gray; background-color:white; padding:10px; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;'>
 
-			<Center><a href='Javascript: card_pay();' style='background-color:blue; border-radius:3px; padding:5px; color:white;'>ბარათით გადახდა</a></center><Br>
+			<Center><a href='Javascript: card_pay();' style='background-color:blue; border-radius:3px; padding:10px; color:white; border-radius:5px;'>ბარათით გადახდა</a></center><Br>
 			<div id='end_info'></div>
-			<Br><br><br>
+			<Br><br>
 			<center><a href='Javascript: close_end_info();' style='border:1px solid gray; border-radius:3px; padding:10px; background-color:green; color:white;'>OK</a><center>
 			<Br><Br>
 
 		</div>
 
-<Script>
-function card_pay()
-	{
-	window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_blank', 'location=yes');
-	}
-
-function close_end_info()
-	{
-	tanxa=0;
-	document.getElementById("end_screen").style.display="none";
-
-	}
-</script>
 
 <!--		<a id='call_but' style='position:fixed; bottom:0px; left:20%; height:100px; width:60%; z-index:252;' href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>-->
 	<a id='call_but' style='position:fixed;bottom: 20px;left: 15%;width:60%;z-index:252;background-color:#34e777;color:white;border: 2px solid #27af55;border-radius: 20px; padding: 15px;font-size: 22px; font-weight: bold;  font-family:mainfont;' href='Javascript: call_taxi();'><center>გამოძახება</center></a>
