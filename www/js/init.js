@@ -295,12 +295,15 @@ function update_data() {
 
 
                 a = mr.split("|");
-                if (a[0] == "searching_taxi") {
+                if (a[0] == "searching_taxi") 
+					{
                     notified = 0;
                     change_status(1);
                     callingtaxi = 0;
+					document.getElementById("input_boxes").style.display="none";
+					document.getElementById("on_call_menu").style.display="inline";
 
-                }
+				 }
                 else if (a[0] == "taxi_moving") {
                     notified = 0;
                     callingtaxi = 0;
@@ -325,7 +328,8 @@ function update_data() {
 
 						}
 					}
-                else if (a[0] == "taxi_arrived") {
+                else if (a[0] == "taxi_arrived") 
+					{
                     callingtaxi = 0;
 
                     change_status(3);
@@ -340,6 +344,8 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
+						 					document.getElementById("input_boxes").style.display="none";
+						 document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
