@@ -390,7 +390,7 @@ function update_data() {
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
-						document.getElementById("dirinfo").style.display='none";
+						document.getElementById("dirinfo").style.display="none";
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
