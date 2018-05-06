@@ -325,7 +325,7 @@ function update_data() {
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
-						document.getElementById("dirinfo").style.display='none";
+						document.getElementById("dirinfo").style.display="none";
 
 						}
 					}
@@ -425,7 +425,7 @@ function update_data() {
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="none";
-						document.getElementById("dirinfo").style.display='none";
+						document.getElementById("dirinfo").style.display="none";
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -457,7 +457,7 @@ function update_data() {
 						document.getElementById("driver_info").style.display="none";
 						document.getElementById("pac-input").value="";
 						document.getElementById("pac-input2").value="";
-						document.getElementById("dirinfo").style.display='none";
+						document.getElementById("dirinfo").style.display="none";
 						document.getElementById("pac-input").style.disabled="false";
 						document.getElementById("pac-input2").style.disabled="false";
 

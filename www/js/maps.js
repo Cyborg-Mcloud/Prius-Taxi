@@ -350,7 +350,7 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
 			document.getElementById("dirinfo").innerHTML="მანძილი: "+(totalDistance/1000)+"კმ, ";
 			document.getElementById("dirinfo").innerHTML+="სავ. ფასი: "+tanxa;
 			appr_price=parseInt(sit_price+(totalDistance/1000)*kmprice);
-			document.getElementById("dirinfo").style.display='inline";
+			document.getElementById("dirinfo").style.display="inline";
 			directionsDisplay.setDirections(response);
             directionsDisplay.setMap(map);
         } else {
