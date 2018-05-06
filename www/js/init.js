@@ -242,7 +242,7 @@ var taxilat = 0;
 var taxiname = "";
 var notified = 0;
 var sit_price=3;
-var kmprice=0.75;
+var kmprice=0.65;
 var chatis = "";
 var meters=0;
 function update_data() {
@@ -325,6 +325,7 @@ function update_data() {
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
+						document.getElementById("dirinfo").style.display='none";
 
 						}
 					}
@@ -389,7 +390,7 @@ function update_data() {
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
-
+						document.getElementById("dirinfo").style.display='none";
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
@@ -413,17 +414,18 @@ function update_data() {
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
 						meters=parseInt(b[6]);
-                        taxiname = "მანძილი: "+meters+"<hr>"+parseInt( (meters*kmprice+sit_price)*100 )/100;
+
 						console.log(kmprice+ " / "+sit_price+ " / "+meters);
 						var metrebi=parseInt((meters/1000)*100)/100;
-						var metrebi_real=parseInt(metrebi*1.1*100)/100;
+						var metrebi_real=parseInt(metrebi*1.12*100)/100;
 						var	tanxa=parseInt( (metrebi_real*kmprice+sit_price)*100 )/100;
-						document.getElementById("driver_info").innerHTML =  "მანძილი: "+metrebi+" კმ. / "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+                        taxiname = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+						document.getElementById("driver_info").innerHTML =  "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="none";
-
+						document.getElementById("dirinfo").style.display='none";
 
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
@@ -437,10 +439,10 @@ function update_data() {
 						if (mystatus==5)
 							{
 							var metrebi=parseInt((meters/1000)*100)/100;
-							var metrebi_real=parseInt(metrebi*1.1*100)/100;
-							document.getElementById("end_screen").style.display="inline";
+							var metrebi_real=parseInt(metrebi*1.12*100)/100;
 							var tanxa=parseInt( (metrebi_real*kmprice+sit_price)*100 )/100;
-							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi+" კმ. / "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+							document.getElementById("end_screen").style.display="inline";
+							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 						  
 							}
 						callingtaxi = 0;
@@ -448,12 +450,14 @@ function update_data() {
                         uplimit = 5;
 						carMarker.setMap(null);
 						taxiname="";
+
+						appr_price=0;
                         document.getElementById("call_but").style.display = "inline";
                         document.getElementById("arrived_screen").style.display = "none";
 						document.getElementById("driver_info").style.display="none";
 						document.getElementById("pac-input").value="";
 						document.getElementById("pac-input2").value="";
-
+						document.getElementById("dirinfo").style.display='none";
 						document.getElementById("pac-input").style.disabled="false";
 						document.getElementById("pac-input2").style.disabled="false";
 
