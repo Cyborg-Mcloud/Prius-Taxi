@@ -320,9 +320,19 @@ function update_data() {
 						 carMarker.setMap(map);
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
+						meters=parseInt(b[6]);
+						var molodini="";
+						if (meters>50)
+							{
+							molodini=(parseInt(meters/800)+1)+" წთ.";
+							}
+						else
+							{
+							molodini="0 წთ.";
+							}
 						document.getElementById("end_screen").style.display="none";
 						document.getElementById("driver_info").style.display="inline";
-						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
+						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("dirinfo").style.display="none";
