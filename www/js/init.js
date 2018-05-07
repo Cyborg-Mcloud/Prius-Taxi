@@ -302,6 +302,7 @@ function update_data() {
                     callingtaxi = 0;
 					document.getElementById("input_boxes").style.display="none";
 					document.getElementById("on_call_menu").style.display="inline";
+					document.getElementById("dirinfo").style.display="none";
 
 				 }
                 else if (a[0] == "taxi_moving") {
@@ -355,7 +356,7 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-						 navigator.vibrate(3000);
+						 navigator.vibrate(1000);
 						 document.getElementById("input_boxes").style.display="none";
 						 document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
