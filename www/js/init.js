@@ -355,7 +355,8 @@ function update_data() {
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
-						 					document.getElementById("input_boxes").style.display="none";
+						 navigator.vibrate(3000);
+						 document.getElementById("input_boxes").style.display="none";
 						 document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
