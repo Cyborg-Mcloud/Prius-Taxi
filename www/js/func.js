@@ -121,4 +121,5 @@ function datvale_pussy(met)
 		met=met-4;
 		tanxa=parseInt( (met*kmprice+sit_price)*100 )/100;	
 		}
+	return tanxa;
 	}
