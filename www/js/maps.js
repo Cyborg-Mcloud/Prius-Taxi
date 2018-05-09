@@ -346,7 +346,7 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
 
 			var metrebi=parseInt((totalDistance/1000)*100)/100;
 			var metrebi_real=parseInt(metrebi*1.12*100)/100;
-			var	tanxa=parseInt( (metrebi_real*kmprice+sit_price));
+			var	tanxa=datvale_pussy(metrebi_real);
 			document.getElementById("dirinfo").innerHTML="მანძილი: "+metrebi_real+" კმ<hr>";
 			document.getElementById("dirinfo").innerHTML+="სავ. ფასი: "+tanxa + " - "+(tanxa+1)+" ლარი";
 			appr_price=parseInt(sit_price+(totalDistance/1000)*kmprice);

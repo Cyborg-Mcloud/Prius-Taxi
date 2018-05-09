@@ -109,3 +109,16 @@ function lat2pixel(lat, zoom) {
     return (((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
 }
 
+function datvale_pussy(met)
+	{
+	var tanxa=0;
+	if (met<4)
+		{
+		tanxa=sit_price;
+		}
+	else
+		{
+		met=met-4;
+		tanxa=parseInt( (met*kmprice+sit_price)*100 )/100;	
+		}
+	}
