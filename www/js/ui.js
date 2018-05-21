@@ -479,7 +479,7 @@ function onCallError(result) {
 function card_pay()
 	{
 									alert(tanxa);
-	window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_blank', 'location=yes');
+//	window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_blank', 'location=yes');
 	}
 
 function close_end_info()
