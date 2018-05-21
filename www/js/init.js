@@ -431,7 +431,7 @@ function update_data() {
 						var metrebi=parseInt((meters/1000)*100)/100;
 						var metrebi_real=parseInt(metrebi*1.12*100)/100;
 
-						var	tanxa=datvale_pussy(metrebi_real);
+							tanxa=datvale_pussy(metrebi_real);
                         taxiname = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 						document.getElementById("driver_info").innerHTML =  "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 
@@ -453,7 +453,7 @@ function update_data() {
 							{
 							var metrebi=parseInt((meters/1000)*100)/100;
 							var metrebi_real=parseInt(metrebi*1.12*100)/100;
-							var	tanxa=datvale_pussy(metrebi_real);
+								tanxa=datvale_pussy(metrebi_real);
 							console.log("tanxa aris: "+tanxa);
 							document.getElementById("end_screen").style.display="inline";
 							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
