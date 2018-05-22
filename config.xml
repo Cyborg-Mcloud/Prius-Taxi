@@ -26,6 +26,8 @@
     <access origin="*"/>
     <allow-intent href="*"/>
     <allow-navigation href="*"/>
+	<allow-intent href="http://*/*" launch-external="yes"/>
+	<allow-intent href="https://*/*" launch-external="yes"/>
 
 	<platform name="ios">
 		<icon gap:platform="ios" src="www/resources/taxi_1024.png" width="1024" height="1024" />

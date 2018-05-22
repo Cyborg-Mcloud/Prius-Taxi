@@ -2,7 +2,7 @@ var mystatus = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-  
+console.log("device: "+ device.platform);
 
 var myid = 0;
 var map;
