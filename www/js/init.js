@@ -246,7 +246,7 @@ var kmprice=0.65;
 var chatis = "";
 var meters=0;
 function update_data() {
-    if (gamehttp.readyState == 4) {
+    if (gamehttp.readyState==4 && gamehttp.status==200 ) {
         mr = gamehttp.responseText;
         if (mr != "") {
             // console.log("data received from server: " + mr);
