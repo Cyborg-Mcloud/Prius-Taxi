@@ -488,3 +488,17 @@ function close_end_info()
 	document.getElementById("end_screen").style.display="none";
 
 	}
+
+function vote(qula, ride)
+	{	
+	url = "http://taxiprius.com.ge/vote.php?unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass+"&qula="+qula+"&ride="+ride;
+	for (i=1;i<=qula ;i++ )
+		{
+		document.getElementById("vote"+i).src='resources/vote_full.png';
+		}
+
+    console.log("vote: " + url);
+    gamehttp.open('GET', url, true);
+    gamehttp.send(null);
+
+	}

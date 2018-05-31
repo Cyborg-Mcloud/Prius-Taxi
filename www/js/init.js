@@ -447,8 +447,9 @@ function update_data() {
 					}
                 else 
 					{
-                    if (mystatus > 0) {
-						console.log("movedi aq: "+mystatus);
+                    if (mystatus > 0) 
+						{
+						console.log("movedi aq, DAXURVASHI: "+mystatus);
 						if (mystatus==5)
 							{
 							var metrebi=parseInt((meters/1000)*100)/100;
@@ -457,7 +458,10 @@ function update_data() {
 							console.log("tanxa aris: "+tanxa);
 							document.getElementById("end_screen").style.display="inline";
 							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
-						  
+							for (i=1;i<=5 ;i++ )
+								{
+								document.getElementById("vote"+i).src='resources/vote_emtpy.png';
+								}
 							}
 						callingtaxi = 0;
                         notified = 0;
