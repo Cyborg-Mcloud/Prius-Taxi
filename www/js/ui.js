@@ -519,7 +519,9 @@ function onCallError(result) {
 function card_pay()
 	{
 	console.log("card pay: "+tanxa);
-	window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_system', 'location=yes');
+document.getElementById("myiframe").src='http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid;
+document.getElementById("myiframe").style.display="inline";
+	//window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_system', 'location=yes');
 	}
 
 function close_end_info()
