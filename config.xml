@@ -28,6 +28,8 @@
     <allow-navigation href="*"/>
 	<allow-intent href="http://*/*" launch-external="yes"/>
 	<allow-intent href="https://*/*" launch-external="yes"/>
+	<allow-navigation href="*://*.taxiprius.com.ge/*" />
+	<allow-navigation href="*://*.securepay.ufc.ge/*" />
 
 	<platform name="ios">
 		<icon gap:platform="ios" src="www/resources/taxi_1024.png" width="1024" height="1024" />

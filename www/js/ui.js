@@ -176,7 +176,8 @@ function cignorewifi() {
 var win;
 function open_reg_window()
 {
-win=window.open('http://taxiprius.com.ge/user_reg.php',  '_blank', 'location=yes');
+window.location="http://taxiprius.com.ge/user_reg.php";
+//win=window.open('http://taxiprius.com.ge/user_reg.php',  '_blank', 'location=yes');
 
 }
 
