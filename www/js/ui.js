@@ -23,13 +23,16 @@ function chat_key(e) {
 function driver_info_up()
 	{
 	document.getElementById("driver_info").style.bottom="30px";
-
+	document.getElementById("downarrow").style.display="block";
+	document.getElementById("uparrow").style.display="none";
 
 	}
 
 function driver_info_down()
 	{
 	document.getElementById("driver_info").style.bottom="-140px";
+	document.getElementById("downarrow").style.display="none";
+	document.getElementById("uparrow").style.display="block";
 
 
 	}
