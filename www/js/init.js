@@ -333,11 +333,12 @@ function update_data() {
 							}
 						document.getElementById("end_screen").style.display="none";
 						document.getElementById("driver_info").style.display="inline";
-						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
+						document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
+
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("dirinfo").style.display="none";
-
+						driver_info_up();
 						}
 					}
                 else if (a[0] == "taxi_arrived") 
@@ -359,7 +360,8 @@ function update_data() {
 						 navigator.vibrate(1000);
 						 document.getElementById("input_boxes").style.display="none";
 						 document.getElementById("on_call_menu").style.display="inline";
-						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
+						 driver_info_down();
+						document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
 
@@ -399,10 +401,12 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-						document.getElementById("driver_info").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
+						document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="inline";
 						document.getElementById("dirinfo").style.display="none";
+
+						driver_info_down();
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
@@ -433,8 +437,8 @@ function update_data() {
 
 							tanxa=datvale_pussy(metrebi_real);
                         taxiname = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
-						document.getElementById("driver_info").innerHTML =  "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
-
+						document.getElementById("driver_info_text").innerHTML =  "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+						driver_info_down();
 						document.getElementById("driver_info").style.display="inline";
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="none";
@@ -489,7 +493,7 @@ function update_data() {
 						dirRender.setMap(null);
 						endMarker.setMap(null);
 						end_set=0;
-						//document.getElementById("driver_info").innerHTML =  taxiname;
+						//document.getElementById("driver_info_text").innerHTML =  taxiname;
                         change_status(0);
                     }
                     check_chat(parseInt(mr));

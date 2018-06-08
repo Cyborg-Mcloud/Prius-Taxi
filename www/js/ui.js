@@ -20,6 +20,19 @@ function chat_key(e) {
     }
 }
 
+function driver_info_up()
+	{
+	document.getElementById("driver_info").style.bottom="30px";
+
+
+	}
+
+function driver_info_down()
+	{
+	document.getElementById("driver_info").style.bottom="-130px";
+
+
+	}
 
 function chat_click() {
     if (chatopened == 0) {
