@@ -175,6 +175,18 @@ function cignorewifi() {
 }
 var win;
 
+window.addEventListener('message', function(event) { 
+
+    
+    
+	console.log(event.data); 
+	if (event.data=="closeme")
+		{
+		close_iframe();
+		}
+    
+}); 
+
 function close_iframe()
 {
 document.getElementById("myiframe").style.display="none";
