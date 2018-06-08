@@ -29,7 +29,7 @@ function driver_info_up()
 
 function driver_info_down()
 	{
-	document.getElementById("driver_info").style.bottom="-130px";
+	document.getElementById("driver_info").style.bottom="-140px";
 
 
 	}
