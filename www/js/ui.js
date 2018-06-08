@@ -174,6 +174,12 @@ function cignorewifi() {
     }
 }
 var win;
+
+function close_iframe()
+{
+document.getElementById("myiframe").style.display="none";
+}
+
 function open_reg_window()
 {
 url="http://taxiprius.com.ge/user_reg.php";
