@@ -483,7 +483,7 @@ function update_data() {
 							var metrebi_real=parseInt(metrebi*1.12*100)/100;
 								tanxa=datvale_pussy(metrebi_real);
 							console.log("tanxa aris: "+tanxa);
-							document.getElementById("end_screen").style.display="inline";
+							document.getElementById("end_screen").style.display="block";
 							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 							for (i=1;i<=5 ;i++ )
 								{
