@@ -534,9 +534,16 @@ function close_end_info()
 function vote(qula, ride)
 	{	
 	url = "http://taxiprius.com.ge/vote.php?unique=" + myid + "&myuser=" + MyUser + "&mypass=" + MyPass+"&qula="+qula+"&ride="+ride;
-	for (i=1;i<=qula ;i++ )
+	for (i=1;i<=5 ;i++ )
 		{
-		document.getElementById("vote"+i).src='resources/vote_full.png';
+		if (i<=qula)
+			{
+			document.getElementById("vote"+i).src='resources/vote_full.png';
+			}
+		else
+			{
+			document.getElementById("vote"+i).src='resources/vote_empty.png';
+			}
 		}
 
     console.log("vote: " + url);
