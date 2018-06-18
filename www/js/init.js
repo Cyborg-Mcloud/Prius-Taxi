@@ -475,7 +475,7 @@ function update_data() {
 				else if (a[0] == "toofar") 
 					{
 					console.log("out of radius");
-					alert("სამწუხაროდ ტაქსის გამოძახება შესაძლებელია მხოლოდ თბილისის რეგიონში");
+					
 					callingtaxi = 0;
 					notified = 0;
 					uplimit = 5;
@@ -504,6 +504,7 @@ function update_data() {
 					end_set=0;
 					//document.getElementById("driver_info_text").innerHTML =  taxiname;
 					change_status(0);
+					alert("სამწუხაროდ ტაქსის გამოძახება შესაძლებელია მხოლოდ თბილისის რეგიონში");
 					}
                 else 
 					{
