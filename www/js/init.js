@@ -521,8 +521,10 @@ function update_data() {
 							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
 							for (i=1;i<=5 ;i++ )
 								{
-								document.getElementById("vote"+i).src='resources/vote_emtpy.png';
+								document.getElementById("vote"+i).src='resources/vote0.png';
 								}
+
+							
 							}
 						callingtaxi = 0;
                         notified = 0;
