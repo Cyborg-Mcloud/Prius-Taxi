@@ -188,21 +188,21 @@ window.addEventListener('message', function(event) {
 }); 
 
 function close_iframe()
-{
-document.getElementById("myiframe").style.display="none";
-}
+	{
+	document.getElementById("myiframe").style.display="none";
+	}
 
 function open_reg_window()
-{
-url="http://taxiprius.com.ge/user_reg.php";
+	{
+	url="http://taxiprius.com.ge/user_reg.php?mytel="+mytel;
 
-document.getElementById("myiframe").src=url;
-document.getElementById("myiframe").style.display="inline";
+	document.getElementById("myiframe").src=url;
+	document.getElementById("myiframe").style.display="inline";
 
-//window.location=url;
-//win=window.open('http://taxiprius.com.ge/user_reg.php',  '_blank', 'location=yes');
+	//window.location=url;
+	//win=window.open('http://taxiprius.com.ge/user_reg.php',  '_blank', 'location=yes');
 
-}
+	}
 
 function setme() {
     if (startMarker !== undefined) {

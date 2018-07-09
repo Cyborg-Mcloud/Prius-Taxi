@@ -209,7 +209,7 @@ function onError(e) {
 }
 
 var updatacounter = 0;
-var uplimit = 5;
+var uplimit = 3;
 
 var tanxa=0;
 function MainProg() {
