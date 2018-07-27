@@ -722,7 +722,8 @@ var pos = {
 }
 
 
-function getpos() {
+function getpos()
+	{
     // console.log("get pos");
     document.getElementById('geopos').innerHTML = "Finding geolocation...";
     navigator.geolocation.getCurrentPosition(onSuccess, onError);

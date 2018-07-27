@@ -386,7 +386,8 @@ var tilef = 0;
 var kartX;
 var kartY;
 
-function setmypos() {
+function setmypos() 
+	{
     if (window.navigator.onLine == false) {
         document.getElementById("myint").style.display = "inline";
     }
@@ -483,7 +484,8 @@ function call_taxi() {
 }
 
 
-function logout() {
+function logout() 
+	{
     myloginid = 0;
 	MyUser="";
 	MyPass="";
@@ -493,7 +495,7 @@ function logout() {
     document.getElementById("mypass").value = "";
     document.getElementById("loggedin_page").style.display = "none";
     document.getElementById("login_page").style.display = "inline";
-}
+	}
 
 function fail(error) {
     console.log(error.code);
@@ -519,9 +521,16 @@ function onCallError(result) {
 function card_pay()
 	{
 	console.log("card pay: "+tanxa);
-document.getElementById("myiframe").src='http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid;
-document.getElementById("myiframe").style.display="inline";
-	//window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_system', 'location=yes');
+	if (mydevice=="android")
+		{
+		
+		document.getElementById("myiframe").src='http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid;
+		document.getElementById("myiframe").style.display="inline";
+		}
+	else
+		{
+		window.open('http://taxiprius.com.ge/bank_req.php?tanxa='+tanxa+"&unid="+myid, '_system', 'location=yes');
+		}
 	}
 
 function close_end_info()
