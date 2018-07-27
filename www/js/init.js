@@ -26,6 +26,9 @@ var MyAcc;
 var started;
 started = 0;
 
+var mydevice=cordova.platformId;
+console.log("device: "+mydevice);
+
 function onBackKeyDown() {
     if (curwindow == 1) {
         show_map();
