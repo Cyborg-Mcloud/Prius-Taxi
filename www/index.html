@@ -67,12 +67,15 @@ td {
 <body>
 <!-- width:370px; height:620px;-->
 <div id='fanjara' style='position:relative; overflow:hidden; width:100%; height:100%;'>
+
+
+<a style='position:fixed; top:0px; left:50%; z-index:1000; background-color:white; font-size:12px; margin-left:-45px; text-align:center; color:black; border-radius:5px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' width=90px><br>პარამეტრები</a>
+      
 	<!--                                          zeda meniu -->
 	<div style='position:fixed;box-shadow: rgba(0, 0, 0, 0.75) 0px 4px 23px 0px;left:0px;top:0px;width:100%; z-index:211; background-color:white;'><!--background-color:#ffce00;-->
-	<div style='width:100%; height:15px;'></div>
+		<div style='width:100%; height:15px;'></div>
 		
-		<a style='float:left;padding:7px;background-color:white;display: block;height: 57px; margin-top:13px; ' href='Javascript: show_settings();'><img src='resources/settings.svg' height=30px></a>
-      
+		
 	<!--									mimartulebis asarchevebi-->
 		<div id='input_boxes' style='float:left; width:81%;'>
 
@@ -157,7 +160,7 @@ td {
 
 
 <!--		<a id='call_but' style='position:fixed; bottom:0px; left:20%; height:100px; width:60%; z-index:252;' href='Javascript: call_taxi();'><img src='resources/gamodzaxeba.svg' style='width:210px; height:100px;'></a>-->
-	<a id='call_but' style='position:fixed;bottom: 20px;left: 5%;width:90%;z-index:252;background-color:#636469;color:#fdf00b;border: 2px solid #fdf00b;border-radius: 20px; padding: 15px;font-size: 22px; font-weight: bold;  font-family:mainfont;' href='Javascript: call_taxi();'><center>გამოძახება</center></a>
+	<a id='call_but' style='position:fixed;bottom: 20px;left: 0%;width:90%;z-index:252;background-color:#636469;color:#fdf00b;border: 2px solid #fdf00b;border-radius: 20px; padding: 15px;font-size: 26px; font-weight: bold;  font-family:maincaps;' href='Javascript: call_taxi();'><center><table><tr><td><img src='resources/taxi_30.png' height=30px></td><td style='font-size:26px;'> გამოძახება</td></tr></table></center></a>
 
 
 
@@ -184,18 +187,11 @@ td {
 	<iframe id='myiframe' style="width:80%; height:80%; z-index:256; position:absolute; top:110px; left:7%; padding:10px;  background-color:white; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px;"></iframe>
 
 
-	<div id='settings_sheet'  style=' position:absolute; left:10%; top:180px; width:80%; background-color:white; color:gray; box-shadow: 4px 4px 23px 0px rgba(0,0,0,0.75); display:none; border-radius:5px; z-index:255;'>
+	<div id='settings_sheet'  style=' position:fixed; left:50%; top:-10px; width:200px; margin-left:-100px; background: url(resources/gradacia.png); color:black; display:block;  border-radius:5px; z-index:1001; border:2px solid #5d5e62;'>
 		
 
 				<div id='mydiv'></div>
-				<br>
-			<!--	<p id="geopos" style='display:none;'>Finding geolocation...</p>
-				<br><br><br><Br><br>
-
-				<div id='erorebi' style='display:none;'>Tilebi (zoom:16)</div>-->
-
-				<center>
-				<b>პროფილი</b>
+			<center><Br>
 				<div id='login_page' style=' '>
 					<table>
 					  <tr>
@@ -213,7 +209,7 @@ td {
 						</td>
 					  </tr>
 					</table>
-					<Br><br>
+
 					<a href='#' onclick="Javascript: open_reg_window();" style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px;'>რეგისტრაცია</a>
 				</div>
 
@@ -224,7 +220,7 @@ td {
 				<br>
 
 
-				<a href='Javascript: show_map();' style='background-color:white; border:1px solid gray; display:block; width:150px; color:black; padding:5px; '>დახურვა</a>
+				<a href='Javascript: show_map();' style='position:absolute; bottom:-37px; left:50%; display:block; margin-left:-45px; width:90px; color:black;  '><img src='resources/settings_1.png' width=90px></a>
 				<Br><Br>
 				</center>
 

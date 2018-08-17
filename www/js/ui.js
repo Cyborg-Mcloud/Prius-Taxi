@@ -250,7 +250,7 @@ function show_settings()
 			login_to_server();
 			}
 		//document.getElementById("fanjara").style.visibility = "hidden";
-		document.getElementById("settings_sheet").style.display = "inline";
+		document.getElementById("settings_sheet").style.display = "block";
 		console.log("showing settings");
 		}
 	else

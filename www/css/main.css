@@ -1,6 +1,11 @@
 @font-face {
     font-family: mainfont;
-    src: url(www/resources/bpg_glaho.ttf);
+    src: url(bpg_glaho.ttf);
+}
+
+@font-face {
+    font-family: maincaps;
+    src: url(bpg_mrgvlovani.ttf);
 }
 
 
