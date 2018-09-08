@@ -353,7 +353,7 @@ function update_data() {
 
 
 							document.getElementById("end_screen").style.display="none";
-							document.getElementById("driver_info").style.display="inline";
+							document.getElementById("driver_info").style.display="block";
 							//document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
 							driver_info_up();
 

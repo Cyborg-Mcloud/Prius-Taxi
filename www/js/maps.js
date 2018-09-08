@@ -84,7 +84,7 @@ function initMap()
         anchor: new google.maps.Point(25, 25) // anchor
     };
     var gpsIcon = {
-        url: "resources/images/myself.png", // url
+        url: "resources/myself.png", // url
         scaledSize: new google.maps.Size(30, 30), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(29, 29) // anchor
