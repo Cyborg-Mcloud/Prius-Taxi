@@ -309,7 +309,8 @@ function update_data() {
 					if (last_status!=1)
 						{
 						document.getElementById("input_boxes").style.display="none";
-						document.getElementById("on_call_menu").style.display="inline";
+						document.getElementById("on_call_menu").style.display="block";
+						document.getElementById("on_call_menu").style.bottom="135px";
 						document.getElementById("dirinfo").style.display="none";
 						}
 					}
@@ -359,7 +360,8 @@ function update_data() {
 							
 
 							document.getElementById("input_boxes").style.display="none";
-							document.getElementById("on_call_menu").style.display="inline";
+							document.getElementById("on_call_menu").style.display="block";
+							document.getElementById("on_call_menu").style.bottom="160px";
 							document.getElementById("dirinfo").style.display="none";
 							}
 						
@@ -387,6 +389,7 @@ function update_data() {
 							document.getElementById("molodini").innerHTML = "თქვენი ტაქსი ადგილზეა";
 							document.getElementById("input_boxes").style.display="none";
 							document.getElementById("on_call_menu").style.display="block";
+							document.getElementById("on_call_menu").style.bottom="160px";
 							var ka=new Array();
 							ka=taxiname.split("<hr>");
 							document.getElementById("manqanis_nomeri").innerHTML =  ka[0];
@@ -439,7 +442,7 @@ function update_data() {
 							document.getElementById("molodini").innerHTML = "ტაქსი გელოდებათ";
 						//	document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 							document.getElementById("input_boxes").style.display="none";
-							document.getElementById("on_call_menu").style.display="inline";
+							document.getElementById("on_call_menu").style.display="block";
 							document.getElementById("dirinfo").style.display="none";
 							var ka=new Array();
 							ka=taxiname.split("<hr>");
@@ -479,12 +482,12 @@ function update_data() {
 						var metrebi_real=parseInt(metrebi*1.12*100)/100;
 
 						tanxa=datvale_pussy(metrebi_real);
-						document.getElementById("მოლოდინი").innerHTML =  "მანძილი: "+metrebi_real+" კმ, თანხა: "+tanxa+" ლარი";
+						document.getElementById("molodini").innerHTML =  "მანძილი: "+metrebi_real+" კმ, თანხა: "+tanxa+" ლარი";
 
 						if (last_status!=5)
 							{
 							
-							document.getElementById("driver_info").style.display="inline";
+							document.getElementById("driver_info").style.display="block";
 							document.getElementById("input_boxes").style.display="none";
 							document.getElementById("on_call_menu").style.display="none";
 							document.getElementById("dirinfo").style.display="none";

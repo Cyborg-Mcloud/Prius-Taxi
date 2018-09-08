@@ -23,16 +23,16 @@ function chat_key(e) {
 function driver_info_up()
 	{
 	document.getElementById("driver_info").style.bottom="0px";
-	document.getElementById("downarrow").style.display="block";
-	document.getElementById("uparrow").style.display="none";
-	document.getElementById("downarrow").style.display="none";
+	//document.getElementById("downarrow").style.display="block";
+//	document.getElementById("uparrow").style.display="none";
+//	document.getElementById("downarrow").style.display="none";
 	}
 
 function driver_info_down()
 	{
 	document.getElementById("driver_info").style.bottom="-140px";
-	document.getElementById("downarrow").style.display="none";
-	document.getElementById("uparrow").style.display="block";
+//	document.getElementById("downarrow").style.display="none";
+//	document.getElementById("uparrow").style.display="block";
 
 
 	}
@@ -109,7 +109,7 @@ function change_status(newstat) {
             uplimit = 1;
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("call_but").style.display = "none";
-            document.getElementById("arrived_screen").style.display = "inline";
+            //document.getElementById("arrived_screen").style.display = "inline";
 			document.getElementById("driver_info").style.display="inline";
           //  document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
 //            document.getElementById("certilebi").style.display = "none";
@@ -119,8 +119,8 @@ function change_status(newstat) {
 			document.getElementById("on_call_menu").style.bottom="160px";
 
 			document.getElementById("darekva").style.display="block";
-			document.getElementById("gamovdivar").style.display="none";
-			document.getElementById("dalodeba").style.display="none";
+			document.getElementById("gamovdivar").style.display="block";
+			document.getElementById("dalodeba").style.display="block";
 
 			}
         else if (newstat == 4) {
@@ -494,7 +494,7 @@ function call_taxi()
 
 		document.getElementById("input_boxes").style.display="none";
 
-		document.getElementById("on_call_menu").style.display="inline";
+		document.getElementById("on_call_menu").style.display="block";
 		document.getElementById("on_call_menu").style.bottom="135px";
 
 		document.getElementById("darekva").style.display="none";
