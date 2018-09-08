@@ -22,10 +22,10 @@ function chat_key(e) {
 
 function driver_info_up()
 	{
-	document.getElementById("driver_info").style.bottom="30px";
+	document.getElementById("driver_info").style.bottom="0px";
 	document.getElementById("downarrow").style.display="block";
 	document.getElementById("uparrow").style.display="none";
-
+	document.getElementById("downarrow").style.display="none";
 	}
 
 function driver_info_down()
@@ -68,7 +68,8 @@ function change_status(newstat) {
     console.log("status change: " + newstat + " / " + mystatus);
     if (newstat != mystatus) {
 
-        if (newstat == 1) {
+        if (newstat == 1) 
+			{
 
             uplimit = 1;
             document.getElementById("taxi_search_screen").style.display = "inline";
@@ -77,18 +78,34 @@ function change_status(newstat) {
             document.getElementById("arrived_screen").style.display = "none";
             //document.getElementById("certilebi").style.display = "none";
 
+			document.getElementById("on_call_menu").style.display="block";
+			document.getElementById("on_call_menu").style.bottom="135px";
+
+			document.getElementById("darekva").style.display="none";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
 			
-        }
-        else if (newstat == 2) {
+			}
+        else if (newstat == 2) 
+			{
             document.getElementById("taxi_search_screen").style.display = "none";
             uplimit = 1;
             document.getElementById("call_but").style.display = "none";
             document.getElementById("info_text").innerHTML = "ტაქსი მოდის";
-			document.getElementById("driver_info").style.display="inline";
+			document.getElementById("driver_info").style.display="block";
 //            document.getElementById("certilebi").style.display = "none";
         //    myself = 1;
-        }
-        else if (newstat == 3) {
+
+			document.getElementById("on_call_menu").style.display="block";
+			document.getElementById("on_call_menu").style.bottom="160px";
+
+			document.getElementById("darekva").style.display="block";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
+
+		   }
+        else if (newstat == 3) 
+			{
             uplimit = 1;
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("call_but").style.display = "none";
@@ -98,7 +115,14 @@ function change_status(newstat) {
 //            document.getElementById("certilebi").style.display = "none";
 
 //            myself = 1;
-        }
+			document.getElementById("on_call_menu").style.display="block";
+			document.getElementById("on_call_menu").style.bottom="160px";
+
+			document.getElementById("darekva").style.display="block";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
+
+			}
         else if (newstat == 4) {
             uplimit = 1;
             document.getElementById("taxi_search_screen").style.display = "none";
@@ -106,6 +130,14 @@ function change_status(newstat) {
             document.getElementById("arrived_screen").style.display = "none";
 			document.getElementById("driver_info").style.display="inline";
             document.getElementById("info_text").innerHTML = "ტაქსი გელოდებათ, ბორტი: " + taxiname;
+
+			document.getElementById("on_call_menu").style.display="block";
+			document.getElementById("on_call_menu").style.bottom="160px";
+
+			document.getElementById("darekva").style.display="block";
+			document.getElementById("gamovdivar").style.display="block";
+			document.getElementById("dalodeba").style.display="block";
+
 //            document.getElementById("certilebi").style.display = "none";
       //      myself = 1;
         }
@@ -115,19 +147,32 @@ function change_status(newstat) {
             document.getElementById("call_but").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
             document.getElementById("info_text").innerHTML = "თქვენ მოძრაობთ";
+
+			document.getElementById("on_call_menu").style.display="none";
+			document.getElementById("on_call_menu").style.bottom="160px";
+
+			document.getElementById("darekva").style.display="none";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
 //            document.getElementById("certilebi").style.display = "none";
 
        //     myself = 1;
         }
 
-        else if (newstat == 0) {
+        else if (newstat == 0) 
+			{
             uplimit = 5;
             document.getElementById("call_but").style.display = "inline";
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
 //            document.getElementById("certilebi").style.display = "inline";
+			document.getElementById("on_call_menu").style.display="none";
+			document.getElementById("on_call_menu").style.bottom="160px";
 
-        }
+			document.getElementById("darekva").style.display="none";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
+			}
         mystatus = newstat;
     }
 
@@ -429,7 +474,8 @@ function isValidInput(input1) {
     return true;
 }
 var end_set=0;
-function call_taxi() {
+function call_taxi() 
+	{
    
     if (mytel == "" || mytel.length < 6) 
 		{
@@ -447,8 +493,17 @@ function call_taxi() {
 		var end_lng = 0;
 
 		document.getElementById("input_boxes").style.display="none";
-		document.getElementById("on_call_menu").style.display="inline";
 
+		document.getElementById("on_call_menu").style.display="inline";
+		document.getElementById("on_call_menu").style.bottom="135px";
+
+		document.getElementById("darekva").style.display="none";
+		document.getElementById("gamovdivar").style.display="none";
+		document.getElementById("dalodeba").style.display="none";
+
+		
+		
+		
 		document.getElementById("pac-input").style.disabled="true";
 		document.getElementById("pac-input2").style.disabled="true";
 

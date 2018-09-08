@@ -325,7 +325,7 @@ function update_data() {
                         taxilong = parseFloat(b[0]);
                         taxilat = parseFloat(b[1]);
                         taxiname = b[2];
-					
+						
 						var latlng = new google.maps.LatLng(taxilat, taxilong);
 						 carMarker.setPosition(latlng);
 						 carMarker.setMap(map);
@@ -335,19 +335,29 @@ function update_data() {
 						var molodini="";
 						if (meters>50)
 							{
-							molodini=(parseInt(meters/800)+1)+" წთ.";
+							molodini=(parseInt(meters/800)+1);
 							}
 						else
 							{
-							molodini="0 წთ.";
+							molodini=0;
 							}
+						document.getElementById("molodini").innerHTML = "სავარაუდო მოლოდინის დრო:"+molodini+" წთ";
 						if (last_status!=2)
 							{
-						
+							var ka=new Array();
+							ka=taxiname.split("<hr>");
+							document.getElementById("manqanis_nomeri").innerHTML =  ka[0];
+							document.getElementById("manqanis_feri").innerHTML =  ka[3];
+							document.getElementById("mzgolis_saxeli").innerHTML =  ka[1];
+
+
 							document.getElementById("end_screen").style.display="none";
 							document.getElementById("driver_info").style.display="inline";
-							document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
+							//document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a><hr>მოლოდინის დრო: "+molodini;
 							driver_info_up();
+
+							
+
 							document.getElementById("input_boxes").style.display="none";
 							document.getElementById("on_call_menu").style.display="inline";
 							document.getElementById("dirinfo").style.display="none";
@@ -374,10 +384,15 @@ function update_data() {
 						navigator.vibrate(1000);
 						if (last_status!=3)
 							{
+							document.getElementById("molodini").innerHTML = "თქვენი ტაქსი ადგილზეა";
 							document.getElementById("input_boxes").style.display="none";
-							document.getElementById("on_call_menu").style.display="inline";
-							driver_info_down();
-							document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
+							document.getElementById("on_call_menu").style.display="block";
+							var ka=new Array();
+							ka=taxiname.split("<hr>");
+							document.getElementById("manqanis_nomeri").innerHTML =  ka[0];
+							document.getElementById("manqanis_feri").innerHTML =  ka[3];
+							document.getElementById("mzgolis_saxeli").innerHTML =  ka[1];
+
 							}
                         //document.getElementById("taxi_number").innerHTML = "ბორტის ნომერი: " + taxiname;
                         if (notified == 0) {
@@ -421,12 +436,18 @@ function update_data() {
                         taxiname = b[2];
 						if (last_status!=4)
 							{
-							document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
+							document.getElementById("molodini").innerHTML = "ტაქსი გელოდებათ";
+						//	document.getElementById("driver_info_text").innerHTML =  taxiname+" <a href='Javascript: make_call();'><img src='resources/call.png' height=18px></a>";
 							document.getElementById("input_boxes").style.display="none";
 							document.getElementById("on_call_menu").style.display="inline";
 							document.getElementById("dirinfo").style.display="none";
+							var ka=new Array();
+							ka=taxiname.split("<hr>");
+							document.getElementById("manqanis_nomeri").innerHTML =  ka[0];
+							document.getElementById("manqanis_feri").innerHTML =  ka[3];
+							document.getElementById("mzgolis_saxeli").innerHTML =  ka[1];
 							
-							driver_info_down();
+
 							}
 						sit_price=parseInt(b[4]);
 						kmprice=parseFloat(b[5]);
@@ -458,12 +479,11 @@ function update_data() {
 						var metrebi_real=parseInt(metrebi*1.12*100)/100;
 
 						tanxa=datvale_pussy(metrebi_real);
-                        taxiname = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
-						document.getElementById("driver_info_text").innerHTML =  "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+						document.getElementById("მოლოდინი").innerHTML =  "მანძილი: "+metrebi_real+" კმ, თანხა: "+tanxa+" ლარი";
 
 						if (last_status!=5)
 							{
-							driver_info_down();
+							
 							document.getElementById("driver_info").style.display="inline";
 							document.getElementById("input_boxes").style.display="none";
 							document.getElementById("on_call_menu").style.display="none";
