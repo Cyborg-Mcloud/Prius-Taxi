@@ -1,3 +1,15 @@
+function onKeyboardShow()
+	{
+	console.log("keyboard will show");
+document.getElementById("misamartebi").style.bottom='250px;';
+	}
+
+function onKeyboardHide()
+	{
+	console.log("keyboard will hide");
+document.getElementById("misamartebi").style.bottom='0px;';
+	}
+
 
 function sel_green()
 {

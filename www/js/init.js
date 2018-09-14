@@ -152,6 +152,9 @@ function onDeviceReady() {
 	document.addEventListener("volumedownbutton", onVolumeDown, false);
 	document.addEventListener("volumeupbutton", onVolumeUp, false);
 
+	window.addEventListener('keyboardWillShow', onKeyboardShow, false);
+	window.addEventListener('keyboardWillHide',onKeyboardHide, false);
+
 	console.log("device ready, getting position");
 
 	navigator.geolocation.getCurrentPosition(onSuccess, function (e) {

@@ -99,7 +99,7 @@
 	<preference name="permissions" value="none"/>
 
 	<preference name="KeyboardResize" value="true" />
-	<preference name="KeyboardResizeMode" value="native" />
+	<preference name="KeyboardResizeMode" value="body" />
 
     <description>
         Prius Taxi Tbilisi
