@@ -544,10 +544,10 @@ function update_data() {
 							tanxa=datvale_pussy(metrebi_real);
 							console.log("tanxa aris: "+tanxa);
 							document.getElementById("end_screen").style.display="block";
-							document.getElementById("end_info").innerHTML = "მანძილი: "+metrebi_real+" კმ<hr>თანხა: "+tanxa+" ლარი";
+							document.getElementById("end_info").innerHTML = "თანხა: "+tanxa+"₾";
 							for (i=1;i<=5 ;i++ )
 								{
-								document.getElementById("vote"+i).src='resources/vote0.png';
+								document.getElementById("vote"+i).src='resources/vote_empty.png';
 								}
 
 							

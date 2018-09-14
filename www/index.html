@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Security-Policy"
-      content="default-src 'self' gap://ready file://* *; img-src * 'self' data:; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com;">
-
-<!--<meta name="viewport" content="width=370, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=0.1,  minimal-ui, height=620">-->
-<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
-<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+	<meta http-equiv="Content-Security-Policy"
+		  content="default-src 'self' gap://ready file://* *; img-src * 'self' data:; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com;">
+	<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
 <head>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Prius Taxi</title>
-<!--  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">-->
-  <link href="css/main.css" rel="stylesheet">
-  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<!--  <script src="js/jquery-3.2.1.min.js"></script>-->
-<!--  <script src="js/popper.js"></script>-->
-<!--  <script src="js/bootstrap.min.js"></script>-->
-  <script type="text/javascript" charset="utf-8" src="js/func.js"></script>
-  <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
-  <script type="text/javascript" charset="utf-8" src="js/io.js"></script>
-
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Prius Taxi</title>
+	<link href="css/main.css" rel="stylesheet">
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/func.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/init.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/io.js"></script>
 </head>
 <style>
   body {
@@ -66,19 +57,18 @@ td {
 </style>
 <body>
 <!-- width:370px; height:620px;-->
-<div id='fanjara' style='position:relative; overflow:hidden; width:100%; height:100%;'>
+<div id='fanjara' style='position:absolute;left:0px; top:0px; overflow:hidden; width:100%; height:100%;'>
 
 
-<a style='position:fixed; top:0px; left:50%; z-index:1000; background-color:white; font-size:12px; margin-left:-45px; text-align:center; color:black; border-radius:5px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' width=90px><br>პარამეტრები</a>
+	<a style='position:fixed; top:0px; left:50%; z-index:1000; background-color:white; font-size:12px; margin-left:-45px; text-align:center; color:black; border-radius:5px;' href='Javascript: show_settings();'><img src='resources/settings_1.png' width=90px><br>პარამეტრები</a>
  
 
 	<!--                                          zeda meniu -->
-	<div style='position:fixed; left:0px;bottom:0px;width:99%; z-index:211; background-color:#636469; border:2px solid #f4f400; display:block;'><!--background-color:#ffce00;-->
+	<div style='position:absolute; left:0px;bottom:0px;width:99%; z-index:211; background-color:#636469; border:2px solid #f4f400; display:block;'><!--background-color:#ffce00;-->
 
-		
-		
+	
 	<!--									mimartulebis asarchevebi-->
-		<div id='input_boxes' style='float:left; width:100%; margin-top:15px;'>
+		<div id='input_boxes' style='width:100%; margin-top:15px;'>
 			<center>
 			<input id="pac-input" type="text" placeholder="საწყისი მისამართი"  onfocus='setState(0);' onclick='this.select();' style='width: 90%;font-size:14px;  text-align:Center; background-color:#58b946; color:white; border-radius:15px;'><br>		
 			<img  src='resources/down_arrow.png' height=30px width=20px><br>
@@ -89,7 +79,7 @@ td {
 		
 	</div>
 
-  <script src="js/maps.js"></script>
+	<script src="js/maps.js"></script>
 
 	<div id='charcho' style='position:fixed; left:0px; top:0px; width:365px; height:600px;  z-index:1;'>
 		<div id='mainw' style='position:absolute; left:0px; top:0px; width:600px; height:600px; '>
@@ -151,25 +141,32 @@ td {
 		</div>
 
 
-		<div id='end_screen' style='position:fixed; top:160px;  left:7%; width:80%; z-index:252;  background-color:#b3b4b6; color:black; border-radius:10px; border:2px solid #fcee13; display:none; height:300px;'>
-<br><br>
+		<div id='end_screen' style='display:none; position:fixed; bottom:0px;  left:5%; width:90%; z-index:500;  background-color:#646466; color:black; border-radius:10px; border:2px solid #fcee13;  height:270px; color:white; font-family:maincaps; font-size:14px;'>
 			<Center>
-			<a href='Javascript: card_pay();' style='background-color:blue; border-radius:5px; padding:10px; color:white; border-radius:5px;'>ბარათით გადახდა</a><Br>
-			<div id='end_info'></div>
-				<Br><br>
-				შესაფასეთ ჩვენი მომსახურება<br>
-				<table><tr>
-				<Td><a href='Javascript: vote(1, 0);'><img id='vote1' src='resources/vote0.png' width=30px></a></td>
-				<Td><a href='Javascript: vote(2, 0);'><img id='vote2' src='resources/vote0.png' width=30px></a></td>
-				<Td><a href='Javascript: vote(3, 0);'><img id='vote3' src='resources/vote0.png' width=30px></a></td>
-				<Td><a href='Javascript: vote(4, 0);'><img id='vote4' src='resources/vote0.png' width=30px></a></td>
-				<Td><a href='Javascript: vote(5, 0);'><img id='vote5' src='resources/vote0.png' width=30px></a></td>
+			<div id='end_info' style='font-family:maincaps; font-size:36px; color:#fff100; border-bottom:2px solid #fff100; padding-top:5px; padding-bottom:5px;'>
+			თანხა 3.5₾
+			</div>
+			
+			<div  style='color:white; font-family:maincaps; font-size:14px; border-bottom:2px solid #fff100; padding-top:5px; padding-bottom:5px;'>
+				გთხოვთ შეაფასოთ მგზავრობა<br>
+				<table width=90% border=0><tr>
+				<Td align=center><a href='Javascript: vote(1, 0);'><img id='vote1' src='resources/vote_empty.png' width=35px></a></td>
+				<Td align=center><a href='Javascript: vote(2, 0);'><img id='vote2' src='resources/vote_empty.png' width=35px></a></td>
+				<Td align=center><a href='Javascript: vote(3, 0);'><img id='vote3' src='resources/vote_empty.png' width=35px></a></td>
+				<Td align=center><a href='Javascript: vote(4, 0);'><img id='vote4' src='resources/vote_empty.png' width=35px></a></td>
+				<Td align=center><a href='Javascript: vote(5, 0);'><img id='vote5' src='resources/vote_empty.png' width=35px></a></td>
 				</tr></table>
-			<br><br>
+			</div>
+			<br>
+			<table width=90% border=0><tr>
+			<Td align=center><img src='resources/nagdi.png' width=120px></td><Td align=center><a href='Javascript: card_pay();'><img src='resources/visa.png'  width=120px></a></td></tr>
+			</table>
+			<bR>
+			
 			<a href='Javascript: close_end_info();' style='border:1px solid #6b6a6f; color:#4e4f51; border-radius:10px; background-color:white; padding:10px; padding-left:30px; padding-right:30px; text-align:center; font-family:maincaps;'>დახურვა</a>
 			
 			<center>
-			<Br><Br>
+
 
 		</div>
 
@@ -180,7 +177,7 @@ td {
 
 
 
-		<a href='Javascript: setme();' style='position:fixed; top:120px; left:5px; margin:5px; z-index:252; '><img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
+		<a href='Javascript: setme();' style='position:fixed; top:10px; right:5px; margin:5px; z-index:252; '><img id='cbut' src='resources/center.svg' style='width:50px; height:50px;'></a>
 
 		<div id="bottom_menu" style=' width:210px; position:fixed; bottom:0px; left:80px; height:31px; z-index:251; background-color:#ffce00; display:none;'>
 			<div id='info_text' name='info_text' style=' float:right; color:white; padding:5px; '></div>
