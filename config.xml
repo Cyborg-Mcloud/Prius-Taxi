@@ -97,6 +97,10 @@
     <preference name="exit-on-suspend" value="false"/>
 	<preference name="Orientation" value="portrait"/>
 	<preference name="permissions" value="none"/>
+
+	<preference name="KeyboardResize" value="true" />
+	<preference name="KeyboardResizeMode" value="native" />
+
     <description>
         Prius Taxi Tbilisi
     </description>
@@ -129,7 +133,11 @@
     <gap:plugin name="cordova-plugin-network-information" source="npm"/>
 	<gap:plugin name="phonegap-plugin-local-notification"  source="npm"/>
 	<gap:plugin name="call-number"  source="npm"/>
-<plugin name="cordova-plugin-vibration"  />
+	<gap:plugin name="cordova-plugin-ionic-webview" source="npm"/>
+
+	<gap:plugin name="cordova-plugin-ionic-keyboard" source="npm"/>
+
+	<plugin name="cordova-plugin-vibration"  />
 	
    <gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" version="0.8.4"/>
 
