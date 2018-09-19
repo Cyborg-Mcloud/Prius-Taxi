@@ -91,7 +91,7 @@ function change_status(newstat) {
             //document.getElementById("certilebi").style.display = "none";
 
 			document.getElementById("on_call_menu").style.display="block";
-			document.getElementById("on_call_menu").style.bottom="135px";
+			document.getElementById("on_call_menu").style.bottom="105px";
 
 			document.getElementById("darekva").style.display="none";
 			document.getElementById("gamovdivar").style.display="none";
@@ -507,7 +507,7 @@ function call_taxi()
 		document.getElementById("input_boxes").style.display="none";
 
 		document.getElementById("on_call_menu").style.display="block";
-		document.getElementById("on_call_menu").style.bottom="135px";
+		document.getElementById("on_call_menu").style.bottom="105px";
 
 		document.getElementById("darekva").style.display="none";
 		document.getElementById("gamovdivar").style.display="none";
@@ -604,7 +604,7 @@ function close_end_info()
 	{
 	tanxa=0;
 	document.getElementById("end_screen").style.display="none";
-
+	location.reload();
 	}
 
 function vote(qula, ride)

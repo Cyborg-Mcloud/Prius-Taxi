@@ -313,7 +313,7 @@ function update_data() {
 						{
 						document.getElementById("input_boxes").style.display="none";
 						document.getElementById("on_call_menu").style.display="block";
-						document.getElementById("on_call_menu").style.bottom="135px";
+						document.getElementById("on_call_menu").style.bottom="105px";
 						document.getElementById("dirinfo").style.display="none";
 						}
 					}
@@ -521,7 +521,7 @@ function update_data() {
 					document.getElementById("pac-input").style.disabled="false";
 					document.getElementById("pac-input2").style.disabled="false";
 
-					document.getElementById("input_boxes").style.display="inline";
+					document.getElementById("input_boxes").style.display="block";
 					document.getElementById("on_call_menu").style.display="none";
 
 
@@ -571,7 +571,7 @@ function update_data() {
 						document.getElementById("pac-input").style.disabled="false";
 						document.getElementById("pac-input2").style.disabled="false";
 
-						document.getElementById("input_boxes").style.display="inline";
+						document.getElementById("input_boxes").style.display="block";
 						document.getElementById("on_call_menu").style.display="none";
 
 
