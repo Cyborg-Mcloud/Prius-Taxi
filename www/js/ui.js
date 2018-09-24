@@ -174,7 +174,7 @@ function change_status(newstat) {
         else if (newstat == 0) 
 			{
             uplimit = 5;
-            document.getElementById("call_but").style.display = "inline";
+//            document.getElementById("call_but").style.display = "inline";
             document.getElementById("taxi_search_screen").style.display = "none";
             document.getElementById("arrived_screen").style.display = "none";
 //            document.getElementById("certilebi").style.display = "inline";
