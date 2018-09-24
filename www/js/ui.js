@@ -495,60 +495,70 @@ function call_taxi()
          mytel = prompt("რა ნომერზე დაგიკავშირდეთ?");
          WriteData();
       
-    }
+		}
 
     if ((mytel != "" && mytel != null) && mytel.length >= 6) 
 		{
-		var start_lat = startMarker.getPosition().lat();
-		var start_lng = startMarker.getPosition().lng();
-		var end_lat = 0;
-		var end_lng = 0;
-
-		document.getElementById("input_boxes").style.display="none";
-
-		document.getElementById("on_call_menu").style.display="block";
-		document.getElementById("on_call_menu").style.bottom="105px";
-
-		document.getElementById("darekva").style.display="none";
-		document.getElementById("gamovdivar").style.display="none";
-		document.getElementById("dalodeba").style.display="none";
-
-		
-		
-		
-		document.getElementById("pac-input").style.disabled="true";
-		document.getElementById("pac-input2").style.disabled="true";
-
-		var start_str=document.getElementById("pac-input").value;
-		var end_str=document.getElementById("pac-input2").value;
-
-
-
-		start_str=start_str.replace("'","");
-		end_str=end_str.replace("'","");
-
-		start_str=start_str.replace(", Tbilisi, Georgia","");
-		end_str=end_str.replace(", Tbilisi, Georgia","");
-
-
-		if (end_set==1)
+		if (document.getElementById("pac-input").value!="")
 			{
-			end_lat=endMarker.getPosition().lat();
-			end_lng=endMarker.getPosition().lng();
-			}
-        if (MyUser !== "nouser" && MyUser !== "") {
-            url = "http://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
-        }
-        else {
-            url = "http://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
-        }
-        callingtaxi = 1;
-        console.log("taxi call: " + url);
-        gamehttp.open('GET', url, true);
-        gamehttp.send(null);
+			
+			var start_lat = startMarker.getPosition().lat();
+			var start_lng = startMarker.getPosition().lng();
+			var end_lat = 0;
+			var end_lng = 0;
 
-    }
-}
+			document.getElementById("input_boxes").style.display="none";
+
+			document.getElementById("on_call_menu").style.display="block";
+			document.getElementById("on_call_menu").style.bottom="105px";
+
+			document.getElementById("darekva").style.display="none";
+			document.getElementById("gamovdivar").style.display="none";
+			document.getElementById("dalodeba").style.display="none";
+
+			
+			
+			
+			document.getElementById("pac-input").style.disabled="true";
+			document.getElementById("pac-input2").style.disabled="true";
+
+			var start_str=document.getElementById("pac-input").value;
+			var end_str=document.getElementById("pac-input2").value;
+
+
+
+			start_str=start_str.replace("'","");
+			end_str=end_str.replace("'","");
+
+			start_str=start_str.replace(", Tbilisi, Georgia","");
+			end_str=end_str.replace(", Tbilisi, Georgia","");
+
+
+			if (end_set==1)
+				{
+				end_lat=endMarker.getPosition().lat();
+				end_lng=endMarker.getPosition().lng();
+				}
+			if (MyUser !== "nouser" && MyUser !== "") 
+				{
+				url = "http://taxiprius.com.ge/call.php?uname=" + MyUser + "&pass=" + MyPass + "&lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
+				}
+			else 
+				{
+				url = "http://taxiprius.com.ge/call.php?lat=" + start_lat + "&long=" + start_lng + "&unique=" + myid + "&tel=" + mytel+"&endlat=" + end_lat + "&endlong=" + end_lng+"&start_str="+start_str+"&end_str="+end_str;
+				}
+			callingtaxi = 1;
+			console.log("taxi call: " + url);
+			gamehttp.open('GET', url, true);
+			gamehttp.send(null);
+			}
+		else
+			{
+			alert("საწყისი მისამართი აუცილებელია!");
+
+			}
+		}
+	}
 
 
 function logout() 
