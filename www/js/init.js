@@ -562,7 +562,7 @@ function update_data() {
 						taxiname="";
 
 						appr_price=0;
-                        document.getElementById("call_but").style.display = "inline";
+//                        document.getElementById("call_but").style.display = "inline";
                         document.getElementById("arrived_screen").style.display = "none";
 						document.getElementById("driver_info").style.display="none";
 						document.getElementById("pac-input").value="";
@@ -571,7 +571,7 @@ function update_data() {
 						document.getElementById("pac-input").style.disabled="false";
 						document.getElementById("pac-input2").style.disabled="false";
 
-						document.getElementById("input_boxes").style.display="block";
+//						document.getElementById("input_boxes").style.display="block";
 						document.getElementById("on_call_menu").style.display="none";
 
 
