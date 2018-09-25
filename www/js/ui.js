@@ -1,13 +1,13 @@
 function onKeyboardShow()
 	{
 	console.log("keyboard will show");
-//	document.getElementById("misamartebi").style.top='0px';
+	document.getElementById("misamartebi").style.top='0px';
 	}
 
 function onKeyboardHide()
 	{
 	console.log("keyboard will hide");
-//	document.getElementById("misamartebi").style.bottom='0px';
+	document.getElementById("misamartebi").style.bottom='0px';
 	}
 
 
