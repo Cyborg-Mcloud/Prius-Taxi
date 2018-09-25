@@ -1,7 +1,7 @@
 function onKeyboardShow()
 	{
 	console.log("keyboard will show");
-	document.getElementById("misamartebi").style.bottom='260px';
+	document.getElementById("misamartebi").style.top='0px';
 	}
 
 function onKeyboardHide()
