@@ -327,7 +327,7 @@ function show_map() {
 
 
 function stopScrolling(touchEvent) {
-    touchEvent.preventDefault();
+    //touchEvent.preventDefault();
 }
 
 
